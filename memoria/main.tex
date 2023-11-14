@@ -11,6 +11,7 @@
 \usepackage{accents}
 \usepackage{enumerate}
 \usepackage{accents,color}
+\usepackage{cite}
 
 \setlength\topmargin{-1.1in} \addtolength\textheight{2.1in}
 \addtolength{\oddsidemargin}{-0.2in}
@@ -49,6 +50,7 @@
 \newcommand{\Q}[0]{\mathbb{Q}}
 \newcommand{\K}[0]{\mathbb{K}}
 \newcommand{\sgn}[0]{\mathrm{sgn}}
+\newcommand{\supp}[0]{\mathrm{supp}}
 
 \newcommand{\cred}[1]{{\color{red} #1}}
 \newcommand{\cb}[1]{{\color{blue}#1}}
@@ -70,18 +72,121 @@
 
 \section{Introduction}
 
-\cred{Write an introduction to multiple orthogonal polynomials and introduce the content of the article.}
+Multiple Orthogonality is an extension of the standard orthogonality. It consists of Polynomials (defined on the real line in this introduction) that verify orthogonality relations with respect to more than one measure. There are also two different types of multiple orthogonality, which will be explained shortly.
 
-\section{\dots}
-\dots
+First, let's consider $r$ different real measures $\mu_1,\dots,\mu_r$ such that $\Omega_i\supp(\mu_i)\subseteq\R$ ($i=1,\dots,r$). We will use multi-indexes $\vec n = (n_1, \dots,n_r)\in \N^r$, and denote $n:=|\vec n| = n_1 + \dots + n_r$. These multi-indexes determine the orthogonality relations with each measure. With these preliminaries we will present the first definition.
+
+\begin{definition}[Type II Multiple Orthogonal Polynomials]
+    Let $\vec n = (n_1,\dots,n_r)$. A monic polynomial $P_{\vec n}(x)$ is a type II multiple orthogonal polynomial if $\deg(P_{\vec n})\leq n$ and 
+    \begin{equation}
+        \label{eq:typeII-MOP}
+        \int_{\Omega_i} P_{\vec n}(x) x^k d\mu_i(x) = 0, \ \ \ k=0,\dots,n_{i}-1, \ \ i = 1,\dots,r
+    \end{equation}
+\end{definition}
+
+This means $P_{\vec n}$ is orthogonal to $1,x,x^2,\dots,n^{n_i-1}$ with respect to each measure $\mu_i$, ($i=1,\dots,r$). If we define the product $\prodesc{f}{g}_i=\int_{\Omega_i}f(x)g(x)d\mu(x)$, conditions \eqref{eq:typeII-MOP} can also be written as
+\begin{equation}
+    \label{eq:typeII-MOP-dot}
+    \prodesc{P_{\vec n}}{x^k}_i = 0, \ \ \ k=0,\dots,n_{i}-1, \ \ i = 1,\dots,r
+\end{equation}
+
+There is another type of multiple orthogonality: The type I MOP.
+
+\begin{definition}[Type I Multiple Orthogonal Polynomials]
+    Let $\vec n = (n_1,\dots,n_r)$. Type I Multiple Orthogonal Polynomials are presented in a vector $(A_{\vec n, 1}(x), \dots, A_{\vec n, r}(x))$, where $\deg(A_{\vec n, i})\leq n_i-1$, ($i=1,\dots,r$) and these polynomials verify the relation
+    \begin{equation}
+        \label{eq:typeI-MOP}
+        \sum_{i=1}^r \int_{\Omega_i}A_{\vec n, i}(x) x^k d\mu_i(x) = 0,  \ \ \ k=0,\dots,n-2
+    \end{equation}
+    and the normalization condition
+    \begin{equation}
+        \label{eq:typeI-MOP-normalization}
+        \sum_{i=1}^r \int_{\Omega_i}A_{\vec n, i}(x) x^{n-1} d\mu_i(x) = 1.
+    \end{equation}
+    
+\end{definition}
+
+As we did previously with the type II MOP, the relations \eqref{eq:typeI-MOP} and \eqref{eq:typeI-MOP-normalization} can be written, using the dot products, as
+\begin{equation}
+    \sum_{i=1}^r \prodesc{A_{\vec n,i}}{x^k}_i = \left\{\begin{array}{ccl}
+        0 &   \text{ if } & k=0,\dots,n-2 \\
+        1 & \text{ if } & k=n-1      
+    \end{array}\right.
+\end{equation}
+
+Whenever the measures are all absolutely continuous with respect to a common positive measure $\mu$ defined in $\Omega = \displaystyle\bigcup_{i=1}^r \Omega_i$, i.e., $d\mu_i = w_i(x) d\mu(x)$, ($i=1,\dots,r$), it is possible to define the \textit{Type I function} as
+\begin{equation}
+    \label{eq:typeI-function}
+    Q_{\vec n}(x)=\sum_{i=1}^r A_{\vec n,i}(x)w_i(x).
+\end{equation}
+Using the type I function, we can rewrite the orthogonality relations
+\begin{equation}
+    \int_\Omega Q_{\vec n}(x) x^k d\mu(x) = \left\{\begin{array}{ccl}
+        0 &   \text{ if } & k=0,\dots,n-2 \\
+        1 & \text{ if } & k=n-1      
+    \end{array}\right.
+\end{equation}
+
+Nevertheless, not every multi-index $\vec n\in\N^r$ provides a type I vector of polynomials or a type II polynomial. Let $\vec n = (n_1,\dots,n_r)$ be a multi-index and let $\mu_1,\dots,\mu_r$ be $r$ positive measures. If $(A_{\vec n, 1}(x), \dots, A_{\vec n, r}(x))$ is the vector of type I MOP, then, if we call
+\begin{equation}
+    \begin{split}
+        A_{\vec n,1}(x) &= a_{n_1-1,1}x^{n_1-1} + a_{n_1-2,1}x^{n_1-2} + \cdots + a_{1,1}x + a_{0,1} \\
+        \vdots & \\
+        A_{\vec n,r}(x) &= a_{n_r-1,r}x^{n_r-1} + a_{n_r-2,r}x^{n_r-2} + \cdots + a_{1,r}x + a_{0,r}
+    \end{split}
+\end{equation}
+and apply the orthogonality conditions \eqref{eq:typeI-MOP} and \eqref{eq:typeI-MOP-normalization}, then we get a linear system of $n$ equations and $n$ unknown coefficients. Thus, the type I MOP will exist if and only if the following matrix is regular:
+
+\begin{equation}
+    \label{eq:MOP-matrix}
+    A=\left(\begin{array}{c}
+    M_{n_1}^{(1)} \\ \hline
+    M_{n_2}^{(2)} \\ \hline
+    \vdots \\ \hline
+    M_{n_r}^{(r)} \\ 
+\end{array}\right), \text{ \ \  where \ \ } M_{n_j}^{(j)} = \begin{pmatrix}
+    m_0^{(j)} & m_1^{(j)} & \cdots & m_{n-1}^{(j)} \\
+    m_1^{(j)} & m_2^{(j)} & \cdots & m_{n}^{(j)} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    m_{n_j-1}^{(j)} & m_{n_j}^{(j)} & \cdots & m_{n+n_j-2}^{(j)} \\
+\end{pmatrix},
+\end{equation}
+$j=1,\dots,r$ and $m_k^{(j)}=\displaystyle\int_{\Omega_j} x^k d\mu_j(x)$ are the moments of the measures $(k\geq 0)$.
+
+In the other hand, if we consider the type II polynomial as:
+$$
+P_{\vec n} = x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a0
+$$
+and apply the conditions \eqref{eq:typeII-MOP}, we get another linear system with $n$ equations and $n$ unknown coefficients. In fact, the coefficients matrix of this linear system is $A^t$, the transpose matrix of the type I MOP. Thus, we have the following result.
+
+\begin{proposition}
+    \label{prop:existence-of-MOP}
+    Given a multi-index $\vec n\in\N^r$ and $r$ positive measures, $\mu_1,\dots,\mu_r$, the following statements are equivalent:
+    \begin{enumerate}
+        \item There exist an unique vector $(A_{\vec n,1}, \dots, A_{\vec n,r})$ of type I MOP.
+        \item There exist an unique type II multiple orthogonal polynomial $P_{\vec n}$.
+        \item The matrix $A$ defined in \eqref{eq:MOP-matrix} is regular.
+    \end{enumerate}
+\end{proposition}
+
+Following this proposition, we provide a new definition.
+
+\begin{definition}
+    A multi-index $\vec n = (n_1,\dots,n_r)\in\N^r$ is \textbf{normal} if it satisfies the conditions of the proposition \ref{prop:existence-of-MOP}.
+    A system of $r$ measures $\mu_1,\dots,\mu_r$ is \textbf{perfect} if every $\vec n\in\N^r$ is normal.
+\end{definition}
+
+There are some perfect systems, standing out the Angelesco systems and the AT-systems, see \cite[Sections 23.1.1 and 23.1.2]{Ismail}
+
+
+We will be mainly focused on the type II multiple orthogonal polynomials. In the next sections, a definition of type II multiple orthogonal polynomials on several variables will be provided, and also some easy examples and a generalized version of the Jacobi-Piñeiro polynomials. 
 
 \section{Conclusion}
 \dots
 
-\begin{thebibliography}{99}
-
-
-\end{thebibliography}
+\nocite{*}
+\bibliography{references}{}
+\bibliographystyle{plain}
 
 
 \end{document} 
