@@ -62,7 +62,7 @@
 \title{Multiple Orthogonal Polynomials in several variables}
 
 
-\author{Fernández Rodríguez, Lidia and Villegas Recio, Juan Antonio\\
+\author{Fernández, Lidia and Villegas-Recio, Juan Antonio\\
 \small University of Granada}
 \maketitle
 
@@ -72,7 +72,7 @@
 
 \section{Introduction}
 
-Multiple Orthogonality is an extension of the standard orthogonality. It consists of Polynomials (defined on the real line in this introduction) that verify orthogonality relations with respect to more than one measure. There are also two different types of multiple orthogonality, which will be explained shortly.
+Multiple Orthogonality is an extension of the standard orthogonality. It consists of Polynomials (defined on the real line in this introduction) that satisfy orthogonality relations with respect to more than one measure. There are also two different types of multiple orthogonality, which will be explained shortly.
 
 First, let's consider $r$ different real measures $\mu_1,\dots,\mu_r$ such that $\Omega_i\supp(\mu_i)\subseteq\R$ ($i=1,\dots,r$). We will use multi-indexes $\vec n = (n_1, \dots,n_r)\in \N^r$, and denote $n:=|\vec n| = n_1 + \dots + n_r$. These multi-indexes determine the orthogonality relations with each measure. With these preliminaries we will present the first definition.
 
@@ -93,7 +93,7 @@ This means $P_{\vec n}$ is orthogonal to $1,x,x^2,\dots,n^{n_i-1}$ with respect 
 There is another type of multiple orthogonality: The type I MOP.
 
 \begin{definition}[Type I Multiple Orthogonal Polynomials]
-    Let $\vec n = (n_1,\dots,n_r)$. Type I Multiple Orthogonal Polynomials are presented in a vector $(A_{\vec n, 1}(x), \dots, A_{\vec n, r}(x))$, where $\deg(A_{\vec n, i})\leq n_i-1$, ($i=1,\dots,r$) and these polynomials verify the relation
+    Let $\vec n = (n_1,\dots,n_r)$. Type I Multiple Orthogonal Polynomials are presented in a vector $(A_{\vec n, 1}(x), \dots, A_{\vec n, r}(x))$, where $\deg(A_{\vec n, i})\leq n_i-1$, ($i=1,\dots,r$) and these polynomials satisfy the relation
     \begin{equation}
         \label{eq:typeI-MOP}
         \sum_{i=1}^r \int_{\Omega_i}A_{\vec n, i}(x) x^k d\mu_i(x) = 0,  \ \ \ k=0,\dots,n-2
@@ -127,7 +127,7 @@ Using the type I function, we can rewrite the orthogonality relations
     \end{array}\right.
 \end{equation}
 
-Nevertheless, not every multi-index $\vec n\in\N^r$ provides a type I vector of polynomials or a type II polynomial. Let $\vec n = (n_1,\dots,n_r)$ be a multi-index and let $\mu_1,\dots,\mu_r$ be $r$ positive measures. If $(A_{\vec n, 1}(x), \dots, A_{\vec n, r}(x))$ is the vector of type I MOP, then, if we call
+Nevertheless, not every multi-index $\vec n\in\N^r$ provides a type I vector of polynomials or a type II polynomial. Let $\vec n = (n_1,\dots,n_r)$ be a multi-index and let $\mu_1,\dots,\mu_r$ be $r$ positive measures. If $(A_{\vec n, 1}(x), \dots, A_{\vec n, r}(x))$ is the vector of type I MOP, then, if we denote
 \begin{equation}
     \begin{split}
         A_{\vec n,1}(x) &= a_{n_1-1,1}x^{n_1-1} + a_{n_1-2,1}x^{n_1-2} + \cdots + a_{1,1}x + a_{0,1} \\
@@ -153,7 +153,7 @@ and apply the orthogonality conditions \eqref{eq:typeI-MOP} and \eqref{eq:typeI-
 \end{equation}
 $j=1,\dots,r$ and $m_k^{(j)}=\displaystyle\int_{\Omega_j} x^k d\mu_j(x)$ are the moments of the measures $(k\geq 0)$.
 
-In the other hand, if we consider the type II polynomial as:
+On the other hand, if we consider the type II polynomial as:
 $$
 P_{\vec n} = x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a0
 $$
