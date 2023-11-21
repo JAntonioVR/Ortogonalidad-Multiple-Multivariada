@@ -191,6 +191,53 @@ $$
 \dim \mathcal{P}_n^d = \binom{n+d-1}{n}.
 $$
 
+In order to work with multivariate polynomials, we will use the notation $\mathbb P_n$ as a column polynomial vector. In order to understand this notation, we denote the vector of degree $j$ monomials as
+$$
+\mathbb{X}_j = \left(x_1^{k_1} x_2^{k_2} \cdots x_d^{k_d}\right)_{k_1+k_2+\cdots +k_d = j}.
+$$
+For example, if $d=2$ and we use the ``degree reverse lexicographic ordering'' in $\N^2$, then
+$$
+\mathbb{X}_0=\left(1\right), \mathbb{X}_1=\begin{pmatrix}
+    x \\ y
+\end{pmatrix}, \mathbb{X}_2=\begin{pmatrix}
+    x^2 \\ xy \\ y^2
+\end{pmatrix}, \dots, \mathbb{X}_j=\begin{pmatrix}
+    x^j \\ x^{j-1}y \\ \vdots \\ y^j
+\end{pmatrix}.
+$$
+Thus, a column polynomial vector of degree $n$ can be represented as
+$$
+\mathbb{P}_n = G_{n,n}\mathbb{X}_n + G_{n,n-1}\mathbb{X}_{n-1}+\cdots G_{n,1}\mathbb{X}_1 + G_{n,0}\mathbb X_0,
+$$
+where $G_{n,j}$ are matrices of size $\binom{n+d-1}{n}\times\binom{j+d-1}{j}$ and they are the polynomial's ``coefficients''. Hence, $\mathbb P_n$ is a vector of polynomials whose size is $\binom{n+d-1}{n}$. We will denote 
+$$
+r_n^d = \dim \mathcal{P}_n^d = \binom{n+d-1}{n}.
+$$
+
+Given a multi-dimensional measure $\mu(x_1,\dots,x_d)$, whose support is $\Omega\subseteq\R^d$, we can extend the definition of a multivariate product $\prodesc{f}{g}_\mu$ and its functional $\mathcal{L}_\mu[f\cdot g]$ to column vectors. If $F=(f_1,f_2,\dots,f_n)^t$ and $G=(g_1,g_2,\dots, g_m)^t$ are column vectors of functions of size $n$ and $m$, respectively, then we define
+$$
+\prodesc{F}{G}:=\mathcal{L}_\mu[F\cdot G^T] = \int_\Omega F\cdot G^T d\mu(x_1,\dots,x_d) = \left(\int_\Omega f_i\cdot g_j d\mu(x_1,\dots,x_d)\right)_{i=1,\dots,n;\ \ j = 1,\dots, m}.
+$$
+In fact, we are applying the standard product $\prodesc{f_i}{g_j}_\mu$ or the functional $\mathcal L_\mu[f_i\cdot g_j]$ to each pair $i,j$ and placing the results in a matrix.
+
+Let's consider it is possible to build a system of polynomials $\{\mathbb{P}_n\}_{n\geq 0}$ where
+$$
+\prodesc{\mathbb P_n}{\mathbb P_k}_\mu = \mathcal{L}_\mu[\mathbb P_n \mathbb P_k^t]= \left\{\begin{array}{ccl}
+    0_{r_n^d\times r_k^d} &   \text{ if } & k=0,\dots,n-1 \\
+    S_n & \text{ if } & k=n      
+\end{array}\right. 
+$$
+Where $S_n$ is a regular squared matrix of size $r_n^d\times r_n^d$.
+Due to orthogonality, it is possible to give a equivalent condition:
+$$
+\prodesc{\mathbb P_n}{\mathbb X_k}_\mu = \mathcal{L}_\mu[\mathbb P_n \mathbb X_k^t]= \left\{\begin{array}{ccl}
+    0_{r_n^d\times r_k^d} &   \text{ if } & k=0,\dots,n-1 \\
+    S_n & \text{ if } & k=n      
+\end{array}\right. 
+$$
+Then, $\{\mathbb{P}_n\}_{n\geq 0}$ is called a system of orthogonal polynomials with respect to the measure $\mu$ or the functional $\mathcal L_\mu$. You can check more information about the existence and uniqueness of this system in \cite[Ch. III, Section 3.2]{dunkl_xu_2014}.
+
+
 
 \section{Conclusion}
 \dots
