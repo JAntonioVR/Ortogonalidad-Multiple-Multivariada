@@ -263,8 +263,24 @@ Now, the question is: How many linear equations is it possible to get from a mul
 If we collect all the equations, we obtain $r_n^d\cdot\displaystyle\sum_{k=0}^{n_i-1}r^d_k$ linear equations for each $i\in\{1,\dots,r\}$. Collecting the number of equations of each $i$, we finally get the number of equations is 
 \begin{equation}
     \label{eq:number-eqs}
-    r_n^d \sum_{i=0}^r \sum_{k=0}^{n_i-1} r_k^d.
+    r_n^d \sum_{i=1}^r \sum_{k=0}^{n_i-1} r_k^d.
 \end{equation}
+
+On the other hand, since $\mathbb P_n = \mathbb X_n + \displaystyle\sum_{k=0}^{n-1}G_{n,k} \mathbb X_k$, where $G_{n,k}$ are matrices whose dimensions are $r^d_n\times r^d_k$, if we consider $\mathbb P_n$ a vector of degree $n$ monic polynomials, then this matrices give us $\displaystyle\sum_{k=0}^{n-1}r^d_n r^d_k=r^d_n\displaystyle\sum_{k=0}^{n-1} r^d_k$ unknown coefficients.
+
+If we want this system to have only one solution for a multi-index $\vec n$. Then, $\vec n$ is a valid multi-index if there exist a number $n\in\N\cup\{0\}$ such that:
+\begin{equation}
+    \label{eq:condition-type-ii-general}
+    \displaystyle\sum_{k=0}^{n-1} r^d_k = \sum_{i=1}^r \sum_{k=0}^{n_i-1} r_k^d.
+\end{equation}
+
+Since this moment, we will assume $d=2$ and $x:=x_1, y:=x_2$. Notice that, in the bidimensional case, $r^2_n = \binom{n+1}{n} = n+1$, which makes things much easier: $\mathbb X_j$ is a polynomial vector of size $j+1$, $\mathbb P_n$ is a vector of size $n+1$, and $G_{n,k}$ is a $(n+1)\times(k+1)$ matrix. Also, the condition \eqref{eq:condition-type-ii-general} gets simpler because some sums become sums of an arithmetic progression. When $d=2$, a multi-index $\vec n =(n_1,\dots,n_r)$ is valid if there exists a number $n\in\N\cup \{0\}$ such that
+\begin{equation}
+    \label{eq:condition-type-ii}
+    n(n+1)=\sum_{i=1}^r n_i (n_i+1).
+\end{equation} 
+
+
 
 \section{Conclusion}
 \dots
