@@ -74,7 +74,7 @@
 
 Multiple Orthogonality is an extension of the standard orthogonality. It consists of Polynomials (defined on the real line in this introduction) that satisfy orthogonality relations with respect to more than one measure. There are also two different types of multiple orthogonality, which will be explained shortly.
 
-First, let's consider $r$ different real measures $\mu_1,\dots,\mu_r$ such that $\Omega_i\supp(\mu_i)\subseteq\R$ ($i=1,\dots,r$). We will use multi-indexes $\vec n = (n_1, \dots,n_r)\in \N^r$, and denote $n:=|\vec n| = n_1 + \dots + n_r$. These multi-indexes determine the orthogonality relations with each measure. With these preliminaries we will present the first definition.
+First, let's consider $r$ different real measures $\mu_1,\dots,\mu_r$ such that $\Omega_i=\supp(\mu_i)\subseteq\R$ ($i=1,\dots,r$). We will use multi-indexes $\vec n = (n_1, \dots,n_r)\in \N^r$, and denote $n:=|\vec n| = n_1 + \dots + n_r$. These multi-indexes determine the orthogonality relations with each measure. With these preliminaries we will present the first definition.
 
 \begin{definition}[Type II Multiple Orthogonal Polynomials]
     Let $\vec n = (n_1,\dots,n_r)$. A monic polynomial $P_{\vec n}(x)$ is a type II multiple orthogonal polynomial if $\deg(P_{\vec n})\leq n$ and 
@@ -372,6 +372,33 @@ a polynomial vector of size $n$ whose components are bivariate polynomials of de
 
 Observe the similarity between equations \eqref{eq:typeI-MOP-dot} and \eqref{eq:condition-type-I}.
     
+Summarizing, we present the final definitions of the multiple orthogonal polynomials in two variables.
+
+\begin{definition}[Type II MOP in two variables]
+    Let $\vec n = (n_1, \dots, n_r)\in \N^r$ such that the condition \eqref{eq:condition-type-ii} holds for certain $n\in\N$. A vector of monic degree $n$ polynomials $\mathbb P_{\vec n}^n = \mathbb X_n + \displaystyle\sum_{k=0}^{n-1} G_{n,k} \mathbb X_k$ is a \textbf{type II Multiple Orthogonal Polynomial Vector} if 
+    \begin{equation}
+        \prodesc{\mathbb X_k}{\mathbb P_{\vec n}^n}_j = 0_{(k+1)\times (n+1)}, \ \ \ k=0,\dots,n_j-1, \ \ \ i=1,\dots,r
+    \end{equation}      
+\end{definition}
+
+\begin{definition}[Type I MOP in two variables]
+    Let $\vec n = (n_1, \dots, n_r)\in \N^r$ such that the condition \eqref{eq:condition-type-ii} holds for certain $n\in\N$. \textbf{Type I Multiple Orthogonal Polynomials Vectors} are presented as $(\mathbb A_{\vec n,1}, \dots, \mathbb A_{\vec n,r})$, where 
+    $\mathbb A_{\vec n,j}=(A_{\vec n,j}^{(1)}, \dots, A_{\vec n,j}^{(n)})^t$, $j=1,\dots,r$ and $A_{\vec n,j}^{(i)}$ are polynomials of degree less than or equal to $n_j-1$ for every $i=1,\dots,n$. In addition, these polynomials vectors satisfy the conditions \eqref{eq:condition-type-I}.     
+\end{definition}
+
+As the univariate case, from the Type I MOP, in case the 2-dimensional measures are all absolutely continuous with respect to a common positive measure $\mu$ defined in $\Omega = \displaystyle\bigcup_{j=1}^r \Omega_j$, \textit{i.e.}, $d\mu_j = w_j(x,y)d\mu(x,y)$, ($j=1,\dots,r$), we can define the \textit{Type I function}:
+\begin{equation}
+    \label{eq:type-I-function-2-vars}
+    \mathbb Q_{\vec n} = \sum_{j=1}^r \mathbb A_{\vec n,j}w_j(x,y).
+\end{equation}
+Using this function, it is possible to rewrite \eqref{eq:condition-type-I} as
+
+\begin{equation}
+    \prodesc{\mathbb X_k}{\mathbb Q_{\vec n}}_\mu = \left\{\begin{array}{ccl}
+        0_{(k+1)\times n} &   \text{ if } & k=0,\dots,n-2 \\
+        I_n & \text{ if } & k=n-1 
+    \end{array}\right.     
+\end{equation}
     
 
 \section{Conclusion}
