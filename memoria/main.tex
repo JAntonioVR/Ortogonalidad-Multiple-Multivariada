@@ -93,6 +93,7 @@ This means $P_{\vec n}$ is orthogonal to $1,x,x^2,\dots,n^{n_i-1}$ with respect 
 There is another type of multiple orthogonality: The type I MOP.
 
 \begin{definition}[Type I Multiple Orthogonal Polynomials]
+    \label{def:typeI-univar}
     Let $\vec n = (n_1,\dots,n_r)$. Type I Multiple Orthogonal Polynomials are presented in a vector $(A_{\vec n, 1}(x), \dots, A_{\vec n, r}(x))$, where $\deg(A_{\vec n, i})\leq n_i-1$, ($i=1,\dots,r$) and these polynomials satisfy the relation
     \begin{equation}
         \label{eq:typeI-MOP}
@@ -121,6 +122,7 @@ Whenever the measures are all absolutely continuous with respect to a common pos
 \end{equation}
 Using the type I function, we can rewrite the orthogonality relations
 \begin{equation}
+    \label{eq:typeI-MOP-dot}
     \int_\Omega Q_{\vec n}(x) x^k d\mu(x) = \left\{\begin{array}{ccl}
         0 &   \text{ if } & k=0,\dots,n-2 \\
         1 & \text{ if } & k=n-1      
@@ -336,8 +338,39 @@ Observe some of the valid multi-indexes and their respective degree $n$.
         \label{fig:indexes}
       \end{figure}
 
-      
+\section{Type I MOP in two variables}
 
+Remember the type I multiple orthogonality in definition \ref{def:typeI-univar}. Given $\vec n =(n_1,\dots,n_r)$, it consists of a polynomial vector $(A_{\vec n,1},\dots,A_{\vec n, r})$ where $\deg(A_{\vec n,j})\leq n_j-1$ ($j=1,\dots,r$) and the polynomials satisfy \eqref{eq:typeI-MOP} and \eqref{eq:typeI-MOP-normalization}. This two conditions can be also expresed in a more compact way if we use the dot products, see \eqref{eq:typeI-MOP-dot}.
+
+In order to generalize this type of orthogonality, the first problem is the sum located in the orthogonality condition. This forces us to define polynomials, or polynomial vectors $\mathbb A_{\vec n, j}$, of the same size. If these vectors had different size, it would not be possible to make the sum. This makes impossible to considerate $\mathbb A_{\vec n,j}$ a vector of degree $\leq n_j-1$ polynomials, with size $n_j$. We will tell you how this problem was solved and the definition we give.
+
+Let $\vec n = (n_1,\dots,n_r)\in\N^r$ such that the condition \eqref{eq:condition-type-ii} holds for some $n\in\N$. Then, let $i\in\{1,\dots,n\}$ and, for each $j$, the polynomial $$A_{\vec n, j}^{(i)}(x,y) = g_{n_j-1,n_j-1}^t \mathbb X_{n_j-1} + g_{n_j-1,n_j-2}^t \mathbb X_{n_j-2} + \cdots + g_{n_j-1,0}^t \mathbb X_{0},$$ where $g_{n_j-1,k}\in\R^{k+1}$, ($k=0,\dots,n_j-1$) is a bivariate polynomial such that $\deg A_{\vec n, j}^{(i)} \leq n_j-1$, ($j=1,\dots,r$). Now, given $r$ 2-dimensional measures $\mu_1,\dots,\mu_r$, we will force the polynomials $A_{\vec n, 1}^{(i)}, A_{\vec n, 2}^{(i)}, \dots, A_{\vec n, r}^{(i)}$ to satisfy the first type I multiple orthogonality condition:
+
+\begin{equation}
+    \label{eq:first-condition-type-I}
+    \sum_{j=1}^r \prodesc{\mathbb X_k}{A_{\vec n,j}^{(i)}}_j = \left\{\begin{array}{ccl}
+        0_{(k+1)\times 1} &   \text{ if } & k=0,\dots,n-2 \\
+        (e_i)_{n\times 1} = (0,\dots,0,1,0,\dots,0)^t & \text{ if } & k=n-1      
+    \end{array}\right.
+\end{equation}
+
+You can easily check the number of unknown coefficients of the polynomials $A_{\vec n,j}^{(i)}$ is the same as the number of linear equations given by conditions \eqref{eq:first-condition-type-I}. If we repeat this for every possible $i\in\{1,\dots,n\}$, we get $n$ lists of polynomials $A_{\vec n, j}^{(i)}$, $j=1,\dots,r, i=1,\dots,n$. Now, let's denote
+$$
+\mathbb A_{\vec n,j} = \begin{pmatrix}
+    A_{\vec n, j}^{(1)} \\ \vdots \\ A_{\vec n, j}^{(n)}
+\end{pmatrix}_{n\times 1},
+$$
+a polynomial vector of size $n$ whose components are bivariate polynomials of degree less than or equal to $n_j-1$ ($j=1,\dots,r$) and, fixed $i$, the polynomials $A_{\vec n, 1}^{(i)},\dots,A_{\vec n, r}^{(i)}$ satisfy \eqref{eq:first-condition-type-I}. Thus, the polynomial vectors $\mathbb A_{\vec n,j}$ will satisfy:
+
+\begin{equation}
+    \label{eq:condition-type-I}
+    \sum_{j=1}^r \prodesc{\mathbb X_k}{\mathbb A_{\vec n,j}}_j = \left\{\begin{array}{ccl}
+        0_{(k+1)\times n} &   \text{ if } & k=0,\dots,n-2 \\
+        I_n & \text{ if } & k=n-1      
+    \end{array}\right.
+\end{equation}
+
+Observe the similarity between equations \eqref{eq:typeI-MOP-dot} and \eqref{eq:condition-type-I}.
     
     
 
