@@ -413,7 +413,9 @@ As we can see, the bivariate case reduces the number of multi-indexes $(n_1,\dot
 
 Let $\mu_1,\dots,\mu_r$ be a perfect system of $r$ 2-dimensional measures. In this section, we will explain an orthogonality relation between the type I and type II MOP. Check the preceding univariate result in \cite[Theorem 23.1.6]{Ismail}.
 
-\begin{theorem} Given $\vec n, \vec m$, both satisfying \eqref{eq:condition-type-ii} for $n$ and $m$, respectively, the following biorthogonality holds for type I and type II MOP:
+\begin{theorem}
+    \label{th:biorthogonality}
+    Given $\vec n, \vec m$, both satisfying \eqref{eq:condition-type-ii} for $n$ and $m$, respectively, the following biorthogonality holds for type I and type II MOP:
     \begin{equation}
         \prodesc{\mathbb P_{\vec n}^n}{\mathbb Q_{\vec m}} = \left\{\begin{array}{ccl}
             0_{(n+1)\times m} &   \text{ if } & \vec m \leq \vec n \\
@@ -442,6 +444,69 @@ Observe the first item emphasises the components of the multi-indexes $\vec n$ a
 
 This result, which is a two-dimensional extension of \cite[Theorem 23.1.6]{Ismail}, will be very useful in order to prove the next result.
 
+\section{Nearest Neighbor Recurrence Relation}
+
+The standard orthogonal polynomials always satisfy a Three-Term Recurrence Relation. That is, given an MOPS $\{P_n\}$ with respect to a dot product $\prodesc{\cdot}{\cdot}$ or its respective functional $\mathcal L$, there exist constants $\alpha_n,\beta_n$ such that
+$$
+xP_n = P_{n+1}+ \alpha_n P_n + \beta_n P_{n-1}.
+$$
+The nearest Neighbor Recurrence Relation, in univariate multiple orthogonality, extends this result, allowing us to express a type II polynomial multiplied by $x$: $xP_{\vec n}$ as a linear combination of the polynomial itself, $P_{\vec n}$, a beyond neighbor, \textit{i.e.} $P_{\vec n + e_k}$ and $r$ above neighbors, see \cite[Theorem 23.1.7]{Ismail}. We are going to give a proof of a first generalization to bivariate MOP of this result. 
+
+\begin{theorem} 
+    Let $\mu_1,\dots,\mu_r$ be a perfect system of 2-dimensional measures. Let $\vec n\in \N^r$ be a multi-index satisfying \eqref{eq:condition-type-ii} for $n\in\N$ and let us consider a path $\{\overrightarrow{m_k}:k=0,\dots,n+1\}$ where $\overrightarrow{m_0}=\vec 0, \overrightarrow{m_n} = \vec n$, each $\overrightarrow{m_k}$ satisfy \eqref{eq:condition-type-ii} for $k$ and $\overrightarrow{m_k} \leq \overrightarrow{m_{k+1}}$ for $k=0,\dots,n+1$. Then, there exist matrices $A_0,\dots,A_r$ of sizes $(n+1)\times(n-j+1)$,  $(j=0,\dots,r)$ such that
+    \begin{equation}
+        \label{eq:nearest-neighbor}
+        x\mathbb P_{\vec n}^n = L_{{n+1},1} \mathbb P_{\overrightarrow{m_{n+1}}}^{n+1} + A_0 \mathbb P_{\vec n}^n + \sum_{j=1}^r A_j \mathbb P_{\overrightarrow{m_{n-j}}}^{n-j},
+    \end{equation}
+    where $L_{n+1,1}=(I_{n+1}|0_{(n+1)\times 1})$.
+
+    In addition, $A_j = \prodesc{x\mathbb P_{\vec n}^n}{\mathbb Q_{\overrightarrow{m_{n-j+1}}}}$.
+\end{theorem}
+\begin{proof}
+    As we are in a perfect system, we can assume the existence of $\mathbb P_{\overrightarrow{m_k}}^k$ for every $k=0,\dots,n+1$. As we know, $x\mathbb P_{\vec n}^n$ is a vector of degree $n+1$ polynomials and its size is also $n+1$. It is possible to write  $x\mathbb P_{\vec n}^n$ as a linear combination of $\{\mathbb P_{\overrightarrow{m_k}}^k, k=0,\dots,n+1\}$ whose coefficients are matrices $M_k$:
+    $$
+    x\mathbb P_{\overrightarrow{n}}^n = \sum_{k=0}^{n+1} M_k \mathbb P_{\overrightarrow{m_k}}^k,
+    $$
+    where $M_k$ is a $(n+1)\times(k+1)$ matrix ($k=0,\dots,n+1$).
+
+    Observing the leader term of $x\mathbb P_{\overrightarrow{n}}^n$, which is $x\mathbb X_{n}$, and equalizing this to the leader term of $M_{n+1} \mathbb P_{\overrightarrow{m_{n+1}}}^{n+1}$, which is $M_{n+1}\mathbb X_{n+1}$ we can easily check $M_{n+1}=L_{(n+1),1}$. Now, we have
+    $$
+    \mathbb P_{\overrightarrow{n}}^n = L_{n+1,1}\mathbb P_{\overrightarrow{m_{n+1}}}^{n+1} + \sum_{k=0}^{n} M_k \mathbb P_{\overrightarrow{m_k}}^k.
+    $$
+    Now, apply the dot product to both sides of the equation by $\mathbb Q_{\overrightarrow{m_l}}$ and observe:
+    \begin{itemize}
+        \item If $\overrightarrow{m_l}\leq \overrightarrow{m_j}$, which always happens if $l\leq j\leq n+1$, then, due to the first item of theorem \ref{th:biorthogonality}, $\prodesc{\mathbb P_{\overrightarrow{m_j}}^j}{\mathbb Q_{\overrightarrow{m_l}}} = 0_{(j+1)\times l}$ whenever $l\leq j$.
+        \item If $j\leq l-2$, then, from the second item of theorem \ref{th:biorthogonality}, $\prodesc{\mathbb P_{\overrightarrow{m_j}}^j}{\mathbb Q_{\overrightarrow{m_l}}} = 0_{(j+1)\times l}.$
+        \item Finally, if $j=l-1$, from the last item of theorem \ref{th:biorthogonality} we deduce $\prodesc{\mathbb P_{\overrightarrow{m_j}}^j}{\mathbb Q_{\overrightarrow{m_l}}} = I_{j+1}.$
+    \end{itemize}
+
+    Summarizing, we have
+    $$
+    \prodesc{x\mathbb P_{\vec n}^n}{\mathbb Q_{\overrightarrow{m_l}}} = L_{n+1,1}\prodesc{\mathbb P_{\overrightarrow{m_{n+1}}}^{n+1}}{\mathbb Q_{\overrightarrow{m_l}}} + \sum_{j=0}^n M_j \prodesc{\mathbb P_{\overrightarrow{m_j}}^j}{\mathbb Q_{\overrightarrow{m_l}}}.
+    $$
+    Applying the previous items deducted from theorem \ref{th:biorthogonality}, we have
+    \begin{equation}
+        \label{eq:biorthogonality-1}
+        \prodesc{x\mathbb P_{\vec n}^n}{\mathbb Q_{\overrightarrow{m_l}}} = M_{l-1} \ \ \ \ l=1,\dots,n+1,
+    \end{equation}
+
+    Now, if $l\leq n-r$, then $\overrightarrow{m_l}\leq \overrightarrow{m_{n-r}}$. So, choosing $l\leq n-r$:
+    $$
+    \prodesc{x\mathbb P_{\vec n}^n}{\mathbb Q_{\overrightarrow{m_l}}} = \sum_{j=1}^r  \prodesc{\mathbb P_{\vec n}^n}{x\mathbb A_{\overrightarrow{m_l},j}}_j.
+    $$
+    But $x\mathbb A_{\overrightarrow{m_l},j}$ are vectors of degree less than or equal to $(\overrightarrow{m_l})_j\leq (\overrightarrow{m_{n-r}})_j < n_j$. Then, the product vanishes because of type II orthogonality \eqref{eq:typeII-MOP-2vars}. This means
+    $$
+    \prodesc{x\mathbb P_{\vec n}^n}{\mathbb Q_{\overrightarrow{m_l}}} = M_{l-1} = 0 \ \ \ l = 1, \dots, n-r.
+    $$
+    Thus, the final expression is
+    $$
+    \mathbb P_{\overrightarrow{n}}^n = L_{n+1,1}\mathbb P_{\overrightarrow{m_{n+1}}}^{n+1} + \sum_{k=n-r}^{n} M_k \mathbb P_{\overrightarrow{m_k}}^k.
+    $$
+    If we rename $A_k = M_{n-k}$ for $k=n-r,...,n$, then we get the desired expression \eqref{eq:nearest-neighbor}. 
+
+    Finally, due to \eqref{eq:biorthogonality-1}, $$A_j = M_{n-j} =  \prodesc{x\mathbb P_{\vec n}^n}{\mathbb Q_{\overrightarrow{m_{n-j+1}}}}.$$
+\end{proof}
+\cb{REVIEW Espero haberlo hecho bien}
 
 
 \section{Conclusion}
