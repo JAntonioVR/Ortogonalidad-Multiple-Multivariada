@@ -377,6 +377,7 @@ Summarizing, we present the final definitions of the multiple orthogonal polynom
 \begin{definition}[Type II MOP in two variables]
     Let $\vec n = (n_1, \dots, n_r)\in \N^r$ such that the condition \eqref{eq:condition-type-ii} holds for certain $n\in\N$. A vector of monic degree $n$ polynomials $\mathbb P_{\vec n}^n = \mathbb X_n + \displaystyle\sum_{k=0}^{n-1} G_{n,k} \mathbb X_k$ is a \textbf{type II Multiple Orthogonal Polynomial Vector} if 
     \begin{equation}
+        \label{eq:typeII-MOP-2vars}
         \prodesc{\mathbb X_k}{\mathbb P_{\vec n}^n}_j = 0_{(k+1)\times (n+1)}, \ \ \ k=0,\dots,n_j-1, \ \ \ i=1,\dots,r
     \end{equation}      
 \end{definition}
@@ -400,7 +401,7 @@ Using this function, it is possible to rewrite \eqref{eq:condition-type-I} as
     \end{array}\right.     
 \end{equation}
 
-As we can see, the bivariate case reduces the number of multi-indexes $(n_1,\dots,n_r)$ which it is possible to create multiple orthogonal polynomials with. Whereas in the univariate it is possible to question the existence of MOP for every $\vec n\in \N^r$, in the bivariate case only some of the multi-indexes can give us MOP, those such that there exist $n\in\N$ with $n(n+1)=\displaystyle\sum_{j=1}^r n_j (n_j+1)$. Given a valid $\vec n\in\N^r$, we will say it is \textbf{normal} if it is possible to calculate its type II polynomial $\mathbb P_{\vec n}^n$. The system of 2-dimensional measures $\mu_1,\dots,\mu_r$ will be called \textbf{perfect} if every valid multi-index is normal.
+As we can see, the bivariate case reduces the number of multi-indexes $(n_1,\dots,n_r)$ which it is possible to create multiple orthogonal polynomials with. Whereas in the univariate it is possible to question the existence of MOP for every $\vec n\in \N^r$, in the bivariate case only some of the multi-indexes can give us MOP, those such that there exist $n\in\N$ with $n(n+1)=\displaystyle\sum_{j=1}^r n_j (n_j+1)$. Given a valid $\vec n\in\N^r$, we will say it is \textbf{normal} if it is possible to calculate its type II polynomial $\mathbb P_{\vec n}^n$ and its type I polynomials $\mathbb A_{\vec n,j}$ ($j=1,\dots,r$). The system of 2-dimensional measures $\mu_1,\dots,\mu_r$ will be called \textbf{perfect} if every valid multi-index is normal.
 
 \cb{REVIEW Revisa esto Lidia porque normal y perfecto son conceptos que en una variable tienen sentido porque los tipo I y los tipo II son equivalentes, aquí de momento como poco tan seguros no estamos.}
 
@@ -410,12 +411,43 @@ As we can see, the bivariate case reduces the number of multi-indexes $(n_1,\dot
 
 \section{Biorthogonality}
 
+Let $\mu_1,\dots,\mu_r$ be a perfect system of $r$ 2-dimensional measures. In this section, we will explain an orthogonality relation between the type I and type II MOP. Check the preceding univariate result in \cite[Theorem 23.1.6]{Ismail}.
+
+\begin{theorem} Given $\vec n, \vec m$, both satisfying \eqref{eq:condition-type-ii} for $n$ and $m$, respectively, the following biorthogonality holds for type I and type II MOP:
+    \begin{equation}
+        \prodesc{\mathbb P_{\vec n}^n}{\mathbb Q_{\vec m}} = \left\{\begin{array}{ccl}
+            0_{(n+1)\times m} &   \text{ if } & \vec m \leq \vec n \\
+            0_{(n+1)\times m} &   \text{ if } &  n \leq m -2 \\
+            I_{n+1} & \text{ if } & n=m-1 
+        \end{array}\right.   
+    \end{equation}
+\end{theorem}
+\begin{proof}
+    We will prove each item. First, we have
+    \begin{equation*}
+        \prodesc{\mathbb P_{\vec n}^n}{\mathbb Q_{\vec m}} = \sum_{j=1}^r \prodesc{\mathbb{P}_{\vec n}^n}{\mathbb A_{\vec m, j}}_j.
+    \end{equation*}
+    \begin{itemize}
+        \item Assume $\vec m \leq \vec n$, this means $m_j \leq n_j \ \ \forall j\in\{1,\dots,r\}$. Then, remember $\mathbb{A}_{\vec m,j}$ is a vector of polynomials of degree less than or equal to $m_j-1 < n_j$ for every $j\in\{1,\dots,r\}$ and $\prodesc{\mathbb P_{\vec n}^n}{\mathbb Q_{\vec m}} =0$ follows from type II orthogonality conditions \eqref{eq:typeII-MOP-2vars}.
+        \item  If $n\leq m-2$, then each polynomial of $\mathbb P_{\vec n}^n$ is a linear combination of $\mathbb X_{n-2},\dots,\mathbb X_1,\mathbb X_0$. Then, the type I orthogonality conditions \eqref{eq:condition-type-I} for $0\leq k\leq n-2$ shows $\prodesc{\mathbb P_{\vec n}^n}{\mathbb Q_{\vec m}} =0$.
+        \item Finally, if $m=n+1$, then $\mathbb P_{\vec n}^n$ is a vector of degree $m-1$ polynomials. So, $\mathbb P_{\vec n}^n = \mathbb X_{m-1} + \displaystyle\sum_{k=0}^{m-2} G_{k} \mathbb X_{k}$. Because of the previous item, we have
+        $$
+        \prodesc{\mathbb P_{\vec n}^{m-1}}{\mathbb Q_{\vec m}} = \sum_{j=1}^r \prodesc{\mathbb{P}_{\vec n}^{m-1}}{\mathbb A_{\vec m, j}}_j = \sum_{j=1}^r \prodesc{\mathbb X_{m-1}}{\mathbb A_{\vec m, j}}_j = I_m = I_{n+1},
+        $$
+        where in the second last equality we have used the normalization condition in \eqref{eq:condition-type-I}.
+    \end{itemize}
+\end{proof}
+
+Observe the first item emphasises the components of the multi-indexes $\vec n$ and $\vec m$, while the last two items are true for any two multi-indexes with degree $n$ and $m$ whatever their components be.
+
+This result, which is a two-dimensional extension of \cite[Theorem 23.1.6]{Ismail}, will be very useful in order to prove the next result.
+
 
 
 \section{Conclusion}
 \dots
 
-\nocite{*}
+\nocite{*}enfatizar en las coordenadas
 \bibliography{references}{}
 \bibliographystyle{plain}
 
