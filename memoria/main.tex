@@ -409,6 +409,50 @@ As we can see, the bivariate case reduces the number of multi-indexes $(n_1,\dot
 
 \cred{TODO Quitar de la introducción el $n=|\vec n|$ para no confundir con las siguientes secciones}
 
+\section{First example}
+
+We are going to show you the first example of type II bivariate multiple orthogonal polynomials: The multiple product Laguerre polynomials. First, we will present the univariate precedents. According to \cite[Page 658, Section 3.6.1]{foupouagnigni-2020}, the type II multiple Laguerre of the first kind $L_{\vec n}^{\vec\alpha}(x)$ ($\vec\alpha=(\alpha_1,\dots,\alpha_r)$) satisfy
+\begin{equation}
+    \int_0^\infty x^k L_{\vec n}^{\vec\alpha}(x) x^{\alpha_j} e^{-x} dx =0 \ \ \ k=0,\dots, n_j-1, \ \ j=1,\dots,r. 
+\end{equation}
+In order that all multi-indices are normal we need to have $\alpha_j>-1$ and $\alpha_j- \alpha_i\not\in\Z$ whenever $i\neq j$. On the other hand, the bivariate product Laguerre polynomials \cite[Ch. II, Section 2.2]{dunkl_xu_2014} are orthogonal with respect to the bidimensional weight function
+$$w(x,y)=x^\alpha y^\beta e^{-x-y}, \ \ \ \alpha,\beta>-1.$$ 
+
+Following this two approaches, we present an example with $r=3$. Let $\vec\alpha=(\alpha_1,\alpha_2,\alpha_3)$, $\vec\beta=(\beta_1,\beta_2,\beta_3)$ such that $\alpha_j,\beta_j > -1$ and any possible pair $\alpha_i,\beta_j$ satisfies $\alpha_i-\beta_j\not\in\Z$,  $\alpha_j- \alpha_i\not\in\Z$, $\beta_j- \beta_i\not\in\Z$ whenever $i\neq j$ (any difference between different parameters is not an integer). We consider the following system of 2-dimensional measures:
+\begin{align}
+    d\mu_1(x,y) &= x^{\alpha_1} y^{\beta_1} e^{-x-y} d(x,y), & d\mu_2(x,y) &= x^{\alpha_2} y^{\beta_2} e^{-x-y} d(x,y),
+\end{align}
+$$d\mu_3(x,y) = x^{\alpha_3} y^{\beta_3} e^{-x-y} d(x,y).$$
+
+Let $\vec n=(n_1,n_2,n_3)\in\N^3$ satisfying \eqref{eq:condition-type-ii}. Then, we have proven experimentally that many of the possible multi-indices are normal. For example, if we take $\alpha_1 = 0, \alpha_2 = 0.5, \alpha_3 = 1.3; \beta_1 = 0.8, \beta_2 = 0.4, \beta_3 = 2.1$, then we can calculate the polynomial vector $\mathbb P_{(1,1,1)}^2$:
+$$
+\mathbb P_{(1,1,1)}^2 = \begin{pmatrix}
+    x^2 + - 3.85556 x - 0.444444 y + 2.65556 \\ x y - 2.15556 x - 1.94444 y + 3.85556 \\  y^2 - 0.755556 x - 5.14444 y + 4.97556
+\end{pmatrix}
+$$
+
+In the following images it is possible to see a graphic plot of the 3 polynomials of the vector $\mathbb P_{(1,1,1)}^2$:
+\begin{figure}[h]
+    \centering\begin{tabular}{ccc}
+      \includegraphics[width=4.5cm]{./img/laguerre1.png} & 
+      \includegraphics[width=4.5cm]{./img/laguerre2.png} &
+      \includegraphics[width=4.5cm]{./img/laguerre3.png} \\
+      (a) $(\mathbb P_{(1,1,1)}^2)_1$ & (b) $(\mathbb P_{(1,1,1)}^2)_2$ & (c) $(\mathbb P_{(1,1,1)}^2)_3$  \\
+    \end{tabular}
+    \caption{Graphic representation of $\mathbb P_{(1,1,1)}^2$}
+    \label{fig:example}
+  \end{figure}
+
+  Check this picture representing the 3 polynomials together:
+
+  \begin{figure}[h]
+    \centering\includegraphics[width=5cm]{./img/EjemploLaguerre.png}
+    \caption{$\mathbb P_{(1,1,1)}^2$ polynomials together}
+    \label{fig:example-2}
+  \end{figure}
+
+
+
 \section{Biorthogonality}
 
 Let $\mu_1,\dots,\mu_r$ be a perfect system of $r$ 2-dimensional measures. In this section, we will explain an orthogonality relation between the type I and type II MOP. Check the preceding univariate result in \cite[Theorem 23.1.6]{Ismail}.
