@@ -418,14 +418,14 @@ As we can see, the bivariate case reduces the number of multi-indices $(n_1,\dot
 
 \section{First example}
 
-We are going to show you the first example of type II bivariate multiple orthogonal polynomials: The multiple product Laguerre polynomials. First, we will present the univariate precedents. According to \cite[Page 658, Section 3.6.1]{foupouagnigni-2020}, the type II multiple Laguerre polynomials of the first kind $L_{\vec n}^{\vec\alpha}(x)$ ($\vec\alpha=(\alpha_1,\dots,\alpha_r)$) satisfy
+We are going to show you the first example of type II bivariate multiple orthogonal polynomials: Multiple product Laguerre polynomials. First, we will present univariate precedents. According to \cite[Page 658, Section 3.6.1]{foupouagnigni-2020}, type II multiple Laguerre polynomials of the first kind $L_{\vec n}^{\vec\alpha}(x)$ ($\vec\alpha=(\alpha_1,\dots,\alpha_r)$) satisfy
 \begin{equation}
     \int_0^\infty x^k L_{\vec n}^{\vec\alpha}(x) x^{\alpha_j} e^{-x} dx =0 \ \ \ k=0,\dots, n_j-1, \ \ j=1,\dots,r. 
 \end{equation}
-In order that all multi-indices to be normal we need to have $\alpha_j>-1$ and $\alpha_j- \alpha_i\not\in\Z$ whenever $i\neq j$. On the other hand, the bivariate product Laguerre polynomials \cite[Ch. II, Section 2.2]{dunkl_xu_2014} are orthogonal with respect to the bidimensional weight function
+In order that all multi-indices to be normal we need to have $\alpha_j>-1$ and $\alpha_j- \alpha_i\not\in\Z$ whenever $i\neq j$. On the other hand, bivariate product Laguerre polynomials \cite[Ch. II, Section 2.2]{dunkl_xu_2014} are orthogonal with respect to the bidimensional weight function
 $$w(x,y)=x^\alpha y^\beta e^{-x-y}, \ \ \ \alpha,\beta>-1.$$ 
 
-Following this two approaches, we present an example with $r=3$. Let $\vec\alpha=(\alpha_1,\alpha_2,\alpha_3)$, $\vec\beta=(\beta_1,\beta_2,\beta_3)$ such that $\alpha_j,\beta_j > -1$ and any possible pair $\alpha_i,\beta_j$ satisfies $\alpha_i-\beta_j\not\in\Z$, and  $\alpha_j- \alpha_i\not\in\Z$, $\beta_j- \beta_i\not\in\Z$ whenever $i\neq j$ (any difference between different parameters is not an integer). We consider the following system of 2-dimensional measures:
+Following this two approaches, we present an example with $r=3$. Let $\vec\alpha=(\alpha_1,\alpha_2,\alpha_3)$, $\vec\beta=(\beta_1,\beta_2,\beta_3)$ such that $\alpha_j,\beta_j > -1$ and any possible pair $\alpha_i,\beta_j$ satisfies $\alpha_i-\beta_j\not\in\Z$, and  $\alpha_j- \alpha_i\not\in\Z$, $\beta_j- \beta_i\not\in\Z$ whenever $i\neq j$ (any difference between different parameters is not an integer). We consider the following system of 2-dimensional measures such that $d\mu_j$ is given by:
 \begin{align}
     d\mu_1(x,y) &= x^{\alpha_1} y^{\beta_1} e^{-x-y} d(x,y), & d\mu_2(x,y) &= x^{\alpha_2} y^{\beta_2} e^{-x-y} d(x,y),
 \end{align}
@@ -438,7 +438,7 @@ $$
 \end{pmatrix}
 $$
 
-In the following images it is possible to see a graphic plot of the 3 polynomials of the vector $\mathbb P_{(1,1,1)}^2$:
+In the following images it is possible to see a graphic plot of the 3 polynomials of vector $\mathbb P_{(1,1,1)}^2$:
 \begin{figure}[h]
     \centering\begin{tabular}{ccc}
       \includegraphics[width=4.5cm]{./img/laguerre1.png} & 
@@ -450,7 +450,7 @@ In the following images it is possible to see a graphic plot of the 3 polynomial
     \label{fig:example}
   \end{figure}
 
-  Check this picture representing the 3 polynomials together:
+  Check this picture representing all three polynomials together:
 
   \begin{figure}[h]
     \centering\includegraphics[width=5cm]{./img/EjemploLaguerre.png}
@@ -458,11 +458,9 @@ In the following images it is possible to see a graphic plot of the 3 polynomial
     \label{fig:example-2}
   \end{figure}
 
-
-
 \section{Biorthogonality}
 
-Let $\mu_1,\dots,\mu_r$ be a perfect system of $r$ 2-dimensional measures. In this section, we will explain an orthogonality relation between the type I and type II MOP. Check the preceding univariate result in \cite[Theorem 23.1.6]{Ismail}.
+Let $\mu_1,\dots,\mu_r$ be a perfect system of $r$ 2-dimensional measures. In this section, we will explain an orthogonality relation between type I and type II MOP. Check the preceding univariate result in \cite[Theorem 23.1.6]{Ismail}.
 
 \begin{theorem}
     \label{th:biorthogonality}
@@ -482,7 +480,7 @@ Let $\mu_1,\dots,\mu_r$ be a perfect system of $r$ 2-dimensional measures. In th
     \end{equation*}
     \begin{itemize}
         \item Assume $\vec m \leq \vec n$, this means $m_j \leq n_j \ \ \forall j\in\{1,\dots,r\}$. Then, remember $\mathbb{A}_{\vec m,j}$ is a vector of polynomials of degree less than or equal to $m_j-1 < n_j$ for every $j\in\{1,\dots,r\}$ and $\prodesc{\mathbb P_{\vec n}^n}{\mathbb Q_{\vec m}} =0$ follows from type II orthogonality conditions \eqref{eq:typeII-MOP-2vars}.
-        \item  If $n\leq m-2$, then each polynomial of $\mathbb P_{\vec n}^n$ is a linear combination of $\mathbb X_{n-2},\dots,\mathbb X_1,\mathbb X_0$. Then, the type I orthogonality conditions \eqref{eq:condition-type-I} for $0\leq k\leq n-2$ shows $\prodesc{\mathbb P_{\vec n}^n}{\mathbb Q_{\vec m}} =0$.
+        \item  If $n\leq m-2$, then each polynomial of $\mathbb P_{\vec n}^n$ is a linear combination of $\mathbb X_{n-2},\dots,\mathbb X_1,\mathbb X_0$. Then, type I orthogonality conditions \eqref{eq:condition-type-I} for $0\leq k\leq n-2$ shows $\prodesc{\mathbb P_{\vec n}^n}{\mathbb Q_{\vec m}} =0$.
         \item Finally, if $m=n+1$, then $\mathbb P_{\vec n}^n$ is a vector of degree $m-1$ polynomials. So, $\mathbb P_{\vec n}^n = \mathbb X_{m-1} + \displaystyle\sum_{k=0}^{m-2} G_{k} \mathbb X_{k}$. Because of the previous item, we have
         $$
         \prodesc{\mathbb P_{\vec n}^{m-1}}{\mathbb Q_{\vec m}} = \sum_{j=1}^r \prodesc{\mathbb{P}_{\vec n}^{m-1}}{\mathbb A_{\vec m, j}}_j = \sum_{j=1}^r \prodesc{\mathbb X_{m-1}}{\mathbb A_{\vec m, j}}_j = I_m = I_{n+1},
@@ -491,13 +489,13 @@ Let $\mu_1,\dots,\mu_r$ be a perfect system of $r$ 2-dimensional measures. In th
     \end{itemize}
 \end{proof}
 
-Observe the first item emphasises the components of the multi-indices $\vec n$ and $\vec m$, while the last two items are true for any two multi-indices with degree $n$ and $m$ whatever their components be.
+Observe that the first item emphasises the components of multi-indices $\vec n$ and $\vec m$, while the last two items are true for any two multi-indices with degree $n$ and $m$ whatever their components be.
 
 This result, which is a two-dimensional extension of \cite[Theorem 23.1.6]{Ismail}, will be very useful in order to prove the next result.
 
 \section{Nearest Neighbor Recurrence Relation}
 
-The standard orthogonal polynomials always satisfy a Three-Term Recurrence Relation. That is, given an MOPS $\{P_n\}$ with respect to a inner product $\prodesc{\cdot}{\cdot}$ or its respective functional $\mathcal L$, there exist constants $\alpha_n,\beta_n$ such that
+The standard orthogonal polynomials always satisfy a Three-Term Recurrence Relation. That is, given an monic OPS $\{P_n\}$ with respect to a inner product $\prodesc{\cdot}{\cdot}$ or its respective functional $\mathcal L$, there exist constants $\alpha_n,\beta_n$ such that
 $$
 xP_n = P_{n+1}+ \alpha_n P_n + \beta_n P_{n-1}.
 $$
@@ -526,16 +524,16 @@ The nearest Neighbor Recurrence Relation, in univariate multiple orthogonality, 
     $$
     Now, apply the inner product to both sides of the equation by $\mathbb Q_{\overrightarrow{m_l}}$ and observe:
     \begin{itemize}
-        \item If $\overrightarrow{m_l}\leq \overrightarrow{m_j}$, which always happens if $l\leq j\leq n+1$, then, due to the first item of theorem \ref{th:biorthogonality}, $\prodesc{\mathbb P_{\overrightarrow{m_j}}^j}{\mathbb Q_{\overrightarrow{m_l}}} = 0_{(j+1)\times l}$ whenever $l\leq j$.
-        \item If $j\leq l-2$, then, from the second item of theorem \ref{th:biorthogonality}, $\prodesc{\mathbb P_{\overrightarrow{m_j}}^j}{\mathbb Q_{\overrightarrow{m_l}}} = 0_{(j+1)\times l}.$
-        \item Finally, if $j=l-1$, from the last item of theorem \ref{th:biorthogonality} we deduce $\prodesc{\mathbb P_{\overrightarrow{m_j}}^j}{\mathbb Q_{\overrightarrow{m_l}}} = I_{j+1}.$
+        \item If $\overrightarrow{m_l}\leq \overrightarrow{m_j}$, which always happens if $l\leq j\leq n+1$, then, due to the first item of Theorem \ref{th:biorthogonality}, $\prodesc{\mathbb P_{\overrightarrow{m_j}}^j}{\mathbb Q_{\overrightarrow{m_l}}} = 0_{(j+1)\times l}$ whenever $l\leq j$.
+        \item If $j\leq l-2$, then, from the second item of Theorem \ref{th:biorthogonality}, $\prodesc{\mathbb P_{\overrightarrow{m_j}}^j}{\mathbb Q_{\overrightarrow{m_l}}} = 0_{(j+1)\times l}.$
+        \item Finally, if $j=l-1$, from the last item of Theorem \ref{th:biorthogonality} we deduce $\prodesc{\mathbb P_{\overrightarrow{m_j}}^j}{\mathbb Q_{\overrightarrow{m_l}}} = I_{j+1}.$
     \end{itemize}
 
     Summarizing, we have
     $$
     \prodesc{x\mathbb P_{\vec n}^n}{\mathbb Q_{\overrightarrow{m_l}}} = L_{n+1,1}\prodesc{\mathbb P_{\overrightarrow{m_{n+1}}}^{n+1}}{\mathbb Q_{\overrightarrow{m_l}}} + \sum_{j=0}^n M_j \prodesc{\mathbb P_{\overrightarrow{m_j}}^j}{\mathbb Q_{\overrightarrow{m_l}}}.
     $$
-    Applying the previous items deduced from theorem \ref{th:biorthogonality}, we have
+    Applying the previous items deduced from Theorem \ref{th:biorthogonality}, we have
     \begin{equation}
         \label{eq:biorthogonality-1}
         \prodesc{x\mathbb P_{\vec n}^n}{\mathbb Q_{\overrightarrow{m_l}}} = M_{l-1} \ \ \ \ l=1,\dots,n+1,
