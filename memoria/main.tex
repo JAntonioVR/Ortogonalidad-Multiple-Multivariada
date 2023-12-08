@@ -72,7 +72,7 @@
 
 \section{Introduction}
 
-Multiple Orthogonality is an extension of the standard orthogonality. It consists of Polynomials (defined on the real line in this introduction) that satisfy orthogonality relations with respect to more than one measure. There are also two different types of multiple orthogonality, which will be explained shortly.
+Multiple Orthogonality is a theory that extends standard orthogonality. In it, polynomials (defined on the real line in this introduction) satisfy orthogonality relations with respect to more than one measure. There are also two different types of multiple orthogonality, which will be explained shortly.
 
 First, let's consider $r$ different real measures $\mu_1,\dots,\mu_r$ such that $\Omega_j=\supp(\mu_j)\subseteq\R$ ($j=1,\dots,r$). We will use multi-indices $\vec n = (n_1, \dots,n_r)\in \N^r$, and denote $|\vec n| := n_1 + \dots + n_r$. These multi-indices determine the orthogonality relations with each measure. With these preliminaries we will present the first definition.
 
@@ -84,17 +84,22 @@ First, let's consider $r$ different real measures $\mu_1,\dots,\mu_r$ such that 
     \end{equation}
 \end{definition}
 
-This means $P_{\vec n}$ is orthogonal to $1,x,x^2,\dots,x^{n_j-1}$ with respect to each measure $\mu_j$, ($j=1,\dots,r$). If we define the product $\prodesc{f}{g}_j=\int_{\Omega_j}f(x)g(x)d\mu_j(x)$, conditions \eqref{eq:typeII-MOP} can also be written as
+This means $P_{\vec n}$ is orthogonal to $1,x,x^2,\dots,x^{n_j-1}$ with respect to each measure $\mu_j$, ($j=1,\dots,r$). If we define the inner product 
+\begin{equation}
+    \label{eq:inner-product}
+    \prodesc{f}{g}_j=\int_{\Omega_j}f(x)g(x)d\mu_j(x)
+\end{equation}
+conditions \eqref{eq:typeII-MOP} can also be written as
 \begin{equation}
     \label{eq:typeII-MOP-dot}
     \prodesc{P_{\vec n}}{x^k}_j = 0, \ \ \ k=0,\dots,n_{j}-1, \ \ j = 1,\dots,r
 \end{equation}
 
-There is another type of multiple orthogonality: The type I MOP.
+In addition to type II there exists another type of multiple orthogonality: type I multiple orthogonality.
 
 \begin{definition}[Type I Multiple Orthogonal Polynomials]
     \label{def:typeI-univar}
-    Let $\vec n = (n_1,\dots,n_r)$. Type I Multiple Orthogonal Polynomials are presented in a vector $(A_{\vec n, 1}(x), \dots, A_{\vec n, r}(x))$, where $\deg(A_{\vec n, j})\leq n_j-1$, ($j=1,\dots,r$) and these polynomials satisfy the relation
+    Let $\vec n = (n_1,\dots,n_r)$. Type I Multiple Orthogonal Polynomials are presented in a vector $(A_{\vec n, 1}(x), \dots, A_{\vec n, r}(x))$, where $\deg(A_{\vec n, j})\leq n_j-1$, ($j=1,\dots,r$) and these polynomials satisfy
     \begin{equation}
         \label{eq:typeI-MOP}
         \sum_{j=1}^r \int_{\Omega_j}A_{\vec n, j}(x) x^k d\mu_j(x) = 0,  \ \ \ k=0,\dots,|\vec n|-2
@@ -107,7 +112,7 @@ There is another type of multiple orthogonality: The type I MOP.
     
 \end{definition}
 
-As we did previously with the type II MOP, the relations \eqref{eq:typeI-MOP} and \eqref{eq:typeI-MOP-normalization} can be written, using the dot products, as
+As we did previously with the type II MOP, the relations \eqref{eq:typeI-MOP} and \eqref{eq:typeI-MOP-normalization} can be written, using the inner products \eqref{eq:inner-product}, as
 \begin{equation}
     \label{eq:typeI-MOP-dot}
     \sum_{j=1}^r \prodesc{A_{\vec n,j}}{x^k}_j = \left\{\begin{array}{ccl}
@@ -130,7 +135,7 @@ Using the type I function, we can rewrite the orthogonality relations
     \end{array}\right.
 \end{equation}
 
-Nevertheless, not every multi-index $\vec n\in\N^r$ provides a type I vector of polynomials or a type II polynomial. Let $\vec n = (n_1,\dots,n_r)$ be a multi-index and let $\mu_1,\dots,\mu_r$ be $r$ positive measures. If $(A_{\vec n, 1}(x), \dots, A_{\vec n, r}(x))$ is the vector of type I MOP, then, if we denote
+Nevertheless, not every multi-index $\vec n\in\N^r$ provides a type I vector of polynomials or a type II polynomial. Let $\vec n = (n_1,\dots,n_r)$ be a multi-index and let $\mu_1,\dots,\mu_r$ be $r$ positive measures. If $(A_{\vec n, 1}(x), \dots, A_{\vec n, r}(x))$ is a vector of type I MOP, then, if we denote
 \begin{equation}
     \begin{split}
         A_{\vec n,1}(x) &= a_{n_1-1,1}x^{n_1-1} + a_{n_1-2,1}x^{n_1-2} + \cdots + a_{1,1}x + a_{0,1} \\
@@ -138,7 +143,7 @@ Nevertheless, not every multi-index $\vec n\in\N^r$ provides a type I vector of 
         A_{\vec n,r}(x) &= a_{n_r-1,r}x^{n_r-1} + a_{n_r-2,r}x^{n_r-2} + \cdots + a_{1,r}x + a_{0,r}
     \end{split}
 \end{equation}
-and apply the orthogonality conditions \eqref{eq:typeI-MOP} and \eqref{eq:typeI-MOP-normalization}, then we get a linear system of $|\vec n|$ equations and $|\vec n|$ unknown coefficients. Thus, the type I MOP will exist if and only if the following matrix is regular:
+and apply the orthogonality conditions \eqref{eq:typeI-MOP} and \eqref{eq:typeI-MOP-normalization}, then we get a linear system of $|\vec n|$ equations and $|\vec n|$ unknown coefficients. Thus, the type I MOP will exist and it will be unique if and only if the following matrix is regular:
 
 \begin{equation}
     \label{eq:MOP-matrix}
@@ -175,18 +180,18 @@ and apply the conditions \eqref{eq:typeII-MOP}, we get another linear system wit
 Following this proposition, we provide a new definition.
 
 \begin{definition}
-    A multi-index $\vec n = (n_1,\dots,n_r)\in\N^r$ is \textbf{normal} if it satisfies the conditions of the proposition \ref{prop:existence-of-MOP}.
+    A multi-index $\vec n = (n_1,\dots,n_r)\in\N^r$ is \textbf{normal} if it satisfies the conditions of Proposition \ref{prop:existence-of-MOP}.
     A system of $r$ measures $\mu_1,\dots,\mu_r$ is \textbf{perfect} if every $\vec n\in\N^r$ is normal.
 \end{definition}
 
 There are some perfect systems, standing out the Angelesco systems and the AT-systems, see \cite[Sections 23.1.1 and 23.1.2]{Ismail}
 
-We will be mainly focused on the type II multiple orthogonal polynomials. In the next sections, a definition of type II multiple orthogonal polynomials on several variables will be provided, and also some easy examples and a generalized version of the Jacobi-Piñeiro polynomials. 
+We will be mainly focused on type II multiple orthogonal polynomials. In next sections, a definition of type II multiple orthogonal polynomials on several variables will be provided, along with a few simple examples and a generalized version of the Jacobi-Piñeiro polynomials. 
 \cred{REVIEW No poner esto en el poster que los piñeiro no ha dado la vida}
 
 \section{Orthogonal Polynomials Systems in several variables}
 
-First of all, we will introduce the notation that will be used. Let $\Pi^d=\R[x_1,\dots,x_d]$ be the space of polynomials in $d$ variables. If $d=2$, we will use the variables $x,y$. For $n\in\N_0$, the space generated by all the degree $n$ monomials is denoted by 
+First of all, we introduce the notation that will be used. Let $\Pi^d=\R[x_1,\dots,x_d]$ be the space of polynomials in $d$ variables. If $d=2$, we use the variables $x,y$. For $n\in\N_0$, the space generated by all the degree $n$ monomials is denoted by 
 $$
 \mathcal{P}_n^d = \left\langle x_1^{k_1} x_2^{k_2} \cdots x_d^{k_d}: k_1+k_2+\cdots +k_d = n, k_1,k_2,\dots,k_d\in\N_0\right\rangle
 $$
@@ -213,20 +218,22 @@ Thus, a column polynomial vector of degree $n$ can be represented as
 $$
 \mathbb{P}_n = G_{n,n}\mathbb{X}_n + G_{n,n-1}\mathbb{X}_{n-1}+\cdots G_{n,1}\mathbb{X}_1 + G_{n,0}\mathbb X_0,
 $$
-where $G_{n,j}$ are matrices of size $\binom{n+d-1}{n}\times\binom{j+d-1}{j}$ and they are the polynomial's ``coefficients''. Hence, $\mathbb P_n$ is a vector of polynomials whose size is $\binom{n+d-1}{n}$. We will denote 
+where $G_{n,j}$ are matrices of size $\binom{n+d-1}{n}\times\binom{j+d-1}{j}$ and they are the polynomial's ``coefficients''. Hence, $\mathbb P_n$ is a vector of polynomials of size $\binom{n+d-1}{n}$. We denote 
 $$
 r_n^d = \dim \mathcal{P}_n^d = \binom{n+d-1}{n}.
 $$
 
-Given a multi-dimensional measure $\mu(x_1,\dots,x_d)$, whose support is $\Omega\subseteq\R^d$, we can extend the definition of a multivariate product $\prodesc{f}{g}_\mu$ and its functional $\mathcal{L}_\mu[f\cdot g]$ to column vectors. If $F=(f_1,f_2,\dots,f_n)^t$ and $G=(g_1,g_2,\dots, g_m)^t$ are column vectors of functions of size $n$ and $m$, respectively, then we define
+Given a multi-dimensional measure $\mu(x_1,\dots,x_d)$, with support $\Omega\subseteq\R^d$, we can extend the definition of a multivariate product $\prodesc{f}{g}_\mu$ and its functional $\mathcal{L}_\mu[f\cdot g]$ to column vectors. If $F=(f_1,f_2,\dots,f_n)^t$ and $G=(g_1,g_2,\dots, g_m)^t$ are column vectors of functions of size $n$ and $m$, respectively, then we define
 \begin{equation}
     \label{eq:prodesc-matrix}
-    \prodesc{F}{G}:=\mathcal{L}_\mu[F\cdot G^T] = \int_\Omega F\cdot G^T d\mu(x_1,\dots,x_d) = \left(\int_\Omega f_i\cdot g_j d\mu(x_1,\dots,x_d)\right)_{i=1,\dots,n;\ \ j = 1,\dots, m}.
+    \prodesc{F}{G}:=\mathcal{L}_\mu[F\cdot G^T] = \int_\Omega F\cdot G^T d\mu(x_1,\dots,x_d) = \left(\int_\Omega f_i\cdot g_j d\mu(x_1,\dots,x_d)\right)_{i,j=1}^{n,m}.
 \end{equation}
+
+\cred{REVIEW como pongo esto para que salga en forma de matriz :(}
 
 In fact, we are applying the standard product $\prodesc{f_i}{g_j}_\mu$ or the functional $\mathcal L_\mu[f_i\cdot g_j]$ to each pair $i,j$ and placing the results in a matrix.
 
-Let's consider it is possible to build a system of polynomials $\{\mathbb{P}_n\}_{n\geq 0}$ where
+Let $\{\mathbb{P}_n\}_{n\geq 0}$ be a system of polynomial vectors such that
 $$
 \prodesc{\mathbb P_n}{\mathbb P_k}_\mu = \mathcal{L}_\mu[\mathbb P_n \mathbb P_k^t]= \left\{\begin{array}{ccl}
     0_{r_n^d\times r_k^d} &   \text{ if } & k=0,\dots,n-1 \\
@@ -234,7 +241,7 @@ $$
 \end{array}\right. 
 $$
 Where $S_n$ is a regular squared matrix of size $r_n^d\times r_n^d$.
-Due to orthogonality, it is possible to give a equivalent condition:
+Due to orthogonality, it is possible to give an equivalent condition:
 \begin{equation}
     \label{eq:prodesc-matrix-PX}
     \prodesc{\mathbb P_n}{\mathbb X_k}_\mu = \mathcal{L}_\mu[\mathbb P_n \mathbb X_k^t]= \left\{\begin{array}{ccl}
@@ -242,20 +249,21 @@ Due to orthogonality, it is possible to give a equivalent condition:
         S_n & \text{ if } & k=n      
     \end{array}\right. 
 \end{equation}
-Then, $\{\mathbb{P}_n\}_{n\geq 0}$ is called a system of orthogonal polynomials with respect to the measure $\mu$ or the functional $\mathcal L_\mu$. You can check more information about the existence and uniqueness of this system in \cite[Ch. III, Section 3.2]{dunkl_xu_2014}.
+Then, $\{\mathbb{P}_n\}_{n\geq 0}$ is called a system of orthogonal polynomials with respect to the measure $\mu$ or the functional $\mathcal L_\mu$. Further information about this topic available in \cite[Ch. III, Section 3.2]{dunkl_xu_2014}.
 
 \section{Type II MOP in several variables}
 
-In order to respect the original Type II MOP in one variable, given $r\in\N$, $\vec n = (n_1,\dots, n_r)\in\N^r$, $r$ $d$-dimensional measures $\mu_1, \dots, \mu_r$ and their respective matrix dot products defined in \eqref{eq:prodesc-matrix}, we are going to define the type II multiple orthogonality as a monic polynomial vector $\mathbb P_{\vec n} = \mathbb X_n + \displaystyle\sum_{k=0}^{n-1}G_{n,k} \mathbb X_k$ which satisfies
+In order to give a definition of type II orthogonality, we will take as a reference the definition of type II orthogonality in the univariate case. given $r\in\N$, $\vec n = (n_1,\dots, n_r)\in\N^r$, $r$ $d$-dimensional measures $\mu_1, \dots, \mu_r$ and their respective matrix inner products defined in \eqref{eq:prodesc-matrix}, we are going to define the type II multiple orthogonal polynomial vector as a monic polynomial vector $\mathbb P_{\vec n} = \mathbb X_n + \displaystyle\sum_{k=0}^{n-1}G_{n,k} \mathbb X_k$ which satisfies
 \begin{equation}
     \label{eq:typeII-MOP-d-variables}
     \prodesc{\mathbb P_{\vec n}}{\mathbb X_k}_i = 0, \ \ \ k=0,\dots,n_i-1, \ \ \ i=1,\dots,r
 \end{equation}
-You can check the similarity between conditions \eqref{eq:typeII-MOP-dot} and \eqref{eq:typeII-MOP-d-variables}. However, when we work with one variable, it is known the type II polynomial is a monic polynomial whose degree is exactly $|\vec n|$. That is because the number of coefficients of a degree $|\vec n|$ univariate monic polynomial ($|\vec n|$) is equal to the number of orthogonality conditions and the size of matrices $A$ defined in \eqref{eq:MOP-matrix}. Due to the differences between the univariate and the multivariate case, the degree $n$ of the polynomial vector $\mathbb P_{\vec n}$ might not be equal to $|\vec n|$. For now, this degree $n$ will be considered as unknown, getting to know it later.
+Note the similarity between conditions \eqref{eq:typeII-MOP-dot} and \eqref{eq:typeII-MOP-d-variables}. However, when we work with one variable, it is known type II polynomial is a monic polynomial whose degree is exactly $|\vec n|$. This is because the number of coefficients of a degree $|\vec n|$ univariate monic polynomial ($|\vec n|$) is equal to both the number of orthogonality conditions and the size of matrices $A$ defined in \eqref{eq:MOP-matrix}. Due to the differences between univariate and multivariate case, the degree $n$ of a polynomial vector $\mathbb P_{\vec n}$ might not be equal to $|\vec n|$. For now, this degree $n$ will be considered as unknown, getting to know it later.
 
-As mencioned previously, in the univariate multiple orthogonality, $\deg(P_{\vec n})=|\vec n|$. The main reason this happens is because the condition $\prodesc{P_{\vec n}}{x^k}=0$ is a linear equation (only one). Hence, we are looking for a polynomial with $|\vec n|$ unknown coefficients and we have $|\vec n|$ linear equations deducted from the conditions \eqref{eq:typeII-MOP-dot}. Then, it is possible to build a system of linear equations whose coefficient matrix is $A^t$ given in \eqref{eq:MOP-matrix}.
+As mencioned above, in the univariate multiple orthogonality, $\deg(P_{\vec n})=|\vec n|$. The main reason why this happens is because the condition $\prodesc{P_{\vec n}}{x^k}=0$ is a linear equation (only one). Hence, we are looking for a polynomial with $|\vec n|$ unknown coefficients and we have $|\vec n|$ linear equations deduced from conditions \eqref{eq:typeII-MOP-dot}. Then, it is possible to build a system of linear equations with coefficient matrix $A^t$ given in \eqref{eq:MOP-matrix}.
 
 If we work with $d$ variables, attending to \eqref{eq:prodesc-matrix-PX}, remember the result of $\prodesc{\mathbb P_{\vec n}}{\mathbb X_k}$ is a matrix of size $r_n^d\times r_k^d$. Thus, it is possible to get $r_n^d\times r_k^d$ linear equations from each orthogonality condition.  
+\cred{REVIEW Esto dice Lidia que no se entiende, estoy de acuerdo con ella}
 
 Now, the question is: How many linear equations is it possible to get from a multi-index $\vec n =(n_1, \dots, n_r)$? The answer to this problem is easy since, if we fix $j\in\{1,\dots,r\}$:
 \begin{itemize}
@@ -264,7 +272,7 @@ Now, the question is: How many linear equations is it possible to get from a mul
     \item \dots
     \item $\prodesc{\mathbb P_{\vec n}}{\mathbb X_{n_j-1}}_j = 0_{r^d_n\times r^d_{n_i-1}}$, we get $r^d_n\times r^d_{n_j-1}$ equations.
 \end{itemize} 
-If we collect all the equations, we obtain $r_n^d\cdot\displaystyle\sum_{k=0}^{n_j-1}r^d_k$ linear equations for each $j\in\{1,\dots,r\}$. Collecting the number of equations of each $j$, we finally get the number of equations is 
+If we collect all the equations, we obtain $r_n^d\cdot\displaystyle\sum_{k=0}^{n_j-1}r^d_k$ linear equations for each $j\in\{1,\dots,r\}$. Collecting the number of equations of each $j$, we finally get that the number of equations is 
 \begin{equation}
     \label{eq:number-eqs}
     r_n^d \sum_{j=1}^r \sum_{k=0}^{n_j-1} r_k^d.
@@ -277,10 +285,10 @@ If we want this system to have only one solution for a multi-index $\vec n$. The
     \label{eq:condition-type-ii-general}
     \displaystyle\sum_{k=0}^{n-1} r^d_k = \sum_{i=1}^r \sum_{k=0}^{n_i-1} r_k^d.
 \end{equation}
-This number $n$ is the degree of the type II polynomials. In order to emphasise the degree of the polynomials, since this moment we will denote the type II MOP as $\mathbb P_{\vec n}^n$.
+This number $n$ is the degree of type II polynomials. In order to emphasise the degree of the polynomials, in the next sections we denote type II MOP as $\mathbb P_{\vec n}^n$.
 \section{The bidimensional case}
 
-Since this moment, we will assume $d=2$ and $x:=x_1, y:=x_2$. Notice that, in the bidimensional case, $r^2_n = \binom{n+1}{n} = n+1$, which makes things much easier: $\mathbb X_j$ is a polynomial vector of size $j+1$, $\mathbb P_n$ is a vector of size $n+1$, and $G_{n,k}$ is a $(n+1)\times(k+1)$ matrix. Also, the condition \eqref{eq:condition-type-ii-general} gets simpler because some sums become sums of arithmetic progressions. When $d=2$, a multi-index $\vec n =(n_1,\dots,n_r)$ is valid if there exists a number $n\in\N\cup \{0\}$ such that
+From now on, we will assume $d=2$ and $x:=x_1, y:=x_2$. Notice that, in the bidimensional case, $r^2_n = \binom{n+1}{n} = n+1$, which makes things much easier: $\mathbb X_j$ is a polynomial vector of size $j+1$, $\mathbb P_n$ is a vector of size $n+1$, and $G_{n,k}$ is a $(n+1)\times(k+1)$ matrix. Also, condition \eqref{eq:condition-type-ii-general} gets simpler because some sums become sums of arithmetic progressions. When $d=2$, a multi-index $\vec n =(n_1,\dots,n_r)$ is valid if there exists a number $n\in\N\cup \{0\}$ such that
 \begin{equation}
     \label{eq:condition-type-ii}
     n(n+1)=\sum_{j=1}^r n_j (n_j+1).
@@ -328,7 +336,7 @@ Observe some of the valid multi-indices and their respective degree $n$ in table
     \label{tab:3measuresindices}
     \end{table}
 
-    Check this visual representation of the valid multi-indices when $r=2$ and $r=3$.
+    Check this visual representation of some valid multi-indices when $r=2$ and $r=3$.
     
     \begin{figure}[h]
         \centering\begin{tabular}{cc}
@@ -336,15 +344,15 @@ Observe some of the valid multi-indices and their respective degree $n$ in table
           \includegraphics[height=5cm]{./img/puntos3D.png} \\
           (a) $r=2$ & (b) $r=3$  \\
         \end{tabular}
-        \caption{Graphic representation of the valid $r$-indices}
+        \caption{Graphic representation of valid $r$-indices}
         \label{fig:indices}
       \end{figure}
 
 \section{Type I MOP in two variables}
 
-Remember the type I multiple orthogonality in definition \ref{def:typeI-univar}. Given $\vec n =(n_1,\dots,n_r)$, it consists of a polynomial vector $(A_{\vec n,1},\dots,A_{\vec n, r})$ where $\deg(A_{\vec n,j})\leq n_j-1$ ($j=1,\dots,r$) and the polynomials satisfy \eqref{eq:typeI-MOP} and \eqref{eq:typeI-MOP-normalization}. This two conditions can be also expresed in a more compact way if we use the dot products, see \eqref{eq:typeI-MOP-dot}.
+Remember type I multiple orthogonal polynomials in definition \ref{def:typeI-univar}. Given $\vec n =(n_1,\dots,n_r)$, it consists of a polynomial list $(A_{\vec n,1},\dots,A_{\vec n, r})$ where $\deg(A_{\vec n,j})\leq n_j-1$ ($j=1,\dots,r$) and polynomials satisfy \eqref{eq:typeI-MOP} and \eqref{eq:typeI-MOP-normalization}. This two conditions can be also expresed in a more compact way if we use the inner products, see \eqref{eq:typeI-MOP-dot}.
 
-In order to generalize this type of orthogonality, the first problem is the sum located in the orthogonality condition. This forces us to define polynomials, or polynomial vectors $\mathbb A_{\vec n, j}$, of the same size. If these vectors had different size, it would not be possible to make the sum. This makes impossible to considerate $\mathbb A_{\vec n,j}$ a vector of degree $\leq n_j-1$ polynomials, with size $n_j$. We will tell you how this problem was solved and the definition we give.
+In order to generalize this type of orthogonality, the first problem is the sum located in orthogonality condition. This forces us to define polynomials, or polynomial vectors $\mathbb A_{\vec n, j}$, of the same size. If these vectors had different size, it would not be possible to make the sum. This makes impossible to consider $\mathbb A_{\vec n,j}$ a vector of degree $\leq n_j-1$ polynomials, with size $n_j$. The solution to this problem will be explained below.
 
 Let $\vec n = (n_1,\dots,n_r)\in\N^r$ such that the condition \eqref{eq:condition-type-ii} holds for some $n\in\N$. Then, let $i\in\{1,\dots,n\}$ and, for each $j$, the polynomial $$A_{\vec n, j}^{(i)}(x,y) = g_{n_j-1,n_j-1}^t \mathbb X_{n_j-1} + g_{n_j-1,n_j-2}^t \mathbb X_{n_j-2} + \cdots + g_{n_j-1,0}^t \mathbb X_{0},$$ where $g_{n_j-1,k}\in\R^{k+1}$, ($k=0,\dots,n_j-1$) is a bivariate polynomial such that $\deg A_{\vec n, j}^{(i)} \leq n_j-1$, ($j=1,\dots,r$). Now, given $r$ 2-dimensional measures $\mu_1,\dots,\mu_r$, we will force the polynomials $A_{\vec n, 1}^{(i)}, A_{\vec n, 2}^{(i)}, \dots, A_{\vec n, r}^{(i)}$ to satisfy the first type I multiple orthogonality condition:
 
@@ -356,7 +364,7 @@ Let $\vec n = (n_1,\dots,n_r)\in\N^r$ such that the condition \eqref{eq:conditio
     \end{array}\right.
 \end{equation}
 
-You can easily check the number of unknown coefficients of the polynomials $A_{\vec n,j}^{(i)}$ is the same as the number of linear equations given by conditions \eqref{eq:first-condition-type-I}. If we repeat this for every possible $i\in\{1,\dots,n\}$, we get $n$ lists of polynomials $A_{\vec n, j}^{(i)}$, $j=1,\dots,r, i=1,\dots,n$. Now, let's denote
+It is easy to see that the number of unknown coefficients of the polynomials $A_{\vec n,j}^{(i)}$ is the same as the number of linear equations given by conditions \eqref{eq:first-condition-type-I}. If we repeat this for every possible $i\in\{1,\dots,n\}$, we get $n$ lists of polynomials $A_{\vec n, j}^{(i)}$, $j=1,\dots,r, i=1,\dots,n$. Now, let us denote
 $$
 \mathbb A_{\vec n,j} = \begin{pmatrix}
     A_{\vec n, j}^{(1)} \\ \vdots \\ A_{\vec n, j}^{(n)}
@@ -386,10 +394,10 @@ Summarizing, we present the final definitions of the multiple orthogonal polynom
 
 \begin{definition}[Type I MOP in two variables]
     Let $\vec n = (n_1, \dots, n_r)\in \N^r$ such that the condition \eqref{eq:condition-type-ii} holds for certain $n\in\N$. \textbf{Type I Multiple Orthogonal Polynomials Vectors} are presented as $(\mathbb A_{\vec n,1}, \dots, \mathbb A_{\vec n,r})$, where 
-    $\mathbb A_{\vec n,j}=(A_{\vec n,j}^{(1)}, \dots, A_{\vec n,j}^{(n)})^t$, $j=1,\dots,r$ and $A_{\vec n,j}^{(i)}$ are polynomials of degree less than or equal to $n_j-1$ for every $i=1,\dots,n$. In addition, these polynomials vectors satisfy the conditions \eqref{eq:condition-type-I}.     
+    $\mathbb A_{\vec n,j}=(A_{\vec n,j}^{(1)}, \dots, A_{\vec n,j}^{(n)})^t$, $j=1,\dots,r$ and $A_{\vec n,j}^{(i)}$ are polynomials of degree less than or equal to $n_j-1$ for every $i=1,\dots,n$. In addition, these polynomial vectors satisfy conditions \eqref{eq:condition-type-I}.     
 \end{definition}
 
-As the univariate case, from the Type I MOP, in case the 2-dimensional measures are all absolutely continuous with respect to a common positive measure $\mu$ defined in $\Omega = \displaystyle\bigcup_{j=1}^r \Omega_j$ (with $\Omega_j=\supp(\mu_j)$), \textit{i.e.}, $d\mu_j = w_j(x,y)d\mu(x,y)$, ($j=1,\dots,r$), we can define the \textit{Type I function}:
+As in the univariate case, from Type I MOP, when the 2-dimensional measures are all absolutely continuous with respect to a common positive measure $\mu$ defined in $\Omega = \displaystyle\bigcup_{j=1}^r \Omega_j$ (with $\Omega_j=\supp(\mu_j)$), \textit{i.e.}, $d\mu_j = w_j(x,y)d\mu(x,y)$, ($j=1,\dots,r$), we can define the \textit{Type I function}:
 \begin{equation}
     \label{eq:type-I-function-2-vars}
     \mathbb Q_{\vec n} = \sum_{j=1}^r \mathbb A_{\vec n,j}w_j(x,y).
@@ -404,7 +412,7 @@ Using this function, it is possible to rewrite \eqref{eq:condition-type-I} as
 \end{equation}
 We will often remove the sub-index $\mu$ from $\prodesc{\cdot}{\cdot}_\mu$, assuming the product uses the common measure.
 
-As we can see, the bivariate case reduces the number of multi-indices $(n_1,\dots,n_r)$ which it is possible to create multiple orthogonal polynomials with. Whereas in the univariate it is possible to question the existence of MOP for every $\vec n\in \N^r$, in the bivariate case only some of the multi-indices can give us MOP, those such that there exist $n\in\N$ with $n(n+1)=\displaystyle\sum_{j=1}^r n_j (n_j+1)$. Given a valid $\vec n\in\N^r$, we will say it is \textbf{normal} if it is possible to calculate its type II polynomial $\mathbb P_{\vec n}^n$ and its type I polynomials $\mathbb A_{\vec n,j}$ ($j=1,\dots,r$). The system of 2-dimensional measures $\mu_1,\dots,\mu_r$ will be called \textbf{perfect} if every valid multi-index is normal.
+As we can see, the bivariate case reduces the number of multi-indices $(n_1,\dots,n_r)$ which it is possible to create multiple orthogonal polynomials with. Whereas in univariate case it is possible to question existence of MOP for every $\vec n\in \N^r$, in the bivariate case only some of the multi-indices can give us MOP, those such that there exist $n\in\N$ with $n(n+1)=\displaystyle\sum_{j=1}^r n_j (n_j+1)$. Given a valid $\vec n\in\N^r$, we will say it is \textbf{normal} if it is possible to calculate its type II polynomial $\mathbb P_{\vec n}^n$ and its type I polynomials $\mathbb A_{\vec n,j}$ ($j=1,\dots,r$). The system of 2-dimensional measures $\mu_1,\dots,\mu_r$ will be called \textbf{perfect} if every valid multi-index is normal.
 
 \cb{REVIEW Revisa esto Lidia porque normal y perfecto son conceptos que en una variable tienen sentido porque los tipo I y los tipo II son equivalentes, aquí de momento como poco tan seguros no estamos.}
 
@@ -415,7 +423,7 @@ We are going to show you the first example of type II bivariate multiple orthogo
 \begin{equation}
     \int_0^\infty x^k L_{\vec n}^{\vec\alpha}(x) x^{\alpha_j} e^{-x} dx =0 \ \ \ k=0,\dots, n_j-1, \ \ j=1,\dots,r. 
 \end{equation}
-In order that all multi-indices are normal we need to have $\alpha_j>-1$ and $\alpha_j- \alpha_i\not\in\Z$ whenever $i\neq j$. On the other hand, the bivariate product Laguerre polynomials \cite[Ch. II, Section 2.2]{dunkl_xu_2014} are orthogonal with respect to the bidimensional weight function
+In order that all multi-indices to be normal we need to have $\alpha_j>-1$ and $\alpha_j- \alpha_i\not\in\Z$ whenever $i\neq j$. On the other hand, the bivariate product Laguerre polynomials \cite[Ch. II, Section 2.2]{dunkl_xu_2014} are orthogonal with respect to the bidimensional weight function
 $$w(x,y)=x^\alpha y^\beta e^{-x-y}, \ \ \ \alpha,\beta>-1.$$ 
 
 Following this two approaches, we present an example with $r=3$. Let $\vec\alpha=(\alpha_1,\alpha_2,\alpha_3)$, $\vec\beta=(\beta_1,\beta_2,\beta_3)$ such that $\alpha_j,\beta_j > -1$ and any possible pair $\alpha_i,\beta_j$ satisfies $\alpha_i-\beta_j\not\in\Z$, and  $\alpha_j- \alpha_i\not\in\Z$, $\beta_j- \beta_i\not\in\Z$ whenever $i\neq j$ (any difference between different parameters is not an integer). We consider the following system of 2-dimensional measures:
@@ -490,7 +498,7 @@ This result, which is a two-dimensional extension of \cite[Theorem 23.1.6]{Ismai
 
 \section{Nearest Neighbor Recurrence Relation}
 
-The standard orthogonal polynomials always satisfy a Three-Term Recurrence Relation. That is, given an MOPS $\{P_n\}$ with respect to a dot product $\prodesc{\cdot}{\cdot}$ or its respective functional $\mathcal L$, there exist constants $\alpha_n,\beta_n$ such that
+The standard orthogonal polynomials always satisfy a Three-Term Recurrence Relation. That is, given an MOPS $\{P_n\}$ with respect to a inner product $\prodesc{\cdot}{\cdot}$ or its respective functional $\mathcal L$, there exist constants $\alpha_n,\beta_n$ such that
 $$
 xP_n = P_{n+1}+ \alpha_n P_n + \beta_n P_{n-1}.
 $$
@@ -517,7 +525,7 @@ The nearest Neighbor Recurrence Relation, in univariate multiple orthogonality, 
     $$
     \mathbb P_{\overrightarrow{n}}^n = L_{n+1,1}\mathbb P_{\overrightarrow{m_{n+1}}}^{n+1} + \sum_{k=0}^{n} M_k \mathbb P_{\overrightarrow{m_k}}^k.
     $$
-    Now, apply the dot product to both sides of the equation by $\mathbb Q_{\overrightarrow{m_l}}$ and observe:
+    Now, apply the inner product to both sides of the equation by $\mathbb Q_{\overrightarrow{m_l}}$ and observe:
     \begin{itemize}
         \item If $\overrightarrow{m_l}\leq \overrightarrow{m_j}$, which always happens if $l\leq j\leq n+1$, then, due to the first item of theorem \ref{th:biorthogonality}, $\prodesc{\mathbb P_{\overrightarrow{m_j}}^j}{\mathbb Q_{\overrightarrow{m_l}}} = 0_{(j+1)\times l}$ whenever $l\leq j$.
         \item If $j\leq l-2$, then, from the second item of theorem \ref{th:biorthogonality}, $\prodesc{\mathbb P_{\overrightarrow{m_j}}^j}{\mathbb Q_{\overrightarrow{m_l}}} = 0_{(j+1)\times l}.$
@@ -528,7 +536,7 @@ The nearest Neighbor Recurrence Relation, in univariate multiple orthogonality, 
     $$
     \prodesc{x\mathbb P_{\vec n}^n}{\mathbb Q_{\overrightarrow{m_l}}} = L_{n+1,1}\prodesc{\mathbb P_{\overrightarrow{m_{n+1}}}^{n+1}}{\mathbb Q_{\overrightarrow{m_l}}} + \sum_{j=0}^n M_j \prodesc{\mathbb P_{\overrightarrow{m_j}}^j}{\mathbb Q_{\overrightarrow{m_l}}}.
     $$
-    Applying the previous items deducted from theorem \ref{th:biorthogonality}, we have
+    Applying the previous items deduced from theorem \ref{th:biorthogonality}, we have
     \begin{equation}
         \label{eq:biorthogonality-1}
         \prodesc{x\mathbb P_{\vec n}^n}{\mathbb Q_{\overrightarrow{m_l}}} = M_{l-1} \ \ \ \ l=1,\dots,n+1,
