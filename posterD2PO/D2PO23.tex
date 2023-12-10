@@ -1,0 +1,485 @@
+%\documentclass[portrait,final,a0paper,fontscale=0.385]{baposter}
+\documentclass[portrait,final,a0paper,fontscale=0.38]{baposter}
+
+\usepackage{calc}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{bm}
+\usepackage{url}
+
+\usepackage{amsfonts,amsmath, amsthm}
+
+\newtheorem{proposition}{Proposition}
+
+
+\usepackage{color}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{fancybox}
+\usepackage{epsfig}
+\usepackage{array}
+
+\usepackage{multicol}
+\usepackage{float}
+%\usepackage{times}
+%\usepackage{helvet}
+%\usepackage{bookman}
+\usepackage{palatino}
+\usepackage{subfig}
+
+\usepackage{wrapfig}
+
+\graphicspath{{images/}{../images/}}
+\usetikzlibrary{calc}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Some math symbols used in the text
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Multicol Settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\columnsep}{1.5em}
+\setlength{\columnseprule}{0mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Save space in lists. Use this after the opening of the list
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\compresslist}{%
+\setlength{\itemsep}{0pt}%
+\setlength{\parskip}{2pt}%
+\setlength{\parsep}{0pt}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Begin of Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Here starts the poster
+%%%---------------------------------------------------------------------------
+%%% Format it to your taste with the options
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define some colors
+
+%\definecolor{lightblue}{cmyk}{0.83,0.24,0,0.12}
+\definecolor{lightblue}{RGB}{102,178,255}
+\definecolor{darkblue}{RGB}{0,51,102}
+\definecolor{fondo}{RGB}{153,204,255}
+\definecolor{caja}{RGB}{155,190,220}
+\definecolor{burdeos}{RGB}{204,0,102}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+
+\newcommand{\diam}[0]{\mathrm{diam}}
+\newcommand{\rad}[0]{\mathrm{rad}}
+\newcommand{\diminf}[0]{\underline{\dim}_B}
+\newcommand{\dimsup}[0]{\overline{\dim}_B}
+\renewcommand{\Re}[0]{\mathrm{Re}\ }
+\renewcommand{\Im}[0]{\mathrm{Im}\ }
+\renewcommand{\H}[0]{\mathbb{H}}
+
+%MORE PACKAGES HERE
+\newcommand{\R}[0]{\mathbb{R}}
+\newcommand{\C}[0]{\mathbb{C}}
+\newcommand{\N}[0]{\mathbb{N}}
+\newcommand{\Z}[0]{\mathbb{Z}}
+\newcommand{\Q}[0]{\mathbb{Q}}
+\newcommand{\K}[0]{\mathbb{K}}
+\newcommand{\sgn}[0]{\mathrm{sgn}}
+\newcommand{\supp}[0]{\mathrm{supp}}
+\newcommand{\prodesc}[2]{\left\langle #1 , #2 \right\rangle}
+
+
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+%%
+\begin{poster}%
+  % Poster Options
+  {
+  % Show grid to help with alignment
+  grid=false,
+  % Column spacing
+  colspacing=1em,
+  % Color style
+  bgColorOne=white,
+  bgColorTwo=fondo,
+  borderColor=lightblue,
+  headerColorOne=darkblue,
+  headerColorTwo=lightblue,
+  headerFontColor=white,
+  boxColorOne=white,
+  boxColorTwo=caja,
+  % Format of textbox
+ textborder=roundedright,
+  % Format of text header
+  eyecatcher=true,
+  headerborder=closed,
+  headerheight=0.085\textheight,
+%  textfont=\sc, An example of changing the text font
+  %headershape=roundedright,
+  headershape=roundedleft,
+  headershade=shadelr,
+  headerfont=\Large\bf\textsc, %Sans Serif
+  textfont={\setlength{\parindent}{1.5em}},
+  boxshade=shadetb,
+%  background=shade-tb,
+  background=shadetb,
+  linewidth=1.5pt
+  }
+  % Eye Catcher
+  % University logo
+  {
+  	\includegraphics[height=10em]{ugr}
+  }
+  % Title
+  {
+  	\medskip
+  	{\scalebox{1.4}{\LARGE{\bf\textsc{\textcolor{darkblue}{Multiple Orthogonal Polynomials in Two Variables}}}}}
+  }
+  % Authors
+  {
+  	\textsc{Lidia Fernández and Juan Antonio Villegas-Recio}
+  	\\
+  	\small{\texttt{(lidiafr@ugr.es, jantoniovr@ugr.es)}}
+  	\\
+  	\normalsize{Departamento de Matem\'{a}tica Aplicada and Instituto de Matemáticas IMAG, Universidad de Granada, Spain.}
+  }
+  % Faculty logo
+  {
+  	\includegraphics[height=5.8em,width=6.9em]{goya}
+  }
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Now define the boxes that make up the poster
+%%%---------------------------------------------------------------------------
+%%% Each box has a name and can be placed absolutely or relatively.
+%%% The only inconvenience is that you can only specify a relative position
+%%% towards an already declared box. So if you have a box attached to the
+%%% bottom, one to the top and a third one which should be in between, you
+%%% have to specify the top and bottom boxes before you specify the middle
+%%% box.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %
+    % A coloured circle useful as a bullet with an adjustably strong filling
+    \newcommand{\colouredcircle}{%
+      \tikz{\useasboundingbox (-0.2em,-0.32em) rectangle(0.2em,0.32em); \draw[draw=black,fill=lightblue,line width=0.03em] (0,0) circle(0.18em);}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  \headerbox{Motivation}{name=motivation,column=0,row=0,span=3}{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{1. Introduction}{name=intro,column=0,row=0,span=2}
+  {
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Multiple Orthogonality is a theory that extends standard orthogonality. In it, polynomials (defined on the real line) satisfy orthogonality relations with respect to more than one measure. There are also two different types of multiple orthogonality.
+
+First, let us consider $r$ different real measures $\mu_1,\dots,\mu_r$ such that $\Omega_j=\supp(\mu_j)\subseteq\R$ and denote as $\prodesc{\cdot}{\cdot}_j$ the respective integral inner product ($j=1,\dots,r$). We will use multi-indices $\vec n = (n_1, \dots,n_r)\in \N^r$, and denote $|\vec n| := n_1 + \dots + n_r$. These multi-indices determine the orthogonality relations with each measure.
+
+\begin{multicols}{2}
+    \begin{definition}[Type II Multiple Orthogonal Polynomials]
+      Let $\vec n = (n_1,\dots,n_r)$. A monic polynomial $P_{\vec n}(x)$ is a \textbf{type II multiple orthogonal polynomial} if $\deg(P_{\vec n})= |\vec n|$ and 
+      \begin{equation}
+        \label{eq:typeII-MOP-dot}
+        \boxed{\prodesc{P_{\vec n}}{x^k}_j = 0, \ \ \ k=0,\dots,n_{j}-1, \ \ j = 1,\dots,r}
+    \end{equation}
+  \end{definition}
+  \begin{definition}[Type I Multiple Orthogonal Polynomials]
+    \label{def:typeI-univar}
+    Let $\vec n = (n_1,\dots,n_r)$. Type I Multiple Orthogonal Polynomials are presented in a vector $(A_{\vec n, 1}(x), \dots, A_{\vec n, r}(x))$, where $\deg(A_{\vec n, j})\leq n_j-1$, ($j=1,\dots,r$) and these polynomials satisfy
+    \begin{equation}
+      \label{eq:typeI-MOP-dot}
+      \boxed{\sum_{j=1}^r \prodesc{A_{\vec n,j}}{x^k}_j = \left\{\begin{array}{ccl}
+          0 &   \text{ if } & k=0,\dots,|\vec n|-2 \\
+          1 & \text{ if } & k=|\vec n|-1      
+      \end{array}\right.}
+    \end{equation}
+  \end{definition}
+  Whenever the measures are all absolutely continuous with respect to a common positive measure $\mu$ defined in $\Omega =\nolinebreak \bigcup_{i=1}^r \Omega_i$, \textit{i.e.}, $d\mu_j = w_j(x) d\mu(x)$, ($j=1,\dots,r$), it is possible to define the \textit{Type I function} as
+  \begin{equation}
+      \label{eq:typeI-function}
+      Q_{\vec n}(x)=\sum_{j=1}^r A_{\vec n,j}(x)w_j(x).
+  \end{equation}
+  Using the type I function, we can rewrite the orthogonality relations
+  \begin{equation}
+      \label{eq:typeI-MOP-function}
+      \prodesc{Q_{\vec n}}{x^k}_\mu = \left\{\begin{array}{ccl}
+          0 &   \text{ if } & k=0,\dots,|\vec n|-2 \\
+          1 & \text{ if } & k=|\vec n|-1      
+      \end{array}\right.
+  \end{equation}
+  \end{multicols}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{2. Bivariate OP}{name=bivariate-pols, below=intro, row=1,column=0,span=2}
+{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multicols}{2}
+
+  In order to work with bivariate polynomials, we will use the notation $\mathbb P_n$ as a column polynomial vector. Let us denote the vector of degree $j$ monomials as
+  $$
+  \mathbb{X}_j=(x^j, x^{j-1}y , \dots, y^j)^t.
+  $$
+  Thus, a column polynomial vector of degree $n$ can be represented as
+  $$
+  \mathbb{P}_n = G_{n,n}\mathbb{X}_n + G_{n,n-1}\mathbb{X}_{n-1}+\cdots G_{n,1}\mathbb{X}_1 + G_{n,0}\mathbb X_0,
+  $$
+  where $G_{n,j}$ are matrices of size $(n+1)\times(j+1)$. 
+
+  Given a bidimensional measure $\mu(x,y)$, with support $\Omega\subseteq\R^2$, we can extend the definition of inner product $\prodesc{f}{g}_\mu$ to column vectors. If $F=(f_1,f_2,\dots,f_n)^t$ and $G=(g_1,g_2,\dots, g_m)^t$ are column vectors of functions, then we define
+  \begin{equation}
+    \label{eq:prodesc-matrix}
+    \prodesc{F}{G}:=\mathcal{L}_\mu[F\cdot G^T] = \int_\Omega F\cdot G^T d\mu = \left(\int_\Omega f_i\cdot g_j d\mu\right)_{i,j=1}^{n,m}.
+  \end{equation}
+  In fact, we are applying the standard product $\prodesc{f_i}{g_j}_\mu$ or the functional $\mathcal L_\mu[f_i\cdot g_j]$ to each pair $i,j$ and placing the results in a matrix.
+  
+  Let $\{\mathbb{P}_n\}_{n\geq 0}$ be a system of polynomial vectors such that
+  $$
+  \prodesc{\mathbb P_n}{\mathbb P_k}_\mu = \mathcal{L}_\mu[\mathbb P_n \mathbb P_k^t]= \left\{\begin{array}{ccl}
+      0_{(n+1)\times(k+1)} &   \text{ if } & k=0,\dots,n-1 \\
+      S_n & \text{ if } & k=n.
+  \end{array}\right. 
+  $$
+  Where $S_n$ is a regular squared matrix of size $(n+1)\times (n+1)$.
+  Due to orthogonality, it is possible to give an equivalent condition:
+  \begin{equation}
+      \label{eq:prodesc-matrix-PX}
+      \prodesc{\mathbb P_n}{\mathbb X_k}_\mu = \mathcal{L}_\mu[\mathbb P_n \mathbb X_k^t]= \left\{\begin{array}{ccl}
+          0_{(n+1)\times(k+1)} &   \text{ if } & k=0,\dots,n-1 \\
+          S_n & \text{ if } & k=n.  
+      \end{array}\right. 
+  \end{equation}
+\end{multicols}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\headerbox{3. Bivariate Type II MOP}{name=typeII,row=0,column=2,span=1}
+	{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{multicols}{2}
+  Given $r\in\N$, $\vec n = (n_1,\dots, n_r)\in\N^r$, $r$ $2$-dimensional measures $\mu_1, \dots, \mu_r$ and their respective matrix inner products defined in \eqref{eq:prodesc-matrix}, we define the type II multiple orthogonal polynomial vector as a monic polynomial vector $$\mathbb P_{\vec n} = \mathbb X_n + \displaystyle\sum_{k=0}^{n-1}G_{n,k} \mathbb X_k$$ which satisfies
+\begin{equation}
+    \label{eq:typeII-MOP-d-variables}
+    \prodesc{\mathbb P_{\vec n}}{\mathbb X_k}_j = 0, \ \ \ k=0,\dots,n_i-1, \ \ \ j=1,\dots,r.
+\end{equation}
+Since $G_{n,k}$ are matrices whose dimensions are $(n+1)\times (k+1)$, if we consider $\mathbb P_{\vec n}$ a vector of degree $n$ monic polynomials, then this matrices give us $\frac 1 2 n (n+1)^2 $ unknown coefficients. We want the system to have only one solution for a multi-index $\vec n$. Then, $\vec n$ is a valid multi-index if there exist a number $n\in\N_0$ such that:
+\begin{equation}
+    \label{eq:condition-type-ii}
+    n(n+1) = \sum_{j=1}^r n_j (n_j+1).
+\end{equation}
+This number $n$ is the degree of type II polynomials. In order to emphasise the degree of the polynomials, in the next sections we denote type II MOP as $\mathbb P_{\vec n}^n$.
+%\end{multicols}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{Valid multi-indices for $r=2, r=3$}{name=indices, below=bivariate-pols, row=1,column=0,span=2}
+{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Observe some of the valid multi-indices and their respective degree $n$ in the following table.
+
+    \begin{tabular}{|c|c|c|}
+    \hline
+    $n$ & $r=2$ indices & $r=3$ indices \\ \hline
+    $1$ & $(0,1), (1,0)$                           & $(0,0,0)$                                                                                                                                                                                                          \\ \hline
+    $2$ & $(0, 2), (2, 0)$                         & $(0, 0, 1), (0, 1, 0), (1, 0, 0)$                                                                                                                                                                                  \\ \hline
+    $0$ & $(0,0)$                                  & $(0, 0, 2), (0, 2, 0), (1, 1, 1), (2, 0, 0)$                                                                                                                                                                       \\ \hline
+    $3$ & $(0, 3), (2, 2), (3, 0)$                 & $(0, 0, 3), (0, 2, 2), (0, 3, 0), (2, 0, 2), (2, 2, 0), (3, 0, 0)$                                                                                                                                                 \\ \hline
+    $4$ & $(0, 4), (4, 0)$                         & $(0, 0, 4), (0, 4, 0), (1, 2, 3), (1, 3, 2), (2, 1, 3), (2, 3, 1), (3, 1, 2), (3, 2, 1), (4, 0, 0)$                                                                                                                \\ \hline
+    $5$ & $(0, 5), (5, 0)$                         & $(0, 0, 5), (0, 5, 0), (2, 3, 3), (3, 2, 3), (3, 3, 2), (5, 0, 0)$                                                                                                                                                 \\ \hline
+    $6$ & $(0, 6), (3, 5), (5, 3), (6, 0)$         & \begin{tabular}[c]{@{}c@{}}$(0, 0, 6), (0, 3, 5), (0, 5, 3), (0, 6, 0), (1, 4, 4), (2, 2, 5), (2, 5, 2), (3, 0, 5),$ \\ $(3, 5, 0), (4, 1, 4), (4, 4, 1), (5, 0, 3), (5, 2, 2), (5, 3, 0), (6, 0, 0)$\end{tabular} \\ \hline
+    $7$ & $(0, 7), (7, 0)$                         & \begin{tabular}[c]{@{}c@{}}$(0, 0, 7), (0, 7, 0), (1, 3, 6), (1, 6, 3), (2, 4, 5), (2, 5, 4), (3, 1, 6), (3, 6, 1),$ \\ $(4, 2, 5), (4, 5, 2), (5, 2, 4), (5, 4, 2), (6, 1, 3), (6, 3, 1), (7, 0, 0)$\end{tabular} \\ \hline
+    $8$ & $(0, 8), (5, 6), (6, 5), (8, 0)$         & \begin{tabular}[c]{@{}c@{}}$(0, 0, 8), (0, 5, 6), (0, 6, 5), (0, 8, 0), (3, 5, 5), (5, 0, 6), (5, 3, 5), (5, 5, 3),$ \\ $(5, 6, 0), (6, 0, 5), (6, 5, 0), (8, 0, 0)$\end{tabular}                                  \\ \hline
+    $9$ & $(0, 9), (9, 0)$                         & \begin{tabular}[c]{@{}c@{}}$(0, 0, 9), (0, 9, 0), (2, 3, 8), (2, 6, 6), (2, 8, 3), (3, 2, 8), (3, 8, 2), (5, 5, 5), (6, 2, 6),$ \\ $(6, 6, 2), (8, 2, 3), (8, 3, 2), (9, 0, 0)$\end{tabular}                       \\ \hline
+    \end{tabular}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{4. Bivariate Type I MOP}{name=typeI,below=typeII,row=1,column=2,span=1}
+{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Let $\vec n = (n_1,\dots,n_r)\in\N^r$ such that the condition \eqref{eq:condition-type-ii} holds for some $n\in\N$. Then, let $i\in\{1,\dots,n\}$ and, for each $j$, we define $A_{\vec n, j}^{(i)}(x,y)$, a bivariate polynomial of degree $\leq n_j-1$, ($j=1,\dots,r$). Now, given $r$ 2-dimensional measures $\mu_1,\dots,\mu_r$, the polynomials $A_{\vec n, 1}^{(i)}, \dots, A_{\vec n, r}^{(i)}$ satisfy
+\begin{equation}
+    \label{eq:first-condition-type-I}
+    \sum_{j=1}^r \prodesc{\mathbb X_k}{A_{\vec n,j}^{(i)}}_j = \left\{\begin{array}{ccl}
+        0_{(k+1)\times 1} &   \text{ if } & k=0,\dots,n-2 \\
+        (e_i)_{n\times 1}  & \text{ if } & k=n-1      
+    \end{array}\right.
+\end{equation}
+If we repeat this for every possible $i\in\{1,\dots,n\}$, we get $n$ lists of polynomials $A_{\vec n, j}^{(i)}$, $j=1,\dots,r, i=1,\dots,n$. Now, let us denote
+$$
+\mathbb A_{\vec n,j} = (A_{\vec n, j}^{(1)}, \dots, A_{\vec n, j}^{(n)})^t,
+$$
+a polynomial vector of size $n$ whose components are bivariate polynomials of degree less than or equal to $n_j-1$ ($j=1,\dots,r$). Thus, the polynomial vectors $\mathbb A_{\vec n,j}$ will satisfy:
+\begin{equation}
+    \label{eq:condition-type-I}
+    \sum_{j=1}^r \prodesc{\mathbb X_k}{\mathbb A_{\vec n,j}}_j = \left\{\begin{array}{ccl}
+        0_{(k+1)\times n} &   \text{ if } & k=0,\dots,n-2 \\
+        I_n & \text{ if } & k=n-1      
+    \end{array}\right.
+\end{equation}
+When the 2-dimensional measures are all absolutely continuous with respect to a common positive measure $\mu$ defined in $\Omega = \displaystyle\bigcup_{j=1}^r \Omega_j$ (with $\Omega_j=\supp(\mu_j)$), \textit{i.e.}, $d\mu_j = w_j(x,y)d\mu(x,y)$, ($j=1,\dots,r$), we can define the \textit{Type I function}:
+\begin{equation}
+    \label{eq:type-I-function-2-vars}
+    \mathbb Q_{\vec n} = \sum_{j=1}^r \mathbb A_{\vec n,j}w_j(x,y).
+\end{equation}
+Using this function, it is possible to rewrite \eqref{eq:condition-type-I} as
+\begin{equation}
+    \prodesc{\mathbb X_k}{\mathbb Q_{\vec n}}_\mu = \left\{\begin{array}{ccl}
+        0_{(k+1)\times n} &   \text{ if } & k=0,\dots,n-2 \\
+        I_n & \text{ if } & k=n-1.
+    \end{array}\right.     
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{5. Numerical example}{name=example,below=indices,column=0,span=1}
+{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Starting from the well-known Laguerre product polynomials and the generalisation to multiple orthogonality of classical Laguerre polynomials, we have implemented $\mathbb P_{(1,1,1)}^2$, a multiple orthogonal polynomial vector with respect to the measures given by $d\mu_j=x^{\alpha_j} y^{\beta_j} e^{-x-y} d(x,y)$ ($i=1,2,3$) and the multi-index $(1,1,1)$. We have choosen the values $$\alpha_1 = 0, \alpha_2 = 0.5, \alpha_3 = 1.3; \beta_1 = 0.8, \beta_2 = 0.4, \beta_3 = 2.1,$$ and got the polynomial vector 
+$$
+\mathbb P_{(1,1,1)}^2 = \begin{pmatrix}
+    x^2 + - 3.85556 x - 0.444444 y + 2.65556 \\ x y - 2.15556 x - 1.94444 y + 3.85556 \\  y^2 - 0.755556 x - 5.14444 y + 4.97556
+\end{pmatrix}
+$$
+\centering\includegraphics*[width=4cm]{EjemploLaguerre}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \headerbox{References}{name=references,column=0,row=3,below=example,span=2}{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\smaller
+\bibliographystyle{ieee}
+\renewcommand{\section}[2]{\vskip 0.05em}
+\begin{thebibliography}{1}\itemsep=-0.01em
+\setlength{\baselineskip}{0.4em}
+\bibitem{18}
+{\sc S. Barbero, A. Bradley, N. López-Gil, J. Rubinstein, and L. Thibos},
+{\em Catastrophe optics theory unveils the localised wave aberration features that generate ghost images},
+{\rm Ophthalmic Physiol Opt.} {\bf 42}(5) (2022) 1074-1091.
+\bibitem{xu}
+{\sc C. F. Dunkl and Y. Xu},
+{\em Orthogonal polynomials of several variables},
+{\rm 2nd edition, Encyclopedia of Mathematics and its Applications, vol. 155, Cambridge Univ. Press, Cambridge, 2014.}
+\bibitem{1}
+{\sc R. Navarro and M.A. Losada},
+{\em Shape of stars and optical quality of the human eye},
+{\rm J. Opt. Soc. Am. A} {\bf 14} (1997) 353-359.
+\bibitem{2}
+{\sc J. Rubinstein},
+{\em On the geometry of visual starbursts},
+{\rm J. Opt. Soc. Am. A} {\bf 36} (2019) B58–B64.
+\bibitem{3}
+{\sc R. Xu, L.N. Thibos, N. Lopez-Gil, P. Kollbaum, and A. Bradley},
+{\em Psychophysical study of the optical origin of starbursts},
+{\rm J. Opt. Soc. Am. A} {\bf 36} (2019) B97–B102.
+\bibitem{zer}
+{\sc F. Zernike},
+{\em Beugungstheorie des Schneidenverfahrens und Seiner Verbesserten Form, der Phasenkontrastmethode},
+{\rm Physica} {\bf 1} (1934)  689-704.
+\end{thebibliography}
+}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \headerbox{Acknowledgements}{name=acknowledgements,column=2,aligned=references}{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\noindent\hspace*{-5pt}
+%\begin{tabular}{p{0.8\textwidth}p{0.15\textwidth}}
+\small Universidad de Granada; IMAG-María de Maeztu, grant ``IMAG CEX2020--001105--M''; GOYA: ``Grupo de Ortogonalidad Y Aplicaciones'' and ``Departamento de Matemática Aplicada''.
+
+\noindent Universidad de Almería; TAPO: ``Teoría de Aproximación y Polinomios Ortogonales'' and ``Departamento de Matemáticas''.}
+
+\bigskip
+
+%& \hspace*{-5pt}
+\centerline{
+\includegraphics[height=0.73cm]{ugrH} \quad
+\includegraphics[height=0.73cm]{IMAG} \quad
+\includegraphics[height=0.73cm]{maeztu} \quad
+\includegraphics[height=0.73cm]{tapo.png}
+}
+%\end{tabular}
+
+}
+\end{poster}
+
+\end{document} 
