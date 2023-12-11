@@ -34,6 +34,7 @@
 
 \usepackage{wrapfig}
 
+
 \graphicspath{{images/}{../images/}}
 \usetikzlibrary{calc}
 
@@ -238,10 +239,10 @@ First, let us consider $r$ different real measures $\mu_1,\dots,\mu_r$ such that
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{2. Bivariate OP}{name=bivariate-pols, below=intro, row=1,column=0,span=2}
+\headerbox{2. Bivariate OP}{name=bivariate-pols, row=0,column=2,span=1}
 {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{multicols}{2}
+%\begin{multicols}{2}
 
   In order to work with bivariate polynomials, we will use the notation $\mathbb P_n$ as a column polynomial vector. Let us denote the vector of degree $j$ monomials as
   $$
@@ -258,30 +259,32 @@ First, let us consider $r$ different real measures $\mu_1,\dots,\mu_r$ such that
     \label{eq:prodesc-matrix}
     \prodesc{F}{G}:=\mathcal{L}_\mu[F\cdot G^T] = \int_\Omega F\cdot G^T d\mu = \left(\int_\Omega f_i\cdot g_j d\mu\right)_{i,j=1}^{n,m}.
   \end{equation}
-  In fact, we are applying the standard product $\prodesc{f_i}{g_j}_\mu$ or the functional $\mathcal L_\mu[f_i\cdot g_j]$ to each pair $i,j$ and placing the results in a matrix.
-  
-  Let $\{\mathbb{P}_n\}_{n\geq 0}$ be a system of polynomial vectors such that
-  $$
-  \prodesc{\mathbb P_n}{\mathbb P_k}_\mu = \mathcal{L}_\mu[\mathbb P_n \mathbb P_k^t]= \left\{\begin{array}{ccl}
-      0_{(n+1)\times(k+1)} &   \text{ if } & k=0,\dots,n-1 \\
-      S_n & \text{ if } & k=n.
-  \end{array}\right. 
-  $$
-  Where $S_n$ is a regular squared matrix of size $(n+1)\times (n+1)$.
-  Due to orthogonality, it is possible to give an equivalent condition:
-  \begin{equation}
-      \label{eq:prodesc-matrix-PX}
-      \prodesc{\mathbb P_n}{\mathbb X_k}_\mu = \mathcal{L}_\mu[\mathbb P_n \mathbb X_k^t]= \left\{\begin{array}{ccl}
-          0_{(n+1)\times(k+1)} &   \text{ if } & k=0,\dots,n-1 \\
-          S_n & \text{ if } & k=n.  
-      \end{array}\right. 
-  \end{equation}
-\end{multicols}
+
+%  In fact, we are applying the standard product $\prodesc{f_i}{g_j}_\mu$ or the functional $\mathcal L_\mu[f_i\cdot g_j]$ to each pair $i,j$ and placing the results in a matrix.
+%  
+%  Let $\{\mathbb{P}_n\}_{n\geq 0}$ be a system of polynomial vectors such that
+%  $$
+%  \prodesc{\mathbb P_n}{\mathbb P_k}_\mu = \mathcal{L}_\mu[\mathbb P_n \mathbb P_k^t]= \left\{\begin{array}{ccl}
+%      0_{(n+1)\times(k+1)} &   \text{ if } & k=0,\dots,n-1 \\
+%      S_n & \text{ if } & k=n.
+%  \end{array}\right. 
+%  $$
+%  Where $S_n$ is a regular squared matrix of size $(n+1)\times (n+1)$.
+%  Due to orthogonality, it is possible to give an equivalent condition:
+%  \begin{equation}
+%      \label{eq:prodesc-matrix-PX}
+%      \prodesc{\mathbb P_n}{\mathbb X_k}_\mu = \mathcal{L}_\mu[\mathbb P_n \mathbb X_k^t]= \left\{\begin{array}{ccl}
+%          0_{(n+1)\times(k+1)} &   \text{ if } & k=0,\dots,n-1 \\
+%          S_n & \text{ if } & k=n.  
+%      \end{array}\right. 
+%  \end{equation}
+
+%\end{multicols}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-\headerbox{3. Bivariate Type II MOP}{name=typeII,row=0,column=2,span=1}
+\headerbox{3. Bivariate Type II MOP}{name=typeII,below=intro, row=1,column=0,span=1}
 	{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{multicols}{2}
@@ -301,37 +304,13 @@ This number $n$ is the degree of type II polynomials. In order to emphasise the 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{Valid multi-indices for $r=2, r=3$}{name=indices, below=bivariate-pols, row=1,column=0,span=2}
+\headerbox{4. Bivariate Type I MOP}{name=typeI,below=bivariate-pols,row=1,column=1,span=2}
 {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Observe some of the valid multi-indices and their respective degree $n$ in the following table.
-
-    \begin{tabular}{|c|c|c|}
-    \hline
-    $n$ & $r=2$ indices & $r=3$ indices \\ \hline
-    $1$ & $(0,1), (1,0)$                           & $(0,0,0)$                                                                                                                                                                                                          \\ \hline
-    $2$ & $(0, 2), (2, 0)$                         & $(0, 0, 1), (0, 1, 0), (1, 0, 0)$                                                                                                                                                                                  \\ \hline
-    $0$ & $(0,0)$                                  & $(0, 0, 2), (0, 2, 0), (1, 1, 1), (2, 0, 0)$                                                                                                                                                                       \\ \hline
-    $3$ & $(0, 3), (2, 2), (3, 0)$                 & $(0, 0, 3), (0, 2, 2), (0, 3, 0), (2, 0, 2), (2, 2, 0), (3, 0, 0)$                                                                                                                                                 \\ \hline
-    $4$ & $(0, 4), (4, 0)$                         & $(0, 0, 4), (0, 4, 0), (1, 2, 3), (1, 3, 2), (2, 1, 3), (2, 3, 1), (3, 1, 2), (3, 2, 1), (4, 0, 0)$                                                                                                                \\ \hline
-    $5$ & $(0, 5), (5, 0)$                         & $(0, 0, 5), (0, 5, 0), (2, 3, 3), (3, 2, 3), (3, 3, 2), (5, 0, 0)$                                                                                                                                                 \\ \hline
-    $6$ & $(0, 6), (3, 5), (5, 3), (6, 0)$         & \begin{tabular}[c]{@{}c@{}}$(0, 0, 6), (0, 3, 5), (0, 5, 3), (0, 6, 0), (1, 4, 4), (2, 2, 5), (2, 5, 2), (3, 0, 5),$ \\ $(3, 5, 0), (4, 1, 4), (4, 4, 1), (5, 0, 3), (5, 2, 2), (5, 3, 0), (6, 0, 0)$\end{tabular} \\ \hline
-    $7$ & $(0, 7), (7, 0)$                         & \begin{tabular}[c]{@{}c@{}}$(0, 0, 7), (0, 7, 0), (1, 3, 6), (1, 6, 3), (2, 4, 5), (2, 5, 4), (3, 1, 6), (3, 6, 1),$ \\ $(4, 2, 5), (4, 5, 2), (5, 2, 4), (5, 4, 2), (6, 1, 3), (6, 3, 1), (7, 0, 0)$\end{tabular} \\ \hline
-    $8$ & $(0, 8), (5, 6), (6, 5), (8, 0)$         & \begin{tabular}[c]{@{}c@{}}$(0, 0, 8), (0, 5, 6), (0, 6, 5), (0, 8, 0), (3, 5, 5), (5, 0, 6), (5, 3, 5), (5, 5, 3),$ \\ $(5, 6, 0), (6, 0, 5), (6, 5, 0), (8, 0, 0)$\end{tabular}                                  \\ \hline
-    $9$ & $(0, 9), (9, 0)$                         & \begin{tabular}[c]{@{}c@{}}$(0, 0, 9), (0, 9, 0), (2, 3, 8), (2, 6, 6), (2, 8, 3), (3, 2, 8), (3, 8, 2), (5, 5, 5), (6, 2, 6),$ \\ $(6, 6, 2), (8, 2, 3), (8, 3, 2), (9, 0, 0)$\end{tabular}                       \\ \hline
-    \end{tabular}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{4. Bivariate Type I MOP}{name=typeI,below=typeII,row=1,column=2,span=1}
-{
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Let $\vec n = (n_1,\dots,n_r)\in\N^r$ such that the condition \eqref{eq:condition-type-ii} holds for some $n\in\N$. Then, let $i\in\{1,\dots,n\}$ and, for each $j$, we define $A_{\vec n, j}^{(i)}(x,y)$, a bivariate polynomial of degree $\leq n_j-1$, ($j=1,\dots,r$). Now, given $r$ 2-dimensional measures $\mu_1,\dots,\mu_r$, the polynomials $A_{\vec n, 1}^{(i)}, \dots, A_{\vec n, r}^{(i)}$ satisfy
+\begin{multicols}{2}
+  Let $\vec n = (n_1,\dots,n_r)\in\N^r$ such that the condition \eqref{eq:condition-type-ii} holds for some $n\in\N$. Then, let $i\in\{1,\dots,n\}$ and, for each $j$, we define $A_{\vec n, j}^{(i)}(x,y)$, a bivariate polynomial of degree $\leq n_j-1$, ($j=1,\dots,r$). Now, given $r$ 2-dimensional measures $\mu_1,\dots,\mu_r$, the polynomials $A_{\vec n, 1}^{(i)}, \dots, A_{\vec n, r}^{(i)}$ satisfy
 \begin{equation}
     \label{eq:first-condition-type-I}
     \sum_{j=1}^r \prodesc{\mathbb X_k}{A_{\vec n,j}^{(i)}}_j = \left\{\begin{array}{ccl}
@@ -363,12 +342,48 @@ Using this function, it is possible to rewrite \eqref{eq:condition-type-I} as
         I_n & \text{ if } & k=n-1.
     \end{array}\right.     
 \end{equation}
+
+Despite their differences, type I and type II MOP in two variables are equivalent.
+\begin{proposition}
+  \label{prop:existence}
+  Let $\vec n = (n_1,\dots,n_r)$ be a multi-index satisfying \eqref{eq:condition-type-ii} for $n\in\N_0$. Then the following statements are equivalent:
+  \begin{enumerate}
+      \item There exist a unique polynomials $(\mathbb A_{\vec n,1}, \dots, \mathbb A_{\vec n,r})$ of bivariate type I MOP.
+      \item There exist a unique bivariate type II multiple orthogonal polynomial $\mathbb P_{\vec n}^n$.
+  \end{enumerate}
+\end{proposition}
+We will say $\vec n$ is a \textbf{normal} multi-index if it satisfies the conditions of Proposition \ref{prop:existence}. A system $\mu_1,\dots,\mu_r$ of bivariate measures is \textbf{perfect} if every multi-index satisfying \eqref{eq:condition-type-ii} is normal.
+
+\end{multicols}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{5. Numerical example}{name=example,below=indices,column=0,span=1}
+\headerbox{Valid multi-indices for $r=2, r=3$}{name=indices, below=typeI, row=2,column=1,span=2}
+{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Observe some of the valid multi-indices and their respective degree $n$ in the following table.
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+    $n$ & $r=2$ indices & $r=3$ indices \\ \hline
+    $1$ & $(0,1), (1,0)$                           & $(0,0,0)$                                                                                                                                                                                                          \\ \hline
+    $2$ & $(0, 2), (2, 0)$                         & $(0, 0, 1), (0, 1, 0), (1, 0, 0)$                                                                                                                                                                                  \\ \hline
+    $0$ & $(0,0)$                                  & $(0, 0, 2), (0, 2, 0), (1, 1, 1), (2, 0, 0)$                                                                                                                                                                       \\ \hline
+    $3$ & $(0, 3), (2, 2), (3, 0)$                 & $(0, 0, 3), (0, 2, 2), (0, 3, 0), (2, 0, 2), (2, 2, 0), (3, 0, 0)$                                                                                                                                                 \\ \hline
+    $4$ & $(0, 4), (4, 0)$                         & $(0, 0, 4), (0, 4, 0), (1, 2, 3), (1, 3, 2), (2, 1, 3), (2, 3, 1), (3, 1, 2), (3, 2, 1), (4, 0, 0)$                                                                                                                \\ \hline
+    $5$ & $(0, 5), (5, 0)$                         & $(0, 0, 5), (0, 5, 0), (2, 3, 3), (3, 2, 3), (3, 3, 2), (5, 0, 0)$                                                                                                                                                 \\ \hline
+    $6$ & $(0, 6), (3, 5), (5, 3), (6, 0)$         & \begin{tabular}[c]{@{}c@{}}$(0, 0, 6), (0, 3, 5), (0, 5, 3), (0, 6, 0), (1, 4, 4), (2, 2, 5), (2, 5, 2), (3, 0, 5),$ \\ $(3, 5, 0), (4, 1, 4), (4, 4, 1), (5, 0, 3), (5, 2, 2), (5, 3, 0), (6, 0, 0)$\end{tabular} \\ \hline
+    $7$ & $(0, 7), (7, 0)$                         & \begin{tabular}[c]{@{}c@{}}$(0, 0, 7), (0, 7, 0), (1, 3, 6), (1, 6, 3), (2, 4, 5), (2, 5, 4), (3, 1, 6), (3, 6, 1),$ \\ $(4, 2, 5), (4, 5, 2), (5, 2, 4), (5, 4, 2), (6, 1, 3), (6, 3, 1), (7, 0, 0)$\end{tabular} \\ \hline
+    \end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{5. Numerical example}{name=example,below=typeII,column=0,span=1}
 {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Starting from the well-known Laguerre product polynomials and the generalisation to multiple orthogonality of classical Laguerre polynomials, we have implemented $\mathbb P_{(1,1,1)}^2$, a multiple orthogonal polynomial vector with respect to the measures given by $d\mu_j=x^{\alpha_j} y^{\beta_j} e^{-x-y} d(x,y)$ ($i=1,2,3$) and the multi-index $(1,1,1)$. We have choosen the values $$\alpha_1 = 0, \alpha_2 = 0.5, \alpha_3 = 1.3; \beta_1 = 0.8, \beta_2 = 0.4, \beta_3 = 2.1,$$ and got the polynomial vector 
@@ -383,9 +398,64 @@ $$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{6. Biorthogonality}{name=biorthogonality,below=example,row=3,column=0,span=1}
+{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+There is an orthogonality relation between type I and type II MOP:
+\begin{theorem}
+  \label{th:biorthogonality}
+  Let $\mu_1,\dots,\mu_r$ be a perfect system of $r$ 2-dimensional measures. Given $\vec n, \vec m$, both satisfying \eqref{eq:condition-type-ii} for $n$ and $m$, respectively, the following biorthogonality holds for type I and type II MOP:
+  \begin{equation}
+      \prodesc{\mathbb P_{\vec n}^n}{\mathbb Q_{\vec m}} = \left\{\begin{array}{ccl}
+          0_{(n+1)\times m} &   \text{ if } & \vec m \leq \vec n \\
+          0_{(n+1)\times m} &   \text{ if } &  n \leq m -2 \\
+          I_{n+1} & \text{ if } & n=m-1 
+      \end{array}\right.   
+  \end{equation}
+\end{theorem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{7. Nearest Neighbor Relation}{name=NNR,below=indices,row=3,column=1,span=1}
+{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{multicols}{2}
+  In univariate MOP, the nearest neighbor relation is a generalisation of the TTRR satisfied by any OPS. This is a extension to bivariate MOP.
+\begin{theorem} 
+  Let $\mu_1,\dots,\mu_r$ be a perfect system of 2-dimensional measures. Let $\vec n\in \N^r$ be a multi-index satisfying \eqref{eq:condition-type-ii} for $n\in\N$ and let us consider a path $\{\overrightarrow{m}_k:k=0,\dots,n+1\}$ where $\overrightarrow{m}_0=\vec 0, \overrightarrow{m}_n = \vec n$, each $\overrightarrow{m}_k$ satisfy \eqref{eq:condition-type-ii} for $k$ and $\overrightarrow{m}_k \leq \overrightarrow m_{k+1}$ for $k=0,\dots,n$. Then, there exist matrices $A_0,\dots,A_r$ of sizes $(n+1)\times(n-j+1)$,  $(j=0,\dots,r)$ such that
+  \begin{equation}
+      \label{eq:nearest-neighbor}
+      x\mathbb P_{\vec n}^n = L_{{n+1},1} \mathbb P_{\overrightarrow{m}_{n+1}}^{n+1} + A_0 \mathbb P_{\vec n}^n + \sum_{j=1}^r A_j \mathbb P_{\overrightarrow{m}_{n-j}}^{n-j},
+  \end{equation}
+  where $L_{n+1,1}=(I_{n+1}|0_{(n+1)\times 1})$. In addition, $A_j = \prodesc{x\mathbb P_{\vec n}^n}{\mathbb Q_{\overrightarrow{m}_{n-j+1}}}$.
+\end{theorem}
+%\end{multicols}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{8. Future research topics }{name=future,below=indices,row=3,column=2,span=1}
+{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{multicols}{2}
+  Multiple Orthogonal Polynomials is a theory that is currently being widely researched. At this moment, we have generalised to the bivariate some of the main univariate results. But there are still many results and applications to generalise:
+  \begin{itemize}
+    \item Find a Nearest Neighbor Relation for more general paths and other types of Nearest Neighbor Relations.
+    \item Christoffel-Darboux formula.
+    \item Look for applications to Hermite-Padé approximants and random matrices.
+    \item Generalise existing examples to the bivariate case: Jacobi-Piñeiro, Jacobi-Angelesco, OP defined in the Simplex, etc.
+    \item Extend all this theory to $d$ variables.
+    \item \dots
+  \end{itemize}
+%\end{multicols}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+}
 
 
 
@@ -424,37 +494,29 @@ $$
 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \headerbox{References}{name=references,column=0,row=3,below=example,span=2}{
+   \headerbox{References}{name=references,column=0,row=3,below=NNR,span=2}{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \smaller
 \bibliographystyle{ieee}
 \renewcommand{\section}[2]{\vskip 0.05em}
 \begin{thebibliography}{1}\itemsep=-0.01em
 \setlength{\baselineskip}{0.4em}
-\bibitem{18}
-{\sc S. Barbero, A. Bradley, N. López-Gil, J. Rubinstein, and L. Thibos},
-{\em Catastrophe optics theory unveils the localised wave aberration features that generate ghost images},
-{\rm Ophthalmic Physiol Opt.} {\bf 42}(5) (2022) 1074-1091.
 \bibitem{xu}
 {\sc C. F. Dunkl and Y. Xu},
 {\em Orthogonal polynomials of several variables},
 {\rm 2nd edition, Encyclopedia of Mathematics and its Applications, vol. 155, Cambridge Univ. Press, Cambridge, 2014.}
-\bibitem{1}
-{\sc R. Navarro and M.A. Losada},
-{\em Shape of stars and optical quality of the human eye},
-{\rm J. Opt. Soc. Am. A} {\bf 14} (1997) 353-359.
-\bibitem{2}
-{\sc J. Rubinstein},
-{\em On the geometry of visual starbursts},
-{\rm J. Opt. Soc. Am. A} {\bf 36} (2019) B58–B64.
+\bibitem{Walter}
+{\sc W. van Assche},
+{\em Orthogonal and multiple orthogonal polynomials, random matrices, and painlevé equations}, in 
+{\rm ``Orthogonal Polynomials'' (M. Foupouagnigni, W. Koepf, eds), Tutorials, Schools and Workshops in the Mathematical Sciences, Springer Nature Switzerland} (2020) 629--683.
+\bibitem{ismail}
+{\sc M. E. H. Ismail and W. van Assche},
+{\em Classical and quantum orthogonal polynomials in one variable},
+{\rm Cambridge University Press, Encyclopedia of mathematics and its applications} {\bf 98} (2005).
 \bibitem{3}
-{\sc R. Xu, L.N. Thibos, N. Lopez-Gil, P. Kollbaum, and A. Bradley},
-{\em Psychophysical study of the optical origin of starbursts},
-{\rm J. Opt. Soc. Am. A} {\bf 36} (2019) B97–B102.
-\bibitem{zer}
-{\sc F. Zernike},
-{\em Beugungstheorie des Schneidenverfahrens und Seiner Verbesserten Form, der Phasenkontrastmethode},
-{\rm Physica} {\bf 1} (1934)  689-704.
+{\sc A. Martínez-Finkelshtein, W. van Assche},
+{\em What is \dots a multiple orthogonal polynomial?},
+{\rm Notices of the American Mathematical Society} {\bf 63} (2016) 1029--1031.
 \end{thebibliography}
 }
 %
