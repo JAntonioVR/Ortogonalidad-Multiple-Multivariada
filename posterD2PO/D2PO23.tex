@@ -289,7 +289,7 @@ First, let us consider $r$ different real measures $\mu_1,\dots,\mu_r$ such that
 	{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{multicols}{2}
-  Given $r\in\N$, $\vec n = (n_1,\dots, n_r)\in\N^r$, $r$ $2$-dimensional measures $\mu_1, \dots, \mu_r$ and their respective matrix inner products defined in \eqref{eq:prodesc-matrix}, we define the type II multiple orthogonal polynomial vector as a monic polynomial vector $$\mathbb P_{\vec n} = \mathbb X_n + \displaystyle\sum_{k=0}^{n-1}G_{n,k} \mathbb X_k$$ which satisfies
+  Given $r\in\N$, $\vec n = (n_1,\dots, n_r)\in\N^r$, $r$ $2$-dimensional measures $\mu_1, \dots, \mu_r$ and their respective matrix inner products defined in \eqref{eq:prodesc-matrix}, we define the \textbf{bivariate type II multiple orthogonal polynomial vector} as a monic polynomial vector $$\mathbb P_{\vec n} = \mathbb X_n + \displaystyle\sum_{k=0}^{n-1}G_{n,k} \mathbb X_k$$ which satisfies
 \begin{equation}
     \label{eq:typeII-MOP-d-variables}
     \boxed{
@@ -320,7 +320,7 @@ This number $n$ is the degree of type II polynomials. In order to emphasise the 
         (e_i)_{n\times 1}  & \text{ if } & k=n-1      
     \end{array}\right.
 \end{equation}
-If we repeat this for every possible $i\in\{1,\dots,n\}$, we get $n$ lists of polynomials $A_{\vec n, j}^{(i)}$, $j=1,\dots,r, i=1,\dots,n$. Now, let us denote
+If we repeat this for every possible $i\in\{1,\dots,n\}$, we get $n$ lists of polynomials $A_{\vec n, j}^{(i)}$, $j=1,\dots,r, i=1,\dots,n$. Now, let us denote the \textbf{bivariate type I multiple orthogonal polynomial vectors} as
 $$
 \mathbb A_{\vec n,j} = (A_{\vec n, j}^{(1)}, \dots, A_{\vec n, j}^{(n)})^t,
 $$
@@ -371,9 +371,9 @@ Observe some of the valid multi-indices which satisfy \eqref{eq:condition-type-i
     \begin{tabular}{|c|c|c|}
     \hline
     $n$ & $r=2$ indices & $r=3$ indices \\ \hline
-    $1$ & $(0,1), (1,0)$                           & $(0,0,0)$                                                                                                                                                                                                          \\ \hline
-    $2$ & $(0, 2), (2, 0)$                         & $(0, 0, 1), (0, 1, 0), (1, 0, 0)$                                                                                                                                                                                  \\ \hline
-    $0$ & $(0,0)$                                  & $(0, 0, 2), (0, 2, 0), (1, 1, 1), (2, 0, 0)$                                                                                                                                                                       \\ \hline
+    $1$ & $(0,0)$                                & $(0,0,0)$                                                                                                                                                                                                          \\ \hline
+    $2$ & $(0,1), (1,0)$                         & $(0, 0, 1), (0, 1, 0), (1, 0, 0)$                                                                                                                                                                                  \\ \hline
+    $0$ & $(0, 2), (2, 0)$                        & $(0, 0, 2), (0, 2, 0), (1, 1, 1), (2, 0, 0)$                                                                                                                                                                       \\ \hline
     $3$ & $(0, 3), (2, 2), (3, 0)$                 & $(0, 0, 3), (0, 2, 2), (0, 3, 0), (2, 0, 2), (2, 2, 0), (3, 0, 0)$                                                                                                                                                 \\ \hline
     $4$ & $(0, 4), (4, 0)$                         & $(0, 0, 4), (0, 4, 0), (1, 2, 3), (1, 3, 2), (2, 1, 3), (2, 3, 1), (3, 1, 2), (3, 2, 1), (4, 0, 0)$                                                                                                                \\ \hline
     $5$ & $(0, 5), (5, 0)$                         & $(0, 0, 5), (0, 5, 0), (2, 3, 3), (3, 2, 3), (3, 3, 2), (5, 0, 0)$                                                                                                                                                 \\ \hline
@@ -525,7 +525,7 @@ There is a relation between type I and type II MOP:
 %
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \headerbox{Acknowledgements}{name=acknowledgements,column=2,aligned=references}{
+    \headerbox{Acknowledgements}{name=acknowledgements,column=2,below=future}{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {\noindent\hspace*{-5pt}
 %\begin{tabular}{p{0.8\textwidth}p{0.15\textwidth}}
