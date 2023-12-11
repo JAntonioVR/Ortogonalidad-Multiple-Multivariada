@@ -168,14 +168,14 @@ On the other hand, if we consider the type II polynomial as:
 $$
 P_{\vec n} = x^{|\vec n|} + a_{|\vec n|-1} x^{|\vec n|-1} + \cdots + a_1 x + a_0
 $$
-and apply the conditions \eqref{eq:typeII-MOP}, we get another linear system with $|\vec n|$ equations and $|\vec n|$ unknown coefficients. In fact, the coefficients matrix of this linear system is $A^t$, the transpose matrix of the type I MOP. Thus, we have the following result.
+and apply the conditions \eqref{eq:typeII-MOP}, we get another linear system with $|\vec n|$ equations and $|\vec n|$ unknown coefficients. In fact, the coefficient matrix of this linear system is $A^t$, the transpose matrix of the type I MOP. Thus, we have the following result.
 
 \begin{proposition}
     \label{prop:existence-of-MOP}
     Given a multi-index $\vec n\in\N^r$ and $r$ positive measures, $\mu_1,\dots,\mu_r$, the following statements are equivalent:
     \begin{enumerate}
-        \item There exist an unique vector $(A_{\vec n,1}, \dots, A_{\vec n,r})$ of type I MOP.
-        \item There exist an unique type II multiple orthogonal polynomial $P_{\vec n}$.
+        \item There exist a unique vector $(A_{\vec n,1}, \dots, A_{\vec n,r})$ of type I MOP.
+        \item There exist a unique type II multiple orthogonal polynomial $P_{\vec n}$.
         \item The matrix $A$ defined in \eqref{eq:MOP-matrix} is regular.
     \end{enumerate}
 \end{proposition}
@@ -252,7 +252,7 @@ Due to orthogonality, it is possible to give an equivalent condition:
         S_n & \text{ if } & k=n      
     \end{array}\right. 
 \end{equation}
-Then, $\{\mathbb{P}_n\}_{n\geq 0}$ is called a system of orthogonal polynomials with respect to the measure $\mu$ or the functional $\mathcal L_\mu$. Further information about this topic available in \cite[Ch. III, Section 3.2]{dunkl_xu_2014}.
+Then, $\{\mathbb{P}_n\}_{n\geq 0}$ is called a system of orthogonal polynomials with respect to the measure $\mu$ or the functional $\mathcal L_\mu$. Further information about this topic is available in \cite[Ch. III, Section 3.2]{dunkl_xu_2014}.
 
 \section{Type II MOP in several variables}
 
@@ -265,7 +265,7 @@ Note the similarity between conditions \eqref{eq:typeII-MOP-dot} and \eqref{eq:t
 
 As mencioned above, in the univariate multiple orthogonality, $\deg(P_{\vec n})=|\vec n|$. The main reason why this happens is because the condition $\prodesc{P_{\vec n}}{x^k}=0$ is a linear equation (only one). Hence, we are looking for a polynomial with $|\vec n|$ unknown coefficients and we have $|\vec n|$ linear equations deduced from conditions \eqref{eq:typeII-MOP-dot}. Then, it is possible to build a system of linear equations with coefficient matrix $A^t$ given in \eqref{eq:MOP-matrix}.
 
-If we work with $d$ variables, attending to \eqref{eq:prodesc-matrix-PX}, remember the result of $\prodesc{\mathbb P_{\vec n}}{\mathbb X_k}$ is a matrix of size $r_n^d\times r_k^d$. Then, equation $\prodesc{\mathbb P_{\vec n}}{\mathbb X_k}_i = 0$ gives us $r_n^d\times r_k^d$ linear equations.
+If we work with $d$ variables, attending to \eqref{eq:prodesc-matrix-PX}, $\prodesc{\mathbb P_{\vec n}}{\mathbb X_k}$ is a matrix of size $r_n^d\times r_k^d$. Then, equation $\prodesc{\mathbb P_{\vec n}}{\mathbb X_k}_i = 0$ gives us $r_n^d\times r_k^d$ linear equations.
 
 Now, the question is: How many linear equations is it possible to get from a multi-index $\vec n =(n_1, \dots, n_r)$? The answer to this problem is easy since, if we fix $j\in\{1,\dots,r\}$:
 \begin{itemize}
@@ -280,7 +280,7 @@ If we collect all the equations, we obtain $r_n^d\cdot\displaystyle\sum_{k=0}^{n
     r_n^d \sum_{j=1}^r \sum_{k=0}^{n_j-1} r_k^d.
 \end{equation}
 
-On the other hand, since $\mathbb P_{\vec n} = \mathbb X_n + \displaystyle\sum_{k=0}^{n-1}G_{n,k} \mathbb X_k$, where $G_{n,k}$ are matrices whose dimensions are $r^d_n\times r^d_k$, if we consider $\mathbb P_{\vec n}$ a vector of degree $n$ monic polynomials, then this matrices give us $\displaystyle\sum_{k=0}^{n-1}r^d_n r^d_k=r^d_n\displaystyle\sum_{k=0}^{n-1} r^d_k$ unknown coefficients.
+On the other hand, since $\mathbb P_{\vec n} = \mathbb X_n + \displaystyle\sum_{k=0}^{n-1}G_{n,k} \mathbb X_k$, where $G_{n,k}$ are matrices of dimensions $r^d_n\times r^d_k$, if we consider $\mathbb P_{\vec n}$ a vector of degree $n$ monic polynomials, then this matrices give us $\displaystyle\sum_{k=0}^{n-1}r^d_n r^d_k=r^d_n\displaystyle\sum_{k=0}^{n-1} r^d_k$ unknown coefficients.
 
 If we want this system to have only one solution for a multi-index $\vec n$. Then, $\vec n$ is a valid multi-index if there exist a number $n\in\N_0$ such that:
 \begin{equation}
@@ -296,7 +296,7 @@ From now on, we will assume $d=2$ and $x:=x_1, y:=x_2$. Notice that, in the bidi
     n(n+1)=\sum_{j=1}^r n_j (n_j+1).
 \end{equation} 
 
-Observe some of the valid multi-indices and their respective degree $n$ in tables \ref{tab:2measuresindices} and \ref{tab:3measuresindices}.
+Observe some of the valid multi-indices and their respective degree $n$ in tables \ref{tab:2measuresindices} and \ref{tab:3measuresindices}, and a visual representation of some of them when $r=2$ and $r=3$ in figure \ref{fig:indices}.
 
 \begin{table}[h]
     \centering
@@ -337,8 +337,6 @@ Observe some of the valid multi-indices and their respective degree $n$ in table
     \caption{Valid multi-indices when using $r=3$ measures}
     \label{tab:3measuresindices}
     \end{table}
-
-    Check this visual representation of some valid multi-indices when $r=2$ and $r=3$.
     
     \begin{figure}[h]
         \centering\begin{tabular}{cc}
@@ -352,11 +350,11 @@ Observe some of the valid multi-indices and their respective degree $n$ in table
 
 \section{Type I MOP in two variables}
 
-Remember type I multiple orthogonal polynomials in definition \ref{def:typeI-univar}. Given $\vec n =(n_1,\dots,n_r)$, it consists of a polynomial list $(A_{\vec n,1},\dots,A_{\vec n, r})$ where $\deg(A_{\vec n,j})\leq n_j-1$ ($j=1,\dots,r$) and polynomials satisfy \eqref{eq:typeI-MOP} and \eqref{eq:typeI-MOP-normalization}. This two conditions can be also expresed in a more compact way if we use the inner products, see \eqref{eq:typeI-MOP-dot}.
+Let us recall type I multiple orthogonal polynomials in Definition \ref{def:typeI-univar}. Given $\vec n =(n_1,\dots,n_r)$, it consists of a polynomial list $(A_{\vec n,1},\dots,A_{\vec n, r})$ where $\deg(A_{\vec n,j})\leq n_j-1$ ($j=1,\dots,r$) and polynomials $A_{\vec n,j}$ satisfy \eqref{eq:typeI-MOP} and \eqref{eq:typeI-MOP-normalization}. These two conditions can be also expresed in a more compact way if we use the inner products, see \eqref{eq:typeI-MOP-dot}.
 
 In order to generalize this type of orthogonality, the first problem is the sum located in orthogonality condition. This forces us to define polynomials, or polynomial vectors $\mathbb A_{\vec n, j}$, of the same size. If these vectors had different size, it would not be possible to make the sum. This makes impossible to consider $\mathbb A_{\vec n,j}$ a vector of degree $\leq n_j-1$ polynomials, with size $n_j$. The solution to this problem will be explained below.
 
-Let $\vec n = (n_1,\dots,n_r)\in\N^r$ such that the condition \eqref{eq:condition-type-ii} holds for some $n\in\N$. Then, let $i\in\{1,\dots,n\}$ and, for each $j$, the polynomial $$A_{\vec n, j}^{(i)}(x,y) = g_{n_j-1,n_j-1}^t \mathbb X_{n_j-1} + g_{n_j-1,n_j-2}^t \mathbb X_{n_j-2} + \cdots + g_{n_j-1,0}^t \mathbb X_{0},$$ where $g_{n_j-1,k}\in\R^{k+1}$, ($k=0,\dots,n_j-1$) is a bivariate polynomial such that $\deg A_{\vec n, j}^{(i)} \leq n_j-1$, ($j=1,\dots,r$). Now, given $r$ 2-dimensional measures $\mu_1,\dots,\mu_r$, we will force the polynomials $A_{\vec n, 1}^{(i)}, A_{\vec n, 2}^{(i)}, \dots, A_{\vec n, r}^{(i)}$ to satisfy the first type I multiple orthogonality condition:
+Let $\vec n = (n_1,\dots,n_r)\in\N^r$ such that the condition \eqref{eq:condition-type-ii} holds for some $n\in\N$. Then, let $i\in\{1,\dots,n\}$ and, for each $j$, the polynomial $$A_{\vec n, j}^{(i)}(x,y) = g_{n_j-1,n_j-1}^t \mathbb X_{n_j-1} + g_{n_j-1,n_j-2}^t \mathbb X_{n_j-2} + \cdots + g_{n_j-1,0}^t \mathbb X_{0}$$ with $g_{n_j-1,k}\in\R^{k+1}$ ($k=0,\dots,n_j-1$), is a bivariate polynomial such that $\deg A_{\vec n, j}^{(i)} \leq n_j-1$, ($j=1,\dots,r$). Now, given $r$ 2-dimensional measures $\mu_1,\dots,\mu_r$, we will force the polynomials $A_{\vec n, 1}^{(i)}, A_{\vec n, 2}^{(i)}, \dots, A_{\vec n, r}^{(i)}$ to satisfy the first type I multiple orthogonality condition:
 
 \begin{equation}
     \label{eq:first-condition-type-I}
@@ -412,7 +410,7 @@ Using this function, it is possible to rewrite \eqref{eq:condition-type-I} as
         I_n & \text{ if } & k=n-1.
     \end{array}\right.     
 \end{equation}
-We will often remove the sub-index $\mu$ from $\prodesc{\cdot}{\cdot}_\mu$, assuming the product uses the common measure.
+We will often remove the sub-index $\mu$ from $\prodesc{\cdot}{\cdot}_\mu$, assuming that the product uses the common measure.
 
 As we can see, the bivariate case reduces the number of multi-indices $(n_1,\dots,n_r)$ which it is possible to create multiple orthogonal polynomials with. Whereas in univariate case it is possible to question existence of MOP for every $\vec n\in \N^r$, in the bivariate case only some of the multi-indices can give us MOP, those such that there exist $n\in\N$ with $n(n+1)=\displaystyle\sum_{j=1}^r n_j (n_j+1)$. Given a valid $\vec n\in\N^r$, we will say it is \textbf{normal} if it is possible to calculate its type II polynomial $\mathbb P_{\vec n}^n$ and its type I polynomials $\mathbb A_{\vec n,j}$ ($j=1,\dots,r$). The system of 2-dimensional measures $\mu_1,\dots,\mu_r$ will be called \textbf{perfect} if every valid multi-index is normal.
 
@@ -428,7 +426,7 @@ We are going to show you the first example of type II bivariate multiple orthogo
 In order that all multi-indices to be normal we need to have $\alpha_j>-1$ and $\alpha_j- \alpha_i\not\in\Z$ whenever $i\neq j$. On the other hand, bivariate product Laguerre polynomials \cite[Ch. II, Section 2.2]{dunkl_xu_2014} are orthogonal with respect to the bidimensional weight function
 $$w(x,y)=x^\alpha y^\beta e^{-x-y}, \ \ \ \alpha,\beta>-1.$$ 
 
-Following this two approaches, we present an example with $r=3$. Let $\vec\alpha=(\alpha_1,\alpha_2,\alpha_3)$, $\vec\beta=(\beta_1,\beta_2,\beta_3)$ such that $\alpha_j,\beta_j > -1$ and any possible pair $\alpha_i,\beta_j$ satisfies $\alpha_i-\beta_j\not\in\Z$, and  $\alpha_j- \alpha_i\not\in\Z$, $\beta_j- \beta_i\not\in\Z$ whenever $i\neq j$ (any difference between different parameters is not an integer). We consider the following system of 2-dimensional measures such that $d\mu_j$ is given by:
+Following this two approaches, we present an example with $r=3$. Let $\vec\alpha=(\alpha_1,\alpha_2,\alpha_3)$, $\vec\beta=(\beta_1,\beta_2,\beta_3)$ such that $\alpha_j,\beta_j > -1$ and any possible pair $\alpha_i,\beta_j$ satisfies $\alpha_i-\beta_j\not\in\Z$, and  $\alpha_j- \alpha_i\not\in\Z$, $\beta_j- \beta_i\not\in\Z$ whenever $i\neq j$ (any difference between different parameters is not an integer). We consider the following system of 2-dimensional measures:
 \begin{align}
     d\mu_1(x,y) &= x^{\alpha_1} y^{\beta_1} e^{-x-y} d(x,y), & d\mu_2(x,y) &= x^{\alpha_2} y^{\beta_2} e^{-x-y} d(x,y),
 \end{align}
@@ -441,7 +439,7 @@ $$
 \end{pmatrix}
 $$
 
-In the following images it is possible to see a graphic plot of the 3 polynomials of vector $\mathbb P_{(1,1,1)}^2$:
+In the following images it is possible to see a plot of the 3 polynomials of vector $\mathbb P_{(1,1,1)}^2$ in figure \ref{fig:example} and a picture representing all three polynomials together in figure \ref{fig:example-2}.
 \begin{figure}[h]
     \centering\begin{tabular}{ccc}
       \includegraphics[width=4.5cm]{./img/laguerre1.png} & 
@@ -452,9 +450,6 @@ In the following images it is possible to see a graphic plot of the 3 polynomial
     \caption{Graphic representation of $\mathbb P_{(1,1,1)}^2$}
     \label{fig:example}
   \end{figure}
-
-  Check this picture representing all three polynomials together:
-
   \begin{figure}[h]
     \centering\includegraphics[width=5cm]{./img/EjemploLaguerre.png}
     \caption{$\mathbb P_{(1,1,1)}^2$ polynomials together}
@@ -463,7 +458,7 @@ In the following images it is possible to see a graphic plot of the 3 polynomial
 
 \section{Biorthogonality}
 
-Let $\mu_1,\dots,\mu_r$ be a perfect system of $r$ 2-dimensional measures. In this section, we will explain an orthogonality relation between type I and type II MOP. Check the preceding univariate result in \cite[Theorem 23.1.6]{Ismail}.
+Let $\mu_1,\dots,\mu_r$ be a perfect system of $r$ 2-dimensional measures. In this section, we will explain an orthogonality relation between type I and type II MOP. Analogous results for the univariate case are available in \cite[Theorem 23.1.6]{Ismail}.
 
 \begin{theorem}
     \label{th:biorthogonality}
@@ -484,7 +479,7 @@ Let $\mu_1,\dots,\mu_r$ be a perfect system of $r$ 2-dimensional measures. In th
     \begin{itemize}
         \item Assume $\vec m \leq \vec n$, this means $m_j \leq n_j \ \ \forall j\in\{1,\dots,r\}$. Then, remember $\mathbb{A}_{\vec m,j}$ is a vector of polynomials of degree less than or equal to $m_j-1 < n_j$ for every $j\in\{1,\dots,r\}$ and $\prodesc{\mathbb P_{\vec n}^n}{\mathbb Q_{\vec m}} =0$ follows from type II orthogonality conditions \eqref{eq:typeII-MOP-2vars}.
         \item  If $n\leq m-2$, then each polynomial of $\mathbb P_{\vec n}^n$ is a linear combination of $\mathbb X_{n-2},\dots,\mathbb X_1,\mathbb X_0$. Then, type I orthogonality conditions \eqref{eq:condition-type-I} for $0\leq k\leq n-2$ shows $\prodesc{\mathbb P_{\vec n}^n}{\mathbb Q_{\vec m}} =0$.
-        \item Finally, if $m=n+1$, then $\mathbb P_{\vec n}^n$ is a vector of degree $m-1$ polynomials. So, $\mathbb P_{\vec n}^n = \mathbb X_{m-1} + \displaystyle\sum_{k=0}^{m-2} G_{k} \mathbb X_{k}$. Because of the previous item, we have
+        \item Finally, if $m=n+1$, then $\mathbb P_{\vec n}^n$ is a vector of degree $m-1$ polynomials. So, $\mathbb P_{\vec n}^n = \mathbb X_{m-1} + \displaystyle\sum_{k=0}^{m-2} G_{k} \mathbb X_{k}$. Due to the previous item, we have
         $$
         \prodesc{\mathbb P_{\vec n}^{m-1}}{\mathbb Q_{\vec m}} = \sum_{j=1}^r \prodesc{\mathbb{P}_{\vec n}^{m-1}}{\mathbb A_{\vec m, j}}_j = \sum_{j=1}^r \prodesc{\mathbb X_{m-1}}{\mathbb A_{\vec m, j}}_j = I_m = I_{n+1},
         $$
@@ -492,7 +487,7 @@ Let $\mu_1,\dots,\mu_r$ be a perfect system of $r$ 2-dimensional measures. In th
     \end{itemize}
 \end{proof}
 
-Observe that the first item emphasises the components of multi-indices $\vec n$ and $\vec m$, while the last two items are true for any two multi-indices with degree $n$ and $m$ whatever their components be.
+Observe that the first item emphasises the components of multi-indices $\vec n$ and $\vec m$, while the last two items are true for any two multi-indices with degree $n$ and $m$ whatever their components are.
 
 This result, which is a two-dimensional extension of \cite[Theorem 23.1.6]{Ismail}, will be very useful in order to prove the next result.
 
@@ -505,60 +500,59 @@ $$
 The nearest Neighbor Recurrence Relation, in univariate multiple orthogonality, extends this result, allowing us to express a type II polynomial multiplied by $x$: $xP_{\vec n}$ as a linear combination of the polynomial itself, $P_{\vec n}$, a beyond neighbor, \textit{i.e.} $P_{\vec n + e_k}$ and $r$ above neighbors, see \cite[Theorem 23.1.7]{Ismail}. We are going to give a proof of a first generalization to bivariate MOP of this result. 
 
 \begin{theorem} 
-    Let $\mu_1,\dots,\mu_r$ be a perfect system of 2-dimensional measures. Let $\vec n\in \N^r$ be a multi-index satisfying \eqref{eq:condition-type-ii} for $n\in\N$ and let us consider a path $\{\overrightarrow{m_k}:k=0,\dots,n+1\}$ where $\overrightarrow{m_0}=\vec 0, \overrightarrow{m_n} = \vec n$, each $\overrightarrow{m_k}$ satisfy \eqref{eq:condition-type-ii} for $k$ and $\overrightarrow{m_k} \leq \overrightarrow{m_{k+1}}$ for $k=0,\dots,n$. Then, there exist matrices $A_0,\dots,A_r$ of sizes $(n+1)\times(n-j+1)$,  $(j=0,\dots,r)$ such that
+    Let $\mu_1,\dots,\mu_r$ be a perfect system of 2-dimensional measures. Let $\vec n\in \N^r$ be a multi-index satisfying \eqref{eq:condition-type-ii} for $n\in\N$ and let us consider a path $\{\overrightarrow{m}_k:k=0,\dots,n+1\}$ where $\overrightarrow{m}_0=\vec 0, \overrightarrow{m}_n = \vec n$, each $\overrightarrow{m}_k$ satisfy \eqref{eq:condition-type-ii} for $k$ and $\overrightarrow{m}_k \leq \overrightarrow m_{k+1}$ for $k=0,\dots,n$. Then, there exist matrices $A_0,\dots,A_r$ of sizes $(n+1)\times(n-j+1)$,  $(j=0,\dots,r)$ such that
     \begin{equation}
         \label{eq:nearest-neighbor}
-        x\mathbb P_{\vec n}^n = L_{{n+1},1} \mathbb P_{\overrightarrow{m_{n+1}}}^{n+1} + A_0 \mathbb P_{\vec n}^n + \sum_{j=1}^r A_j \mathbb P_{\overrightarrow{m_{n-j}}}^{n-j},
+        x\mathbb P_{\vec n}^n = L_{{n+1},1} \mathbb P_{\overrightarrow{m}_{n+1}}^{n+1} + A_0 \mathbb P_{\vec n}^n + \sum_{j=1}^r A_j \mathbb P_{\overrightarrow{m}_{n-j}}^{n-j},
     \end{equation}
     where $L_{n+1,1}=(I_{n+1}|0_{(n+1)\times 1})$.
 
-    In addition, $A_j = \prodesc{x\mathbb P_{\vec n}^n}{\mathbb Q_{\overrightarrow{m_{n-j+1}}}}$.
+    In addition, $A_j = \prodesc{x\mathbb P_{\vec n}^n}{\mathbb Q_{\overrightarrow{m}_{n-j+1}}}$.
 \end{theorem}
 \begin{proof}
-    As we are in a perfect system, we can assume the existence of $\mathbb P_{\overrightarrow{m_k}}^k$ for every $k=0,\dots,n+1$. As we know, $x\mathbb P_{\vec n}^n$ is a vector of degree $n+1$ polynomials and its size is also $n+1$. It is possible to write  $x\mathbb P_{\vec n}^n$ as a linear combination of $\{\mathbb P_{\overrightarrow{m_k}}^k, k=0,\dots,n+1\}$ whose coefficients are matrices $M_k$:
+    As we are in a perfect system, we can assume the existence of $\mathbb P_{\overrightarrow{m}_k}^k$ for every $\vec m_k, k=0,\dots,n+1$. As we know, $x\mathbb P_{\vec n}^n$ is a vector of degree $n+1$ polynomials and its size is also $n+1$. It is possible to write  $x\mathbb P_{\vec n}^n$ as a linear combination of $\{\mathbb P_{\overrightarrow{m}_k}^k, k=0,\dots,n+1\}$ whose coefficients are matrices $M_k$:
     $$
-    x\mathbb P_{\overrightarrow{n}}^n = \sum_{k=0}^{n+1} M_k \mathbb P_{\overrightarrow{m_k}}^k,
+    x\mathbb P_{\overrightarrow{n}}^n = \sum_{k=0}^{n+1} M_k \mathbb P_{\overrightarrow{m}_k}^k,
     $$
     where $M_k$ is a $(n+1)\times(k+1)$ matrix ($k=0,\dots,n+1$).
 
-    Observing the leader term of $x\mathbb P_{\overrightarrow{n}}^n$, which is $x\mathbb X_{n}$, and equalizing this to the leader term of $M_{n+1} \mathbb P_{\overrightarrow{m_{n+1}}}^{n+1}$, which is $M_{n+1}\mathbb X_{n+1}$ we can easily check $M_{n+1}=L_{(n+1),1}$. Now, we have
+    Observing the leader term of $x\mathbb P_{\overrightarrow{n}}^n$, which is $x\mathbb X_{n}$, and comparing it with the leader term of $M_{n+1} \mathbb P_{\overrightarrow{m}_{n+1}}^{n+1}$, which is $M_{n+1}\mathbb X_{n+1}$ we can easily check $M_{n+1}=L_{(n+1),1}$. Now, we have
     $$
-    \mathbb P_{\overrightarrow{n}}^n = L_{n+1,1}\mathbb P_{\overrightarrow{m_{n+1}}}^{n+1} + \sum_{k=0}^{n} M_k \mathbb P_{\overrightarrow{m_k}}^k.
+    \mathbb P_{\overrightarrow{n}}^n = L_{n+1,1}\mathbb P_{\overrightarrow{m}_{n+1}}^{n+1} + \sum_{k=0}^{n} M_k \mathbb P_{\overrightarrow{m_k}}^k.
     $$
-    Now, apply the inner product to both sides of the equation by $\mathbb Q_{\overrightarrow{m_l}}$ and observe:
+    Now, we apply the inner product to both sides of the equation by $\mathbb Q_{\overrightarrow{m}_l}$ and observe:
     \begin{itemize}
-        \item If $\overrightarrow{m_l}\leq \overrightarrow{m_j}$, which always happens if $l\leq j\leq n+1$, then, due to the first item of Theorem \ref{th:biorthogonality}, $\prodesc{\mathbb P_{\overrightarrow{m_j}}^j}{\mathbb Q_{\overrightarrow{m_l}}} = 0_{(j+1)\times l}$ whenever $l\leq j$.
-        \item If $j\leq l-2$, then, from the second item of Theorem \ref{th:biorthogonality}, $\prodesc{\mathbb P_{\overrightarrow{m_j}}^j}{\mathbb Q_{\overrightarrow{m_l}}} = 0_{(j+1)\times l}.$
-        \item Finally, if $j=l-1$, from the last item of Theorem \ref{th:biorthogonality} we deduce $\prodesc{\mathbb P_{\overrightarrow{m_j}}^j}{\mathbb Q_{\overrightarrow{m_l}}} = I_{j+1}.$
+        \item If $\overrightarrow{m}_l\leq \overrightarrow{m}_j$, which always happens if $l\leq j\leq n+1$, then, due to the first item of Theorem \ref{th:biorthogonality}, $\prodesc{\mathbb P_{\overrightarrow{m}_j}^j}{\mathbb Q_{\overrightarrow{m}_l}} = 0_{(j+1)\times l}$ whenever $l\leq j$.
+        \item If $j\leq l-2$, then, from the second item of Theorem \ref{th:biorthogonality}, $\prodesc{\mathbb P_{\overrightarrow{m}_j}^j}{\mathbb Q_{\overrightarrow{m}_l}} = 0_{(j+1)\times l}.$
+        \item Finally, if $j=l-1$, from the last item of Theorem \ref{th:biorthogonality} we deduce $\prodesc{\mathbb P_{\overrightarrow{m}_j}^j}{\mathbb Q_{\overrightarrow{m}_l}} = I_{j+1}.$
     \end{itemize}
 
     Summarizing, we have
     $$
-    \prodesc{x\mathbb P_{\vec n}^n}{\mathbb Q_{\overrightarrow{m_l}}} = L_{n+1,1}\prodesc{\mathbb P_{\overrightarrow{m_{n+1}}}^{n+1}}{\mathbb Q_{\overrightarrow{m_l}}} + \sum_{j=0}^n M_j \prodesc{\mathbb P_{\overrightarrow{m_j}}^j}{\mathbb Q_{\overrightarrow{m_l}}}.
+    \prodesc{x\mathbb P_{\vec n}^n}{\mathbb Q_{\overrightarrow{m}_l}} = L_{n+1,1}\prodesc{\mathbb P_{\overrightarrow{m}_{n+1}}^{n+1}}{\mathbb Q_{\overrightarrow{m}_l}} + \sum_{j=0}^n M_j \prodesc{\mathbb P_{\overrightarrow{m}_j}^j}{\mathbb Q_{\overrightarrow{m}_l}}.
     $$
     Applying the previous items deduced from Theorem \ref{th:biorthogonality}, we have
     \begin{equation}
         \label{eq:biorthogonality-1}
-        \prodesc{x\mathbb P_{\vec n}^n}{\mathbb Q_{\overrightarrow{m_l}}} = M_{l-1} \ \ \ \ l=1,\dots,n+1,
+        \prodesc{x\mathbb P_{\vec n}^n}{\mathbb Q_{\overrightarrow{m}_l}} = M_{l-1} \ \ \ \ l=1,\dots,n+1,
     \end{equation}
 
-    Now, if $l\leq n-r$, then $\overrightarrow{m_l}\leq \overrightarrow{m_{n-r}}$. So, choosing $l\leq n-r$,
+    Now, if $l\leq n-r$, then $\overrightarrow{m}_l\leq \overrightarrow{m}_{n-r}$. So, choosing $l\leq n-r$,
     $$
-    \prodesc{x\mathbb P_{\vec n}^n}{\mathbb Q_{\overrightarrow{m_l}}} = \sum_{j=1}^r  \prodesc{\mathbb P_{\vec n}^n}{x\mathbb A_{\overrightarrow{m_l},j}}_j,
+    \prodesc{x\mathbb P_{\vec n}^n}{\mathbb Q_{\overrightarrow{m}_l}} = \sum_{j=1}^r  \prodesc{\mathbb P_{\vec n}^n}{x\mathbb A_{\overrightarrow{m}_l,j}}_j,
     $$
-    but $x\mathbb A_{\overrightarrow{m_l},j}$ are vectors of degree less than or equal to $(\overrightarrow{m_l})_j\leq (\overrightarrow{m_{n-r}})_j < n_j$. Then, the product vanishes because of type II orthogonality \eqref{eq:typeII-MOP-2vars}. This means
+    but $x\mathbb A_{\overrightarrow{m}_l,j}$ are vectors of degree less than or equal to $(\overrightarrow{m}_l)_j\leq (\overrightarrow{m}_{n-r})_j < n_j$. Then, the product vanishes because of type II orthogonality \eqref{eq:typeII-MOP-2vars}. This means
     $$
-    \prodesc{x\mathbb P_{\vec n}^n}{\mathbb Q_{\overrightarrow{m_l}}} = M_{l-1} = 0 \ \ \ l = 1, \dots, n-r.
+    \prodesc{x\mathbb P_{\vec n}^n}{\mathbb Q_{\overrightarrow{m}_l}} = M_{l-1} = 0 \ \ \ l = 1, \dots, n-r.
     $$
     Thus, the final expression is
     $$
-    \mathbb P_{\overrightarrow{n}}^n = L_{n+1,1}\mathbb P_{\overrightarrow{m_{n+1}}}^{n+1} + \sum_{k=n-r}^{n} M_k \mathbb P_{\overrightarrow{m_k}}^k.
+    \mathbb P_{\overrightarrow{n}}^n = L_{n+1,1}\mathbb P_{\overrightarrow{m}_{n+1}}^{n+1} + \sum_{k=n-r}^{n} M_k \mathbb P_{\overrightarrow{m}_k}^k.
     $$
     If we rename $A_{n-k} = M_k$ for $k=n-r,...,n$, then we get the desired expression \eqref{eq:nearest-neighbor}. 
 
-    Finally, due to \eqref{eq:biorthogonality-1}, $$A_j = M_{n-j} =  \prodesc{x\mathbb P_{\vec n}^n}{\mathbb Q_{\overrightarrow{m_{n-j+1}}}}.$$
+    Finally, due to \eqref{eq:biorthogonality-1}, $$A_j = M_{n-j} =  \prodesc{x\mathbb P_{\vec n}^n}{\mathbb Q_{\overrightarrow{m}_{n-j+1}}}.$$
 \end{proof}
-\cb{REVIEW Espero haberlo hecho bien}
 
 
 \section{Conclusion}
