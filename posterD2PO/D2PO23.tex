@@ -79,11 +79,11 @@
 \definecolor{burdeos}{RGB}{204,0,102}
 
 \theoremstyle{plain}
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{definition}[theorem]{Definition}
-\newtheorem{remark}[theorem]{Remark}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
 
 
 \newcommand{\diam}[0]{\mathrm{diam}}
@@ -195,11 +195,12 @@
   {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Multiple Orthogonality is a theory that extends standard orthogonality. In it, polynomials (defined on the real line) satisfy orthogonality relations with respect to more than one measure. There are also two different types of multiple orthogonality.
+\begin{multicols}{2}
+
+\textbf{Multiple Orthogonality} is a theory that extends standard orthogonality. In it, polynomials (defined on the real line) satisfy orthogonality relations with respect to more than one measure. There are also two different types of multiple orthogonality.
 
 First, let us consider $r$ different real measures $\mu_1,\dots,\mu_r$ such that $\Omega_j=\supp(\mu_j)\subseteq\R$ and denote as $\prodesc{\cdot}{\cdot}_j$ the respective integral inner product ($j=1,\dots,r$). We will use multi-indices $\vec n = (n_1, \dots,n_r)\in \N^r$, and denote $|\vec n| := n_1 + \dots + n_r$. These multi-indices determine the orthogonality relations with each measure.
 
-\begin{multicols}{2}
     \begin{definition}[Type II Multiple Orthogonal Polynomials]
       Let $\vec n = (n_1,\dots,n_r)$. A monic polynomial $P_{\vec n}(x)$ is a \textbf{type II multiple orthogonal polynomial} if $\deg(P_{\vec n})= |\vec n|$ and 
       \begin{equation}
@@ -209,12 +210,12 @@ First, let us consider $r$ different real measures $\mu_1,\dots,\mu_r$ such that
   \end{definition}
   \begin{definition}[Type I Multiple Orthogonal Polynomials]
     \label{def:typeI-univar}
-    Let $\vec n = (n_1,\dots,n_r)$. Type I Multiple Orthogonal Polynomials are presented in a vector $(A_{\vec n, 1}(x), \dots, A_{\vec n, r}(x))$, where $\deg(A_{\vec n, j})\leq n_j-1$, ($j=1,\dots,r$) and these polynomials satisfy
+    Let $\vec n = (n_1,\dots,n_r)$. \textbf{Type I Multiple Orthogonal Polynomials} are presented in a vector $(A_{\vec n, 1}(x), \dots, A_{\vec n, r}(x))$, where $\deg(A_{\vec n, j})\leq\nolinebreak n_j-1$, ($j=1,\dots,r$) and satisfy
     \begin{equation}
       \label{eq:typeI-MOP-dot}
       \boxed{\sum_{j=1}^r \prodesc{A_{\vec n,j}}{x^k}_j = \left\{\begin{array}{ccl}
           0 &   \text{ if } & k=0,\dots,|\vec n|-2 \\
-          1 & \text{ if } & k=|\vec n|-1      
+          1 & \text{ if } & k=|\vec n|-1.      
       \end{array}\right.}
     \end{equation}
   \end{definition}
@@ -223,7 +224,7 @@ First, let us consider $r$ different real measures $\mu_1,\dots,\mu_r$ such that
       \label{eq:typeI-function}
       Q_{\vec n}(x)=\sum_{j=1}^r A_{\vec n,j}(x)w_j(x).
   \end{equation}
-  Using the type I function, we can rewrite the orthogonality relations
+  Using the type I function, we can rewrite \eqref{eq:typeI-MOP-dot} as
   \begin{equation}
       \label{eq:typeI-MOP-function}
       \prodesc{Q_{\vec n}}{x^k}_\mu = \left\{\begin{array}{ccl}
@@ -248,16 +249,16 @@ First, let us consider $r$ different real measures $\mu_1,\dots,\mu_r$ such that
   $$
   \mathbb{X}_j=(x^j, x^{j-1}y , \dots, y^j)^t.
   $$
-  Thus, a column polynomial vector of degree $n$ can be represented as
+  A column polynomial vector of degree $n$ can be represented as
   $$
-  \mathbb{P}_n = G_{n,n}\mathbb{X}_n + G_{n,n-1}\mathbb{X}_{n-1}+\cdots G_{n,1}\mathbb{X}_1 + G_{n,0}\mathbb X_0,
+  \mathbb{P}_n = G_{n,n}\mathbb{X}_n + G_{n,n-1}\mathbb{X}_{n-1}+\cdots + G_{n,1}\mathbb{X}_1 + G_{n,0}\mathbb X_0,
   $$
   where $G_{n,j}$ are matrices of size $(n+1)\times(j+1)$. 
 
-  Given a bidimensional measure $\mu(x,y)$, with support $\Omega\subseteq\R^2$, we can extend the definition of inner product $\prodesc{f}{g}_\mu$ to column vectors. If $F=(f_1,f_2,\dots,f_n)^t$ and $G=(g_1,g_2,\dots, g_m)^t$ are column vectors of functions, then we define
+  Given a bidimensional measure $\mu(x,y)$, with support $\Omega\subseteq\R^2$, we can extend the definition of inner product $\prodesc{f}{g}_\mu$ to column vectors. If $F=(f_1,f_2,\dots,f_n)^t$ and \linebreak $G=(g_1,g_2,\dots, g_m)^t$ are column vectors of functions, then we define
   \begin{equation}
     \label{eq:prodesc-matrix}
-    \prodesc{F}{G}:=\mathcal{L}_\mu[F\cdot G^T] = \int_\Omega F\cdot G^T d\mu = \left(\int_\Omega f_i\cdot g_j d\mu\right)_{i,j=1}^{n,m}.
+    \prodesc{F}{G}_\mu :=\mathcal{L}_\mu[F\cdot G^T] = \int_\Omega F\cdot G^T d\mu = \left(\int_\Omega f_i\cdot g_j d\mu\right)_{i,j=1}^{n,m}.
   \end{equation}
 
 %  In fact, we are applying the standard product $\prodesc{f_i}{g_j}_\mu$ or the functional $\mathcal L_\mu[f_i\cdot g_j]$ to each pair $i,j$ and placing the results in a matrix.
@@ -291,14 +292,15 @@ First, let us consider $r$ different real measures $\mu_1,\dots,\mu_r$ such that
   Given $r\in\N$, $\vec n = (n_1,\dots, n_r)\in\N^r$, $r$ $2$-dimensional measures $\mu_1, \dots, \mu_r$ and their respective matrix inner products defined in \eqref{eq:prodesc-matrix}, we define the type II multiple orthogonal polynomial vector as a monic polynomial vector $$\mathbb P_{\vec n} = \mathbb X_n + \displaystyle\sum_{k=0}^{n-1}G_{n,k} \mathbb X_k$$ which satisfies
 \begin{equation}
     \label{eq:typeII-MOP-d-variables}
-    \prodesc{\mathbb P_{\vec n}}{\mathbb X_k}_j = 0, \ \ \ k=0,\dots,n_i-1, \ \ \ j=1,\dots,r.
+    \boxed{
+    \prodesc{\mathbb P_{\vec n}}{\mathbb X_k}_j = 0_{(n+1)\times (k+1)}, \ \ \ k=0,\dots,n_j-1, j=1,\dots,r.}
 \end{equation}
-Since $G_{n,k}$ are matrices whose dimensions are $(n+1)\times (k+1)$, if we consider $\mathbb P_{\vec n}$ a vector of degree $n$ monic polynomials, then this matrices give us $\frac 1 2 n (n+1)^2 $ unknown coefficients. We want the system to have only one solution for a multi-index $\vec n$. Then, $\vec n$ is a valid multi-index if there exist a number $n\in\N_0$ such that:
+Since $G_{n,k}$ are matrices whose dimensions are $(n+1)\times (k+1)$, if we consider $\mathbb P_{\vec n}$ a vector of degree $n$ monic polynomials, then this matrices give us $\frac 1 2 n (n+1)^2 $ unknown coefficients. We want the system to have only one solution for a multi-index $\vec n$. Then, $\vec n$ is a \textbf{valid} multi-index if there exist a number $n\in\N_0$ such that:
 \begin{equation}
     \label{eq:condition-type-ii}
-    n(n+1) = \sum_{j=1}^r n_j (n_j+1).
+    \boxed{n(n+1) = \sum_{j=1}^r n_j (n_j+1).}
 \end{equation}
-This number $n$ is the degree of type II polynomials. In order to emphasise the degree of the polynomials, in the next sections we denote type II MOP as $\mathbb P_{\vec n}^n$.
+This number $n$ is the degree of type II polynomials. In order to emphasise the degree of the polynomials, we denote type II MOP as $\mathbb P_{\vec n}^n$.
 %\end{multicols}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -306,11 +308,11 @@ This number $n$ is the degree of type II polynomials. In order to emphasise the 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{4. Bivariate Type I MOP}{name=typeI,below=bivariate-pols,row=1,column=1,span=2}
+\headerbox{4. Bivariate Type I MOP}{name=typeI,below=intro,row=1,column=1,span=2}
 {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{multicols}{2}
-  Let $\vec n = (n_1,\dots,n_r)\in\N^r$ such that the condition \eqref{eq:condition-type-ii} holds for some $n\in\N$. Then, let $i\in\{1,\dots,n\}$ and, for each $j$, we define $A_{\vec n, j}^{(i)}(x,y)$, a bivariate polynomial of degree $\leq n_j-1$, ($j=1,\dots,r$). Now, given $r$ 2-dimensional measures $\mu_1,\dots,\mu_r$, the polynomials $A_{\vec n, 1}^{(i)}, \dots, A_{\vec n, r}^{(i)}$ satisfy
+  Let $\vec n = (n_1,\dots,n_r)\in\N^r$ such that condition \eqref{eq:condition-type-ii} holds for some $n\in\N_0$. Then, let $i\in\{1,\dots,n\}$ and, for each $j$, we define $A_{\vec n, j}^{(i)}(x,y)$, a bivariate polynomial of degree $\leq n_j-1$, ($j=1,\dots,r$). Now, given $r$ 2-dimensional measures $\mu_1,\dots,\mu_r$, the polynomials $A_{\vec n, 1}^{(i)}, \dots, A_{\vec n, r}^{(i)}$ satisfy
 \begin{equation}
     \label{eq:first-condition-type-I}
     \sum_{j=1}^r \prodesc{\mathbb X_k}{A_{\vec n,j}^{(i)}}_j = \left\{\begin{array}{ccl}
@@ -325,12 +327,12 @@ $$
 a polynomial vector of size $n$ whose components are bivariate polynomials of degree less than or equal to $n_j-1$ ($j=1,\dots,r$). Thus, the polynomial vectors $\mathbb A_{\vec n,j}$ will satisfy:
 \begin{equation}
     \label{eq:condition-type-I}
-    \sum_{j=1}^r \prodesc{\mathbb X_k}{\mathbb A_{\vec n,j}}_j = \left\{\begin{array}{ccl}
+    \boxed{\sum_{j=1}^r \prodesc{\mathbb X_k}{\mathbb A_{\vec n,j}}_j = \left\{\begin{array}{ccl}
         0_{(k+1)\times n} &   \text{ if } & k=0,\dots,n-2 \\
         I_n & \text{ if } & k=n-1      
-    \end{array}\right.
+    \end{array}\right.}
 \end{equation}
-When the 2-dimensional measures are all absolutely continuous with respect to a common positive measure $\mu$ defined in $\Omega = \displaystyle\bigcup_{j=1}^r \Omega_j$ (with $\Omega_j=\supp(\mu_j)$), \textit{i.e.}, $d\mu_j = w_j(x,y)d\mu(x,y)$, ($j=1,\dots,r$), we can define the \textit{Type I function}:
+When the 2-dimensional measures are all absolutely continuous with respect to a common positive measure $\mu$ defined in \linebreak$\Omega = \displaystyle\bigcup_{j=1}^r \Omega_j$ (with $\Omega_j=\supp(\mu_j)$), \textit{i.e.}, $d\mu_j = w_j(x,y)d\mu(x,y)$, ($j=1,\dots,r$), we can define the \textit{Type I function}:
 \begin{equation}
     \label{eq:type-I-function-2-vars}
     \mathbb Q_{\vec n} = \sum_{j=1}^r \mathbb A_{\vec n,j}w_j(x,y).
@@ -364,7 +366,7 @@ We will say $\vec n$ is a \textbf{normal} multi-index if it satisfies the condit
 {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Observe some of the valid multi-indices and their respective degree $n$ in the following table.
+Observe some of the valid multi-indices which satisfy \eqref{eq:condition-type-ii} and their respective degree $n$ in the following table.
     \centering
     \begin{tabular}{|c|c|c|}
     \hline
@@ -386,7 +388,7 @@ Observe some of the valid multi-indices and their respective degree $n$ in the f
 \headerbox{5. Numerical example}{name=example,below=typeII,column=0,span=1}
 {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Starting from the well-known Laguerre product polynomials and the generalisation to multiple orthogonality of classical Laguerre polynomials, we have implemented $\mathbb P_{(1,1,1)}^2$, a multiple orthogonal polynomial vector with respect to the measures given by $d\mu_j=x^{\alpha_j} y^{\beta_j} e^{-x-y} d(x,y)$ ($i=1,2,3$) and the multi-index $(1,1,1)$. We have choosen the values $$\alpha_1 = 0, \alpha_2 = 0.5, \alpha_3 = 1.3; \beta_1 = 0.8, \beta_2 = 0.4, \beta_3 = 2.1,$$ and got the polynomial vector 
+Starting from the well-known Laguerre product polynomials in \cite{xu} and the generalisation to multiple orthogonality of classical Laguerre polynomials in \cite{Walter}, we have implemented $\mathbb P_{(1,1,1)}^2$, a multiple orthogonal polynomial vector with respect to the measures given by $d\mu_j=x^{\alpha_j} y^{\beta_j} e^{-x-y} d(x,y)$ ($i=1,2,3$) and the multi-index $(1,1,1)$. We have choosen the values $$\alpha_1 = 0, \alpha_2 = 0.5, \alpha_3 = 1.3; \beta_1 = 0.8, \beta_2 = 0.4, \beta_3 = 2.1,$$ and got the polynomial vector 
 $$
 \mathbb P_{(1,1,1)}^2 = \begin{pmatrix}
     x^2 + - 3.85556 x - 0.444444 y + 2.65556 \\ x y - 2.15556 x - 1.94444 y + 3.85556 \\  y^2 - 0.755556 x - 5.14444 y + 4.97556
@@ -401,16 +403,16 @@ $$
 \headerbox{6. Biorthogonality}{name=biorthogonality,below=example,row=3,column=0,span=1}
 {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-There is an orthogonality relation between type I and type II MOP:
+There is a relation between type I and type II MOP:
 \begin{theorem}
   \label{th:biorthogonality}
   Let $\mu_1,\dots,\mu_r$ be a perfect system of $r$ 2-dimensional measures. Given $\vec n, \vec m$, both satisfying \eqref{eq:condition-type-ii} for $n$ and $m$, respectively, the following biorthogonality holds for type I and type II MOP:
   \begin{equation}
-      \prodesc{\mathbb P_{\vec n}^n}{\mathbb Q_{\vec m}} = \left\{\begin{array}{ccl}
+      \boxed{\prodesc{\mathbb P_{\vec n}^n}{\mathbb Q_{\vec m}} = \left\{\begin{array}{ccl}
           0_{(n+1)\times m} &   \text{ if } & \vec m \leq \vec n \\
           0_{(n+1)\times m} &   \text{ if } &  n \leq m -2 \\
-          I_{n+1} & \text{ if } & n=m-1 
-      \end{array}\right.   
+          I_{n+1} & \text{ if } & n=m-1. 
+      \end{array}\right.}
   \end{equation}
 \end{theorem}
 
@@ -427,9 +429,11 @@ There is an orthogonality relation between type I and type II MOP:
   Let $\mu_1,\dots,\mu_r$ be a perfect system of 2-dimensional measures. Let $\vec n\in \N^r$ be a multi-index satisfying \eqref{eq:condition-type-ii} for $n\in\N$ and let us consider a path $\{\overrightarrow{m}_k:k=0,\dots,n+1\}$ where $\overrightarrow{m}_0=\vec 0, \overrightarrow{m}_n = \vec n$, each $\overrightarrow{m}_k$ satisfy \eqref{eq:condition-type-ii} for $k$ and $\overrightarrow{m}_k \leq \overrightarrow m_{k+1}$ for $k=0,\dots,n$. Then, there exist matrices $A_0,\dots,A_r$ of sizes $(n+1)\times(n-j+1)$,  $(j=0,\dots,r)$ such that
   \begin{equation}
       \label{eq:nearest-neighbor}
-      x\mathbb P_{\vec n}^n = L_{{n+1},1} \mathbb P_{\overrightarrow{m}_{n+1}}^{n+1} + A_0 \mathbb P_{\vec n}^n + \sum_{j=1}^r A_j \mathbb P_{\overrightarrow{m}_{n-j}}^{n-j},
+      \boxed{x\mathbb P_{\vec n}^n = L_{{n+1},1} \mathbb P_{\overrightarrow{m}_{n+1}}^{n+1} + A_0 \mathbb P_{\vec n}^n + \sum_{j=1}^r A_j \mathbb P_{\overrightarrow{m}_{n-j}}^{n-j},}
   \end{equation}
-  where $L_{n+1,1}=(I_{n+1}|0_{(n+1)\times 1})$. In addition, $A_j = \prodesc{x\mathbb P_{\vec n}^n}{\mathbb Q_{\overrightarrow{m}_{n-j+1}}}$.
+  where $L_{n+1,1}=(I_{n+1}|0_{(n+1)\times 1})$. 
+  
+  In addition, $A_j =\nolinebreak \prodesc{x\mathbb P_{\vec n}^n}{\mathbb Q_{\overrightarrow{m}_{n-j+1}}}$.
 \end{theorem}
 %\end{multicols}
 
@@ -442,13 +446,12 @@ There is an orthogonality relation between type I and type II MOP:
 {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{multicols}{2}
-  Multiple Orthogonal Polynomials is a theory that is currently being widely researched. At this moment, we have generalised to the bivariate some of the main univariate results. But there are still many results and applications to generalise:
+  Multiple Orthogonal Polynomials is a theory that is currently being widely researched. At this moment, we have generalised to the bivariate case some of the main univariate results. But there are still many results and applications to work on:
   \begin{itemize}
     \item Find a Nearest Neighbor Relation for more general paths and other types of Nearest Neighbor Relations.
     \item Christoffel-Darboux formula.
     \item Look for applications to Hermite-Padé approximants and random matrices.
     \item Generalise existing examples to the bivariate case: Jacobi-Piñeiro, Jacobi-Angelesco, OP defined in the Simplex, etc.
-    \item Extend all this theory to $d$ variables.
     \item \dots
   \end{itemize}
 %\end{multicols}
@@ -527,17 +530,15 @@ There is an orthogonality relation between type I and type II MOP:
 {\noindent\hspace*{-5pt}
 %\begin{tabular}{p{0.8\textwidth}p{0.15\textwidth}}
 \small Universidad de Granada; IMAG-María de Maeztu, grant ``IMAG CEX2020--001105--M''; GOYA: ``Grupo de Ortogonalidad Y Aplicaciones'' and ``Departamento de Matemática Aplicada''.
-
 \noindent Universidad de Almería; TAPO: ``Teoría de Aproximación y Polinomios Ortogonales'' and ``Departamento de Matemáticas''.}
-
 \bigskip
-
 %& \hspace*{-5pt}
+\vspace{0.5pt}
 \centerline{
-\includegraphics[height=0.73cm]{ugrH} \quad
-\includegraphics[height=0.73cm]{IMAG} \quad
-\includegraphics[height=0.73cm]{maeztu} \quad
-\includegraphics[height=0.73cm]{tapo.png}
+\includegraphics[height=0.68cm]{ugrH} \quad
+\includegraphics[height=0.68cm]{IMAG} \quad
+\includegraphics[height=0.68cm]{maeztu} \quad
+\includegraphics[height=0.68cm]{tapo.png}
 }
 %\end{tabular}
 
