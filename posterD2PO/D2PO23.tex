@@ -219,7 +219,7 @@ First, let us consider $r$ different real measures $\mu_1,\dots,\mu_r$ such that
       \end{array}\right.}
     \end{equation}
   \end{definition}
-  Whenever the measures are all absolutely continuous with respect to a common positive measure $\mu$ defined in $\Omega =\nolinebreak \bigcup_{i=1}^r \Omega_i$, \textit{i.e.}, $d\mu_j = w_j(x) d\mu(x)$, ($j=1,\dots,r$), it is possible to define the \textit{Type I function} as
+  Whenever the measures are all absolutely continuous with respect to a common positive measure $\mu$ defined in $\Omega =\nolinebreak \bigcup_{j=1}^r \Omega_j$, \textit{i.e.}, $d\mu_j = w_j(x) d\mu(x)$, ($j=1,\dots,r$), it is possible to define the \textit{Type I function} as
   \begin{equation}
       \label{eq:typeI-function}
       Q_{\vec n}(x)=\sum_{j=1}^r A_{\vec n,j}(x)w_j(x).
@@ -350,11 +350,11 @@ Despite their differences, type I and type II MOP in two variables are equivalen
   \label{prop:existence}
   Let $\vec n = (n_1,\dots,n_r)$ be a multi-index satisfying \eqref{eq:condition-type-ii} for $n\in\N_0$. Then the following statements are equivalent:
   \begin{enumerate}
-      \item There exist a unique polynomials $(\mathbb A_{\vec n,1}, \dots, \mathbb A_{\vec n,r})$ of bivariate type I MOP.
+      \item There exist unique polynomial vectors $(\mathbb A_{\vec n,1}, \dots, \mathbb A_{\vec n,r})$ of bivariate type I multiple orthogonal polynomials.
       \item There exist a unique bivariate type II multiple orthogonal polynomial $\mathbb P_{\vec n}^n$.
   \end{enumerate}
 \end{proposition}
-We will say $\vec n$ is a \textbf{normal} multi-index if it satisfies the conditions of Proposition \ref{prop:existence}. A system $\mu_1,\dots,\mu_r$ of bivariate measures is \textbf{perfect} if every multi-index satisfying \eqref{eq:condition-type-ii} is normal.
+We will say $\vec n$ is a \textbf{normal} multi-index if it satisfies the conditions of Proposition \ref{prop:existence}. A system $\mu_1,\dots,\mu_r$ of bivariate measures is \textbf{perfect} if every admissible multi-index is normal.
 
 \end{multicols}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -426,7 +426,7 @@ There is a relation between type I and type II MOP:
 %\begin{multicols}{2}
   In univariate MOP, the nearest neighbor relation is a generalisation of the TTRR satisfied by any OPS. This is a extension to bivariate MOP.
 \begin{theorem} 
-  Let $\mu_1,\dots,\mu_r$ be a perfect system of 2-dimensional measures. Let $\vec n\in \N^r$ be a multi-index satisfying \eqref{eq:condition-type-ii} for $n\in\N$ and let us consider a path $\{\overrightarrow{m}_k:k=0,\dots,n+1\}$ where $\overrightarrow{m}_0=\vec 0, \overrightarrow{m}_n = \vec n$, each $\overrightarrow{m}_k$ satisfy \eqref{eq:condition-type-ii} for $k$ and $\overrightarrow{m}_k \leq \overrightarrow m_{k+1}$ for $k=0,\dots,n$. Then, there exist matrices $A_0,\dots,A_r$ of sizes $(n+1)\times(n-j+1)$,  $(j=0,\dots,r)$ such that
+  Let $\mu_1,\dots,\mu_r$ be a perfect system of 2-dimensional measures. Let $\vec n\in \N^r$ be a multi-index satisfying \eqref{eq:condition-type-ii} for $n\in\N$ and let us consider a path $\{\overrightarrow{m}_k:k=0,\dots,n+1\}$ where $\overrightarrow{m}_0=\vec 0, \linebreak\overrightarrow{m}_n = \vec n$, each $\overrightarrow{m}_k$ satisfy \eqref{eq:condition-type-ii} for $k$ and $\overrightarrow{m}_k \leq \overrightarrow m_{k+1}$ for \linebreak$k=0,\dots,n$. Then, there exist matrices $A_0,\dots,A_r$ of sizes $(n+1)\times(n-j+1)$,  $(j=0,\dots,r)$ such that
   \begin{equation}
       \label{eq:nearest-neighbor}
       \boxed{x\mathbb P_{\vec n}^n = L_{{n+1},1} \mathbb P_{\overrightarrow{m}_{n+1}}^{n+1} + A_0 \mathbb P_{\vec n}^n + \sum_{j=1}^r A_j \mathbb P_{\overrightarrow{m}_{n-j}}^{n-j},}
@@ -450,7 +450,7 @@ There is a relation between type I and type II MOP:
   \begin{itemize}
     \item Find a Nearest Neighbor Relation for more general paths and other types of Nearest Neighbor Relations.
     \item Christoffel-Darboux formula.
-    \item Look for applications to Hermite-Padé approximants and random matrices.
+    \item Look for applications to Hermite-Padé rational approximations and random matrices.
     \item Generalise existing examples to the bivariate case: Jacobi-Piñeiro, Jacobi-Angelesco, OP defined in the Simplex, etc.
     \item \dots
   \end{itemize}
