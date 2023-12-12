@@ -191,7 +191,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{1. Introduction}{name=intro,column=0,row=0,span=2}
+\headerbox{\ 1. Introduction}{name=intro,column=0,row=0,span=2}
   {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -240,7 +240,7 @@ First, let us consider $r$ different real measures $\mu_1,\dots,\mu_r$ such that
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{2. Bivariate OP}{name=bivariate-pols, row=0,column=2,span=1}
+\headerbox{\ 2. Bivariate OP}{name=bivariate-pols, row=0,column=2,span=1}
 {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{multicols}{2}
@@ -285,7 +285,7 @@ First, let us consider $r$ different real measures $\mu_1,\dots,\mu_r$ such that
 	}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-\headerbox{3. Bivariate Type II MOP}{name=typeII,below=intro, row=1,column=0,span=1}
+\headerbox{\ 3. Bivariate Type II MOP}{name=typeII,below=intro, row=1,column=0,span=1}
 	{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{multicols}{2}
@@ -295,7 +295,7 @@ First, let us consider $r$ different real measures $\mu_1,\dots,\mu_r$ such that
     \boxed{
     \prodesc{\mathbb P_{\vec n}}{\mathbb X_k}_j = 0_{(n+1)\times (k+1)}, \ \ \ k=0,\dots,n_j-1, j=1,\dots,r.}
 \end{equation}
-Since $G_{n,k}$ are matrices whose dimensions are $(n+1)\times (k+1)$, if we consider $\mathbb P_{\vec n}$ a vector of degree $n$ monic polynomials, then this matrices give us $\frac 1 2 n (n+1)^2 $ unknown coefficients. We want the system to have only one solution for a multi-index $\vec n$. Then, $\vec n$ is a \textbf{valid} multi-index if there exist a number $n\in\N_0$ such that:
+Since $G_{n,k}$ are matrices whose dimensions are $(n+1)\times (k+1)$, if we consider $\mathbb P_{\vec n}$ a vector of degree $n$ monic polynomials, then this matrices give us $\frac 1 2 n (n+1)^2 $ unknown coefficients. We want the system to have only one solution for a multi-index $\vec n$. Then, $\vec n$ is a \textbf{admissible} multi-index if there exist a number $n\in\N_0$ such that:
 \begin{equation}
     \label{eq:condition-type-ii}
     \boxed{n(n+1) = \sum_{j=1}^r n_j (n_j+1).}
@@ -308,7 +308,7 @@ This number $n$ is the degree of type II polynomials. In order to emphasise the 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{4. Bivariate Type I MOP}{name=typeI,below=intro,row=1,column=1,span=2}
+\headerbox{\ 4. Bivariate Type I MOP}{name=typeI,below=intro,row=1,column=1,span=2}
 {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{multicols}{2}
@@ -362,11 +362,11 @@ We will say $\vec n$ is a \textbf{normal} multi-index if it satisfies the condit
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{Valid multi-indices for $r=2, r=3$}{name=indices, below=typeI, row=2,column=1,span=2}
+\headerbox{\ Admissible multi-indices for $r=2, r=3$}{name=indices, below=typeI, row=2,column=1,span=2}
 {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Observe some of the valid multi-indices which satisfy \eqref{eq:condition-type-ii} and their respective degree $n$ in the following table.
+Observe some of the admissible multi-indices which satisfy \eqref{eq:condition-type-ii} and their respective degree $n$ in the following table.
     \centering
     \begin{tabular}{|c|c|c|}
     \hline
@@ -385,22 +385,22 @@ Observe some of the valid multi-indices which satisfy \eqref{eq:condition-type-i
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{5. Numerical example}{name=example,below=typeII,column=0,span=1}
+\headerbox{\ 5. Numerical example}{name=example,below=typeII,column=0,span=1}
 {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Starting from the well-known Laguerre product polynomials in \cite{xu} and the generalisation to multiple orthogonality of classical Laguerre polynomials in \cite{Walter}, we have implemented $\mathbb P_{(1,1,1)}^2$, a multiple orthogonal polynomial vector with respect to the measures given by $d\mu_j=x^{\alpha_j} y^{\beta_j} e^{-x-y} d(x,y)$ ($i=1,2,3$) and the multi-index $(1,1,1)$. We have choosen the values $$\alpha_1 = 0, \alpha_2 = 0.5, \alpha_3 = 1.3; \beta_1 = 0.8, \beta_2 = 0.4, \beta_3 = 2.1,$$ and got the polynomial vector 
+Starting from the well-known Laguerre product polynomials in \cite{xu} and the generalisation to multiple orthogonality of classical Laguerre polynomials in \cite{Walter}, we have implemented $\mathbb P_{(1,1,1)}^2$, a multiple orthogonal polynomial vector with respect to the measures given by $d\mu_j=x^{\alpha_j} y^{\beta_j} e^{-x-y} d(x,y)$ ($j=1,2,3$) and the multi-index $(1,1,1)$. We have chosen the values $$\alpha_1 = 0, \alpha_2 = 0.5, \alpha_3 = 1.3; \beta_1 = 0.8, \beta_2 = 0.4, \beta_3 = 2.1,$$ and got the polynomial vector 
 $$
 \mathbb P_{(1,1,1)}^2 = \begin{pmatrix}
     x^2 + - 3.85556 x - 0.444444 y + 2.65556 \\ x y - 2.15556 x - 1.94444 y + 3.85556 \\  y^2 - 0.755556 x - 5.14444 y + 4.97556
 \end{pmatrix}
 $$
-\centering\includegraphics*[width=4cm]{EjemploLaguerre}
+\centering\includegraphics*[height=2.5cm]{EjemploLaguerre}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{6. Biorthogonality}{name=biorthogonality,below=example,row=3,column=0,span=1}
+\headerbox{\ 6. Biorthogonality}{name=biorthogonality,below=example,row=3,column=0,span=1}
 {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 There is a relation between type I and type II MOP:
@@ -420,7 +420,7 @@ There is a relation between type I and type II MOP:
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{7. Nearest Neighbor Relation}{name=NNR,below=indices,row=3,column=1,span=1}
+\headerbox{\ 7. Nearest Neighbor Relation}{name=NNR,below=indices,row=3,column=1,span=1}
 {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{multicols}{2}
@@ -442,7 +442,7 @@ There is a relation between type I and type II MOP:
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{8. Future research topics }{name=future,below=indices,row=3,column=2,span=1}
+\headerbox{\ 8. Future research topics }{name=future,below=indices,row=3,column=2,span=1}
 {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{multicols}{2}
@@ -497,7 +497,7 @@ There is a relation between type I and type II MOP:
 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \headerbox{References}{name=references,column=0,row=3,below=NNR,span=2}{
+   \headerbox{\ References}{name=references,column=0,row=3,below=NNR,span=2}{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \smaller
 \bibliographystyle{ieee}
@@ -525,7 +525,7 @@ There is a relation between type I and type II MOP:
 %
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \headerbox{Acknowledgements}{name=acknowledgements,column=2,below=future}{
+    \headerbox{\ Acknowledgements}{name=acknowledgements,column=2,below=future}{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {\noindent\hspace*{-5pt}
 %\begin{tabular}{p{0.8\textwidth}p{0.15\textwidth}}
