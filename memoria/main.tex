@@ -282,27 +282,30 @@ If we collect all the equations, we obtain $r_n^d\cdot\displaystyle\sum_{k=0}^{n
 
 On the other hand, since $\mathbb P_{\vec n} = \mathbb X_n + \displaystyle\sum_{k=0}^{n-1}G_{n,k} \mathbb X_k$, where $G_{n,k}$ are matrices of dimensions $r^d_n\times r^d_k$, if we consider $\mathbb P_{\vec n}$ a vector of degree $n$ monic polynomials, then this matrices give us $\displaystyle\sum_{k=0}^{n-1}r^d_n r^d_k=r^d_n\displaystyle\sum_{k=0}^{n-1} r^d_k$ unknown coefficients.
 
-If we want this system to have only one solution for a multi-index $\vec n$. Then, $\vec n$ is a valid multi-index if there exist a number $n\in\N_0$ such that:
+We want this system to have only one unique solution for a multi-index $\vec n$. Then, we will say $\vec n$ is a \textbf{admissible} multi-index if there exist a number $n\in\N_0$ such that:
 \begin{equation}
     \label{eq:condition-type-ii-general}
     \displaystyle\sum_{k=0}^{n-1} r^d_k = \sum_{i=1}^r \sum_{k=0}^{n_i-1} r_k^d.
 \end{equation}
 This number $n$ is the degree of type II polynomials. In order to emphasise the degree of the polynomials, in the next sections we denote type II MOP as $\mathbb P_{\vec n}^n$.
+
+\cb{REVIEW No me termina de hacer gracia el concepto de admisible porque al final está relacionado con un número $n$. A la hora de hablar de que un multi-indice es admisible lo suyo es decir después para qué $n$. He pensado que quizá estaría bien decir que es $n$-admisible?}
+
 \section{The bidimensional case}
 
-From now on, we will assume $d=2$ and $x:=x_1, y:=x_2$. Notice that, in the bidimensional case, $r^2_n = \binom{n+1}{n} = n+1$, which makes things much easier: $\mathbb X_j$ is a polynomial vector of size $j+1$, $\mathbb P_n$ is a vector of size $n+1$, and $G_{n,k}$ is a $(n+1)\times(k+1)$ matrix. Also, condition \eqref{eq:condition-type-ii-general} gets simpler because some sums become sums of arithmetic progressions. When $d=2$, a multi-index $\vec n =(n_1,\dots,n_r)$ is valid if there exists a number $n\in\N\cup \{0\}$ such that
+From now on, we will assume $d=2$ and $x:=x_1, y:=x_2$. Notice that, in the bidimensional case, $r^2_n = \binom{n+1}{n} = n+1$, which makes things much easier: $\mathbb X_j$ is a polynomial vector of size $j+1$, $\mathbb P_n$ is a vector of size $n+1$, and $G_{n,k}$ is a $(n+1)\times(k+1)$ matrix. Also, condition \eqref{eq:condition-type-ii-general} gets simpler because some sums become sums of arithmetic progressions. When $d=2$, a multi-index $\vec n =(n_1,\dots,n_r)$ is admissible if there exists a number $n\in\N\cup \{0\}$ such that
 \begin{equation}
     \label{eq:condition-type-ii}
     n(n+1)=\sum_{j=1}^r n_j (n_j+1).
 \end{equation} 
 
-Observe some of the valid multi-indices and their respective degree $n$ in tables \ref{tab:2measuresindices} and \ref{tab:3measuresindices}, and a visual representation of some of them when $r=2$ and $r=3$ in figure \ref{fig:indices}.
+Observe some of the admissible multi-indices and their respective degree $n$ in tables \ref{tab:2measuresindices} and \ref{tab:3measuresindices}, and a visual representation of some of them when $r=2$ and $r=3$ in figure \ref{fig:indices}.
 
 \begin{table}[h]
     \centering
     \begin{tabular}{|c|c|}
     \hline
-    $n$ & Valid multi-indices when $r=2$ and $d=2$ \\ \hline
+    $n$ & admissible multi-indices when $r=2$ and $d=2$ \\ \hline
     $0$ & $(0,0)$                                  \\ \hline
     $1$ & $(0,1), (1,0)$                           \\ \hline
     $2$ & $(0, 2), (2, 0)$                         \\ \hline
@@ -314,7 +317,7 @@ Observe some of the valid multi-indices and their respective degree $n$ in table
     $8$ & $(0, 8), (5, 6), (6, 5), (8, 0)$         \\ \hline
     $9$ & $(0, 9), (9, 0)$                         \\ \hline
     \end{tabular}
-    \caption{Valid multi-indices when using $r=2$ measures}
+    \caption{admissible multi-indices when using $r=2$ measures}
     \label{tab:2measuresindices}
 \end{table}
 
@@ -322,7 +325,7 @@ Observe some of the valid multi-indices and their respective degree $n$ in table
     \centering
     \begin{tabular}{|c|c|}
     \hline
-    $n$ & Valid multi-indices when $r=3$ and $d=2$                                                                                                                                                                           \\ \hline
+    $n$ & admissible multi-indices when $r=3$ and $d=2$                                                                                                                                                                           \\ \hline
     $0$ & $(0,0,0)$                                                                                                                                                                                                          \\ \hline
     $1$ & $(0, 0, 1), (0, 1, 0), (1, 0, 0)$                                                                                                                                                                                  \\ \hline
     $2$ & $(0, 0, 2), (0, 2, 0), (1, 1, 1), (2, 0, 0)$                                                                                                                                                                       \\ \hline
@@ -334,7 +337,7 @@ Observe some of the valid multi-indices and their respective degree $n$ in table
     $8$ & \begin{tabular}[c]{@{}c@{}}$(0, 0, 8), (0, 5, 6), (0, 6, 5), (0, 8, 0), (3, 5, 5), (5, 0, 6), (5, 3, 5), (5, 5, 3),$ \\ $(5, 6, 0), (6, 0, 5), (6, 5, 0), (8, 0, 0)$\end{tabular}                                  \\ \hline
     $9$ & \begin{tabular}[c]{@{}c@{}}$(0, 0, 9), (0, 9, 0), (2, 3, 8), (2, 6, 6), (2, 8, 3), (3, 2, 8), (3, 8, 2), (5, 5, 5), (6, 2, 6),$ \\ $(6, 6, 2), (8, 2, 3), (8, 3, 2), (9, 0, 0)$\end{tabular}                       \\ \hline
     \end{tabular}
-    \caption{Valid multi-indices when using $r=3$ measures}
+    \caption{admissible multi-indices when using $r=3$ measures}
     \label{tab:3measuresindices}
     \end{table}
     
@@ -344,7 +347,7 @@ Observe some of the valid multi-indices and their respective degree $n$ in table
           \includegraphics[height=5cm]{./img/puntos3D.png} \\
           (a) $r=2$ & (b) $r=3$  \\
         \end{tabular}
-        \caption{Graphic representation of valid $r$-indices}
+        \caption{Graphic representation of admissible $r$-indices}
         \label{fig:indices}
       \end{figure}
 
@@ -392,6 +395,14 @@ Summarizing, we present the final definitions of the multiple orthogonal polynom
     \end{equation}      
 \end{definition}
 
+The $n+1$ bivariate polynomials composing the polynomial vector $\mathbb P_{\vec n}^n$ will be denoted as
+$$
+\mathbb P_{\vec n}^n = 
+\begin{pmatrix}
+    P_{\vec n}^{n,1}(x,y) \\ \vdots \\ P_{\vec n}^{n,n+1}(x,y)
+\end{pmatrix}_{(n+1)\times 1}.
+$$
+
 \begin{definition}[Type I MOP in two variables]
     Let $\vec n = (n_1, \dots, n_r)\in \N^r$ such that the condition \eqref{eq:condition-type-ii} holds for certain $n\in\N$. \textbf{Type I Multiple Orthogonal Polynomials Vectors} are presented as $(\mathbb A_{\vec n,1}, \dots, \mathbb A_{\vec n,r})$, where 
     $\mathbb A_{\vec n,j}=(A_{\vec n,j}^{(1)}, \dots, A_{\vec n,j}^{(n)})^t$, $j=1,\dots,r$ and $A_{\vec n,j}^{(i)}$ are polynomials of degree less than or equal to $n_j-1$ for every $i=1,\dots,n$. In addition, these polynomial vectors satisfy conditions \eqref{eq:condition-type-I}.     
@@ -412,10 +423,17 @@ Using this function, it is possible to rewrite \eqref{eq:condition-type-I} as
 \end{equation}
 We will often remove the sub-index $\mu$ from $\prodesc{\cdot}{\cdot}_\mu$, assuming that the product uses the common measure.
 
-As we can see, the bivariate case reduces the number of multi-indices $(n_1,\dots,n_r)$ which it is possible to create multiple orthogonal polynomials with. Whereas in univariate case it is possible to question existence of MOP for every $\vec n\in \N^r$, in the bivariate case only some of the multi-indices can give us MOP, those such that there exist $n\in\N$ with $n(n+1)=\displaystyle\sum_{j=1}^r n_j (n_j+1)$. Given a valid $\vec n\in\N^r$, we will say it is \textbf{normal} if it is possible to calculate its type II polynomial $\mathbb P_{\vec n}^n$ and its type I polynomials $\mathbb A_{\vec n,j}$ ($j=1,\dots,r$). The system of 2-dimensional measures $\mu_1,\dots,\mu_r$ will be called \textbf{perfect} if every valid multi-index is normal.
+Despite their differences, type I and type II MOP in two variables are equivalent.
+\begin{proposition}
+  \label{prop:existence}
+  Let $\vec n = (n_1,\dots,n_r)$ be a multi-index satisfying \eqref{eq:condition-type-ii} for $n\in\N_0$. Then the following statements are equivalent:
+  \begin{enumerate}
+      \item There exist unique polynomial vectors $(\mathbb A_{\vec n,1}, \dots, \mathbb A_{\vec n,r})$ of bivariate type I multiple orthogonal polynomials.
+      \item There exist a unique bivariate type II multiple orthogonal polynomial $\mathbb P_{\vec n}^n$.
+  \end{enumerate}
+\end{proposition}
 
-\cb{REVIEW Revisa esto Lidia porque normal y perfecto son conceptos que en una variable tienen sentido porque los tipo I y los tipo II son equivalentes, aquí de momento como poco tan seguros no estamos.}
-
+As we can see, the bivariate case reduces the number of multi-indices $(n_1,\dots,n_r)$ which it is possible to create multiple orthogonal polynomials with. Whereas in univariate case it is possible to question existence of MOP for every $\vec n\in \N^r$, in the bivariate case only some of the multi-indices can give us MOP, those such that there exist $n\in\N$ with $n(n+1)=\displaystyle\sum_{j=1}^r n_j (n_j+1)$. Given a admissible $\vec n\in\N^r$, we will say $\vec n$ is a \textbf{normal} multi-index if it satisfies the conditions of Proposition \ref{prop:existence}. A system $\mu_1,\dots,\mu_r$ of bivariate measures is \textbf{perfect} if every admissible multi-index is normal.
 
 \section{First example}
 
