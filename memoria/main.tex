@@ -65,7 +65,7 @@
 \title{Multiple Orthogonal Polynomials in several variables}
 
 
-\author{Fernández, Lidia and Villegas-Recio, Juan Antonio\\
+\author{Fernández, Lidia and Villegas, J. Antonio\\
 \small University of Granada}
 \maketitle
 
@@ -652,11 +652,74 @@ Nevertheless, this theorem has a significant limitation: There are admissible mu
 In fact, this problem holds when the polynomials' degree or the number of measures $r$ increase. For example, when $r=5$, $(1,4,4,0,0)$ (degree 6), $(5,6,0,0,0)$ (degree 8) or $(1,1,1,6,6)$ (degree 9) have not any possible path from $\vec 0$ satisfying theorem \ref{th:neighbours}.
 
 
-\chapter{Second approach: Using the Koornwinder basis for bivariate polynomials}
+\chapter{Second approach: Using the Graded Reverse Lexicographic Order}
 \label{chap:II}
 
-\section{Conclusion}
-\dots
+The second way we tried to generalize multiple orthogonality to the bivariate case was by using the basis of bivariate polynomials ordered by the graded reverse lexicographic order, this is
+$$\{1,x,y,x^2,xy,y^2,x^3,x^2y,xy^2,y^3,\dots\}$$
+
+On the other hand, it is known $\N$ and $\N^2$ are isomorphic sets, so we will use the \emph{Cantor Pairing Function} $\pi$, which is a bijection between $\N$ and $\N^2$ (see \cite{Lisi}). Its expression is given by 
+$$
+\pi(k_1, k_2) = \dfrac{1}{2}(k_1 + k_2)(k_1 + k_2 + 1) + k_2.
+$$
+In figure  \ref{fig:Cantor} you can observe a graphic representation of this bijection.
+
+\begin{figure}[h]
+    \centering\includegraphics[width=5cm]{./img/Cantor.png}
+    \caption{Graphic representation of Cantor Pairing Function}
+    \label{fig:Cantor}
+  \end{figure}
+
+Starting from this, we tried to do a generalization of univariate multiple orthogonality where $|\vec n| = \pi(\exp(P_{\vec n}))$, instead of the degree of type II polynomial, where the function ``$\exp$'' represents the exponent of a polynomial (not the exponential function), \textit{i.e.}, if $$P(x,y)= c_{k} x^t y^s + c_{k-1} x^{t+1} y^{s-1} + \cdots c_2 y + c_1 x + c_0,$$ then $\exp(P)=(t,s)$ and $\pi(t,s)=k$. %Given $(k_1,k_2)\in\N^2$, we will use the notation $X^{(k_1,k_2)}:=x^{k_1} y^{k_2}$, and, if $k=\pi(k_1,k_2)$, then $X^{\pi^{-1} (k)}=X^{(k_1,k_2)}=x^{k_1} y^{k_2}$. 
+
+Now, given $r\in\N$, $\vec n = (n_1,\dots, n_r)\in\N^r$ and a system of $r$ $2$-dimensional measures $\mu_1, \dots, \mu_r$, we are now presenting the definitions of type I and II multiple orthogonality following this approach. 
+
+\begin{definition}[Type II Multiple Orthogonality]
+  The \textbf{bivariate type II multiple orthogonal polynomial} $P_{\vec n}(x,y)$ is a monic polynomial such that $\exp(P_{\vec n})=\pi^{-1}(|\vec n|)$. This means that, if $|\vec n|=\pi(k,l)$ then 
+  $$
+    P_{\vec n}(x,y) = x^k y^l + c_{|\vec n|-1} x^{k+1} y^{l-1} + \cdots + c_1 x + c_0
+  $$
+  satisfying
+  \begin{equation}
+    \label{eq:typeII-MOP-2-app}
+    \prodesc{P_{\vec n}}{x^t y^s}_j = 0, \ \ \ 0\leq \pi(t,s)\leq n_j-1, \ j=1,\dots,r.
+  \end{equation}    
+\end{definition}
+
+\begin{definition}[Type I Multiple Orthogonality]
+  \textbf{Bivariate type I multiple orthogonal polynomials} are presented in a vector $(A_{\vec n,1}(x,y),\dots,A_{\vec n,r}(x,y))$ where $\pi(\exp(A_{\vec n,j})) \leq n_j-1$. This means that, if $n_j-1 = \pi(k_j,l_j)$, then $$A_{\vec n,j} = c_{n_j-1,j} x^{k_j}y^{l_j}+ c_{n_j-2,j}x^{k_j+1}y^{l_j-1} +\cdots +c_{1,j} x + c_{0,j}$$. This polynomials satisfy
+  \begin{equation}
+    \label{eq:condition-type-I-2-app}
+    \boxed{\sum_{j=1}^r \prodesc{A_{\vec n,j}}{x^t y^s}_j = \left\{\begin{array}{ccl}
+        0 &   \text{ if } & 0\leq \pi(t,s)\leq |\vec n|-2 \\
+        1 & \text{ if } & \pi(t,s)= |\vec n|-1     
+    \end{array}\right.}.
+  \end{equation}
+\end{definition}
+
+  As occurs in the first approach, Type II and Type I polynomials existences are equivalent. %For $\vec n=(n_1,\dots,n_r)$, type I and type II polynomials exist if, and only if the matrix
+%
+%  \begin{eqnarray}
+%    M_{\vec n} = \begin{pmatrix}
+%     M^{(1)} | \cdots | M^{(r)}
+%    \end{pmatrix} , \text{ where } M^{(j)} = \begin{pmatrix}
+%      m_{0,0}^{(1)} & \cdots & m_{\pi^{-1}(n_j-2)}^{(1)}  & m_{\pi^{-1}(n_j-1)}^{(1)}  \\
+%      m_{1,0}^{(1)} & \cdots & m_{\pi^{-1}(n_j-2)+(1,0)}^{(1)}  & m_{\pi^{-1}(n_j-1)+(1,0)}^{(1)}  \\
+%      \vdots & \ddots & \vdots & \vdots \\
+%      m_{\pi^{-1}(|\vec n|-1)}^{(1)} & \cdots & m_{\pi^{-1}(n_j-2)+\pi^{-1}(|\vec n|-1)}^{(1)}  & m_{\pi^{-1}(n_j-1)+\pi^{-1}(|\vec n|-1)}^{(1)}  \\
+%    \end{pmatrix}
+%  \end{eqnarray}
+%  
+
+  With the first approach only a few multi-indices allowed us to create MOP vectors, whereas in this second approach it is possible to calculate bivariate MOP with any $\vec n\in\N^r$. Apart from that, the exponent of the type II polynomials is $\pi^{-1}(|\vec n|)$ and the number of orthogonality conditions in type I orthogonality is exactly $|\vec n|$, just like happens in univariate multiple orthogonality. Nevertheless, the conditions \eqref{eq:typeII-MOP-2-app} and \eqref{eq:condition-type-I-2-app} are less intuitive than \eqref{eq:typeII-MOP-d-variables} and \eqref{eq:condition-type-I} with respect to original conditions \eqref{eq:typeII-MOP-dot} and \eqref{eq:typeI-MOP-dot}.
+
+
+
+
+
+% TODO Añadir conclusion llegado el momento
+%\section{Conclusion}
+%\dots
 
 
 
