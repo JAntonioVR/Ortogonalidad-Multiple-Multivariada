@@ -211,21 +211,21 @@
 
   Orthogonal Polynomials theory is a branch of approximation theory which could be useful in many other research topics as approximation of functions, differential equations, numerical analysis, stochastic processes and even in other sciences like optics. Everybody knows polynomials and orthogonality, however, what are ``orthogonal polynomials''?
 
-  Let us consider $\R[x]$, the vector space of univariate polynomials. As a vector space, we can provide $\R[x]$ with an inner product $\prodesc{\cdot}{\cdot}:\R[x]\times\R[x]\longrightarrow\R$, which it is often defined using integral functionals. This is, given a one-dimensional measure $\mu$, we can define the inner product
+  Let us consider $\R[x]$, the vector space of univariate polynomials. As a vector space, we can provide $\R[x]$ with an inner product $\prodesc{\cdot}{\cdot}:\R[x]\times\R[x]\longrightarrow\R$, which is often defined using integral functionals. This is, given a one-dimensional measure $\mu$, we can define the inner product
   \begin{equation}
     \label{eq:prodesc}
     \prodesc{P}{Q}_\mu:=\int P(x)Q(x)d\mu(x), \ \ \ \forall P,Q\in\R[x]
   \end{equation}
   Thus, using this inner product, two polynomials $P,Q$ are orthogonal if $\prodesc{P}{Q}_\mu = 0$. This motivates the first definition
   \begin{definition}
-    Let $\{P_n\}_{n\geq 0}$ be a sucession of polynomials. Then it is a \textbf{Orthogonal Polynomials Sucession} (OPS) if:
+    Let $\{P_n\}_{n\geq 0}$ be a sequence of polynomials. Then it is a \textbf{Orthogonal Polynomials Sequence} (OPS) if:
     \begin{enumerate}
       \item $\deg(P_n)=0, \ \ n\geq 0$.
-      \item $\prodesc{P_n}{P_k}=0, \ \ 0\geq k < n, n\geq 0$.
+      \item $\prodesc{P_n}{P_k}=0, \ \ 0\leq k < n, \ n\geq 0$.
       \item $\prodesc{P_n}{P_n} \not = 0, \ \ \ n\geq 0$.
     \end{enumerate}
   \end{definition}
-  Then, an OPS shapes a orthogonal basis of $\R[x]$. You can build the OPS from the measure using many different ways: applying Gram-Schmidt orthogonalization process to the usual basis $\{1,x,x^2,\dots\}$, solving linear systems of equations, or applying other proper methods like the Three Term Relation or Rodrigues Formula for the so called `classic' orthogonal polynomials. 
+  Then, an OPS shapes a orthogonal basis of $\R[x]$. You can build the OPS from the measure using many different ways: applying Gram-Schmidt orthogonalization process to the usual basis $\{1,x,x^2,\dots\}$, solving linear systems of equations, or applying other proper methods like the Three Term Recurrence Relation or Rodrigues Formula for the so called `classic' orthogonal polynomials. 
 
 
 \end{multicols}
@@ -264,7 +264,7 @@
     \end{equation}
   \end{definition}
 
-  Multiple Orthogonal Polynomials theory has been hardly researched recently. It has applications to Hermite-Padé rational approximations, random matrices, non-intersecting random paths or integrable systems. However, this theory has only been studied in the univariate case. Our recent research is mainly focused on finding generalisations of MOP to bivariate Orthogonal Polynomials. We are currently focusing in two different possible approaches.  
+  Multiple Orthogonal Polynomials theory has been deeply studied in the last years. It has applications to Hermite-Padé rational approximations, random matrices, non-intersecting random paths or integrable systems (see \cite{andrei}). However, this theory has only been studied in the univariate case. Our recent research is mainly focused on finding generalisations of MOP to bivariate Orthogonal Polynomials. We are currently focusing in two different possible approaches.  
   
   \end{multicols}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -299,7 +299,7 @@
     \begin{equation}
         \label{eq:typeII-MOP-d-variables}
         \boxed{
-        \prodesc{\mathbb P_{\vec n}}{\mathbb X_k}_j = 0_{(n+1)\times (k+1)}, \ \ \ k=0,\dots,n_j-1, j=1,\dots,r.}
+        \prodesc{\mathbb P_{\vec n}}{\mathbb X_k}_j = 0_{(n+1)\times (k+1)}, \ \ \ k=0,\dots,n_j-1, \ j=1,\dots,r.}
     \end{equation}    
   \end{definition}
 
@@ -339,7 +339,7 @@ $$
 \pi(k_1, k_2) = \dfrac{1}{2}(k_1 + k_2)(k_1 + k_2 + 1) + k_2;
 $$
 
-Thus, we tried to do a generalization of univariate multiple orthogonality where $|\vec n| = \pi(\exp(P_{\vec n}))$, instead of the degree of type I polynomial, where the function ``$\exp$'' represents the exponent of a polynomial (not the exponential function), \textit{i.e.}, if $$P(x,y)= c_{k} x^t y^s + c_{k-1} x^{t+1} y^{s-1} + \cdots c_2 y + c_1 x + c_0,$$ then $\exp(P)=(t,s)$ and $\pi(t,s)=k$.
+Thus, we tried to do a generalization of univariate multiple orthogonality where $|\vec n| = \pi(\exp(P_{\vec n}))$, instead of the degree of type II polynomial, where the function ``$\exp$'' represents the exponent of a polynomial (not the exponential function), \textit{i.e.}, if $$P(x,y)= c_{k} x^t y^s + c_{k-1} x^{t+1} y^{s-1} + \cdots c_2 y + c_1 x + c_0,$$ then $\exp(P)=(t,s)$ and $\pi(t,s)=k$.
 
 Now, given $r\in\N$, $\vec n = (n_1,\dots, n_r)\in\N^r$ and a system of $r$ $2$-dimensional measures $\mu_1, \dots, \mu_r$, we are now presenting the definitions of type I and II multiple orthogonality following this approach. 
 
@@ -348,12 +348,12 @@ Now, given $r\in\N$, $\vec n = (n_1,\dots, n_r)\in\N^r$ and a system of $r$ $2$-
   \begin{equation}
     \label{eq:typeII-MOP-2-app}
     \boxed{
-    \prodesc{P_{\vec n}}{x^t y^s}_j = 0, \ \ \ 0\leq \pi(t,s)\leq n_j-1, j=1,\dots,r.}
+    \prodesc{P_{\vec n}}{x^t y^s}_j = 0, \ \ \ 0\leq \pi(t,s)\leq n_j-1, \ j=1,\dots,r.}
   \end{equation}    
 \end{definition}
 
-\begin{definition}
-  \textbf{Bivariate type I multiple orthogonal polynomials} are often presented in a vector $(A_{\vec n,1}(x,y),\dots,A_{\vec n,r}(x,y))$ where $\exp(A_{\vec n,j}) \leq \pi^{-1}(n_j-1)$. This means, if $n_j-1 = \pi(t_j,s_j)$, then $A_{\vec n,j} = c_{n_j-1} x^{t_j}y^{s_j}+\cdots + c_0$. This polynomials satisfy
+\begin{definition}[Type I Multiple Orthogonality]
+  \textbf{Bivariate type I multiple orthogonal polynomials} are presented in a vector $(A_{\vec n,1}(x,y),\dots,A_{\vec n,r}(x,y))$ where $\pi(\exp(A_{\vec n,j})) \leq n_j-1$. This means that, if $n_j-1 = \pi(t_j,s_j)$, then $A_{\vec n,j} = c_{n_j-1} x^{t_j}y^{s_j}+\cdots + c_0$. This polynomials satisfy
   \begin{equation}
     \label{eq:condition-type-I-2-app}
     \boxed{\sum_{j=1}^r \prodesc{A_{\vec n,j}}{x^t y^s}_j = \left\{\begin{array}{ccl}
@@ -363,7 +363,7 @@ Now, given $r\in\N$, $\vec n = (n_1,\dots, n_r)\in\N^r$ and a system of $r$ $2$-
   \end{equation}
 \end{definition}
 
-  As occurs in the first approach, Type II and Type I polynomials existence is equivalent.% For $\vec n=(n_1,\dots,n_r)$, type I and type II polynomials exist if, and only if the matrix
+  As occurs in the first approach, Type II and Type I polynomials existences are equivalent.% For $\vec n=(n_1,\dots,n_r)$, type I and type II polynomials exist if, and only if the matrix
 %
 %  \begin{eqnarray}
 %    M_{\vec n} = \begin{pmatrix}
@@ -377,7 +377,7 @@ Now, given $r\in\N$, $\vec n = (n_1,\dots, n_r)\in\N^r$ and a system of $r$ $2$-
 %  \end{eqnarray}
 %  
 
-  With the first approach only a few multi-indices allowed us to create MOP vectors, whereas in this second approach it is possible to calculate bivariate MOP with any $\vec n\in\N^r$. Apart from that, the degree of the type II polynomials and the number of orthogonality conditions in type I orthogonality is exactly $|\vec n|$, just like happens in univariate multiple orthogonality. Nevertheless, the conditions \eqref{eq:typeII-MOP-2-app} and \eqref{eq:condition-type-I-2-app} are less intuitive than \eqref{eq:typeII-MOP-d-variables} and \eqref{eq:condition-type-ii} with respect to the original conditions \eqref{eq:typeII-MOP-dot} and \eqref{eq:typeI-MOP-dot}.
+  With the first approach only a few multi-indices allowed us to create MOP vectors, whereas in this second approach it is possible to calculate bivariate MOP with any $\vec n\in\N^r$. Apart from that, the exponent of the type II polynomials is $\pi^{-1}(|\vec n|)$ and the number of orthogonality conditions in type I orthogonality is exactly $|\vec n|$, just like happens in univariate multiple orthogonality. Nevertheless, the conditions \eqref{eq:typeII-MOP-2-app} and \eqref{eq:condition-type-I-2-app} are less intuitive than \eqref{eq:typeII-MOP-d-variables} and \eqref{eq:condition-type-I} with respect to original conditions \eqref{eq:typeII-MOP-dot} and \eqref{eq:typeI-MOP-dot}.
 
 
 \vspace{2pt}
@@ -396,7 +396,7 @@ Now, given $r\in\N$, $\vec n = (n_1,\dots, n_r)\in\N^r$ and a system of $r$ $2$-
 {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{multicols}{2}
-  Multiple Orthogonal Polynomials is a theory that is currently being widely researched. At this moment, we have generalised to the bivariate case some of the main univariate results. But there are still many results and applications to work on:
+  Multiple Orthogonal Polynomials is a theory that is currently being widely studied. At this moment, we have generalised to the bivariate case some of the main univariate results. But there are still many results and applications to work on:
   \begin{itemize}
     \item Study product of two univariate MOP $P_{\vec n}(x)P_{\vec m}(y)$ as a bivariate MOP. 
     \item Find Nearest Neighbour Relation generalizations to the bivariate case for general paths in both approaches.
@@ -459,23 +459,28 @@ Now, given $r\in\N$, $\vec n = (n_1,\dots, n_r)\in\N^r$ and a system of $r$ $2$-
 \bibitem{chiara}
 {\sc T. S. Chiara},
 {\em An Introduction to Orthogonal Polynomials},
-{\rm Dover Books on Mathematics, Dover Publications, 2011}
+{\rm Dover Books on Mathematics, Dover Publications}, 2011
+
 \bibitem{xu}
 {\sc C. F. Dunkl and Y. Xu},
-{\em Orthogonal polynomials of several variables},
-{\rm 2nd edition, Encyclopedia of Mathematics and its Applications, vol. 155, Cambridge Univ. Press, Cambridge, 2014.}
+{\em Orthogonal Polynomials of Several Variables},
+{\rm 2nd edition, Encyclopedia of Mathematics and its Applications, vol. 155, Cambridge Univ. Press, Cambridge}, 2014.
+
 \bibitem{Walter}
 {\sc W. van Assche},
-{\em Orthogonal and multiple orthogonal polynomials, random matrices, and painlevé equations}, in 
-{\rm ``Orthogonal Polynomials'' (M. Foupouagnigni, W. Koepf, eds), Tutorials, Schools and Workshops in the Mathematical Sciences, Springer Nature Switzerland} (2020) 629--683.
+{\em Orthogonal and Multiple Orthogonal Polynomials, Random Matrices, and Painlevé Equations}, in 
+{\rm ``Orthogonal Polynomials'' (M. Foupouagnigni, W. Koepf, eds), Tutorials, Schools and Workshops in the Mathematical Sciences, Springer Nature Switzerland}, 2020, 629--683.
+
 \bibitem{ismail}
 {\sc M. E. H. Ismail},
-{\em Classical and quantum orthogonal polynomials in one variable},
-{\rm Cambridge University Press, Encyclopedia of mathematics and its applications}, 98, (2005).
-\bibitem{3}
+{\em Classical and Quantum Orthogonal Polynomials in One Variable},
+{\rm Cambridge University Press, Encyclopedia of mathematics and its applications}, 98, 2005.
+
+\bibitem{andrei}
 {\sc A. Martínez-Finkelshtein, W. van Assche},
-{\em What is \dots a multiple orthogonal polynomial?},
-{\rm Notices of the American Mathematical Society}, 63, (2016) 1029--1031.
+{\em What is \dots a Multiple Orthogonal Polynomial?},
+{\rm Notices of the American Mathematical Society}, 63, 2016, 1029--1031.
+
 \end{thebibliography}
 
 
@@ -483,16 +488,16 @@ Now, given $r\in\N$, $\vec n = (n_1,\dots, n_r)\in\N^r$ and a system of $r$ $2$-
 {\noindent\hspace*{-5pt}
 %\begin{tabular}{p{0.8\textwidth}p{0.15\textwidth}}
 \noindent{\normalsize\textbf{Acknowledgements}} Universidad de Granada; GOYA: ``Grupo de Ortogonalidad Y Aplicaciones'' and ``Departamento de Matemática Aplicada''.}
-
-\noindent Research supported by IMAG, María de Maeztu Grant ``IMAG CEX2020--001105--M''
-\bigskip
+\noindent \begin{flushleft}
+  Research supported by IMAG, María de Maeztu Grant ``IMAG CEX2020--001105--M''
+\end{flushleft} 
 %%& \hspace*{-5pt}
 \vspace{1pt}
 \centerline{
-\includegraphics[height=1.1cm]{ugrH} \quad
-\includegraphics[height=1.1cm]{IMAG} \quad
-\includegraphics[height=1.1cm]{maeztu} \quad
-\includegraphics[height=1.1cm]{goya.png}
+\includegraphics[height=0.98cm]{ugrH} \quad
+\includegraphics[height=0.98cm]{IMAG} \quad
+\includegraphics[height=0.98cm]{maeztu} \quad
+\includegraphics[height=0.98cm]{goya.png}
 }
 %\end{tabular}
 
