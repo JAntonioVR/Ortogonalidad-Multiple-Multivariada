@@ -27,6 +27,7 @@
 
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
+\newtheorem{example}{Example}[section]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
@@ -65,7 +66,7 @@
 \title{Multiple Orthogonal Polynomials in several variables}
 
 
-\author{Fernández, Lidia and Villegas, J. Antonio\\
+\author{Fernández, Lidia and Villegas, Juan Antonio\\
 \small University of Granada}
 \maketitle
 
@@ -584,6 +585,7 @@ This result, which is a two-dimensional extension of \cite[Theorem 23.1.6]{Ismai
 
 
 \section{Nearest Neighbour Recurrence Relation}
+\label{sec:NNRR}
 
 The standard orthogonal polynomials always satisfy a Three-Term Recurrence Relation. That is, given an monic OPS $\{P_n\}$ with respect to a inner product $\prodesc{\cdot}{\cdot}$ or its respective functional $\mathcal L$, there exist constants $\alpha_n,\beta_n$ such that
 $$
@@ -656,8 +658,10 @@ In fact, this problem holds when the polynomials' degree or the number of measur
 \label{chap:II}
 
 The second way we tried to generalize multiple orthogonality to the bivariate case was by using the basis of bivariate polynomials ordered by the graded reverse lexicographic order, this is
-$$\{1,x,y,x^2,xy,y^2,x^3,x^2y,xy^2,y^3,\dots\}$$
-
+\begin{equation}
+    \label{eq:usual-basis-ordered}
+    \{1,x,y,x^2,xy,y^2,x^3,x^2y,xy^2,y^3,\dots\}
+\end{equation}
 On the other hand, it is known $\N$ and $\N^2$ are isomorphic sets, so we will use the \emph{Cantor Pairing Function} $\pi$, which is a bijection between $\N$ and $\N^2$ (see \cite{Lisi}). Its expression is given by 
 $$
 \pi(k_1, k_2) = \dfrac{1}{2}(k_1 + k_2)(k_1 + k_2 + 1) + k_2.
@@ -686,35 +690,252 @@ Now, given $r\in\N$, $\vec n = (n_1,\dots, n_r)\in\N^r$ and a system of $r$ $2$-
   \end{equation}    
 \end{definition}
 
+In order to calculate the $|\vec n|$ coefficients of the polynomial $P_{\vec n}(x,y)$, employing the conditions \eqref{eq:typeII-MOP-2-app} we deduce the coefficients $c_0,\dots,c_{|\vec n|-1}$ are the solutions of the following system of linear equations.
+
+\begin{equation}
+    \label{eq:system-typeII-2app}
+    \begin{pmatrix}
+        m_{0,0}^{(1)} & m_{(1,0)}^{(1)} & \cdots &  m_{\pi^{-1}(|\vec n|-1)}^{(1)} \\
+        \vdots & \vdots & \ddots & \vdots  \\
+        m_{\pi^{-1}(n_1-1)}^{(1)} & m_{(1,0)+\pi^{-1}(n_1-1)}^{(1)} & \cdots &  m_{\pi^{-1}(|\vec n|-1)+\pi^{-1}(n_1-1)}^{(1)} \\ \hline
+        \vdots & \vdots & \ddots  & \vdots \\ \hline
+        m_{0,0}^{(r)} & m_{(1,0)}^{(r)} & \cdots  & m_{\pi^{-1}(|\vec n|-1)}^{(r)} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        m_{\pi^{-1}(n_r-1)}^{(r)} & m_{(1,0)+\pi^{-1}(n_r-1)}^{(r)} & \cdots  & m_{\pi^{-1}(|\vec n|-1)+\pi^{-1}(n_r-1)}^{(r)}
+    \end{pmatrix}\begin{pmatrix}
+        c_0 \\ c_1 \\ \vdots \\ c_{|\vec n|-1}
+    \end{pmatrix} = - \begin{pmatrix}
+        m_{\pi^{-1}(|\vec n|)}^{(1)} \\ m_{\pi^{-1}(|\vec n|)+(1,0)}^{(1)} \\ \vdots \\ m_{\pi^{-1}(|\vec n|)+\pi^{-1}(n_1-1)}^{(1)} \\ \hline \vdots \\ \hline \\ m_{\pi^{-1}(|\vec n|)}^{(r)} \\ m_{\pi^{-1}(|\vec n|)+(1,0)}^{(r)} \\ \vdots \\ m_{\pi^{-1}(|\vec n|)+\pi^{-1}(n_r-1)}^{(r)} 
+    \end{pmatrix}.
+\end{equation}
+
+We will denote as $M_{\vec n}$ the transpose matrix of the coefficients matrix of the system \eqref{eq:system-typeII-2app}. Thus, given a multi-index $\vec n =(n_1,\dots,n_r)$, the type II polynomial $P_{\vec n}$ will exist and be unique if, and only if, the matrix $M_{\vec n}$ is regular. Once the type II bivariate multiple orthogonality has been defined, we are presenting a definition for the type I MOP.
+
 \begin{definition}[Type I Multiple Orthogonality]
-  \textbf{Bivariate type I multiple orthogonal polynomials} are presented in a vector $(A_{\vec n,1}(x,y),\dots,A_{\vec n,r}(x,y))$ where $\pi(\exp(A_{\vec n,j})) \leq n_j-1$. This means that, if $n_j-1 = \pi(k_j,l_j)$, then $$A_{\vec n,j} = c_{n_j-1,j} x^{k_j}y^{l_j}+ c_{n_j-2,j}x^{k_j+1}y^{l_j-1} +\cdots +c_{1,j} x + c_{0,j}$$. This polynomials satisfy
+  \textbf{Bivariate type I multiple orthogonal polynomials} are presented in a vector $(A_{\vec n,1}(x,y),\dots,A_{\vec n,r}(x,y))$ where $\pi(\exp(A_{\vec n,j})) \leq n_j-1$. This means, if $n_j-1 = \pi(k_j,l_j)$, then $$A_{\vec n,j} = c_{n_j-1,j} x^{k_j}y^{l_j}+ c_{n_j-2,j}x^{k_j+1}y^{l_j-1} +\cdots +c_{1,j} x + c_{0,j}$$. This polynomials satisfy
   \begin{equation}
     \label{eq:condition-type-I-2-app}
-    \boxed{\sum_{j=1}^r \prodesc{A_{\vec n,j}}{x^t y^s}_j = \left\{\begin{array}{ccl}
+    \sum_{j=1}^r \prodesc{A_{\vec n,j}}{x^t y^s}_j = \left\{\begin{array}{ccl}
         0 &   \text{ if } & 0\leq \pi(t,s)\leq |\vec n|-2 \\
         1 & \text{ if } & \pi(t,s)= |\vec n|-1     
-    \end{array}\right.}.
+    \end{array}\right..
   \end{equation}
 \end{definition}
 
-  As occurs in the first approach, Type II and Type I polynomials existences are equivalent. %For $\vec n=(n_1,\dots,n_r)$, type I and type II polynomials exist if, and only if the matrix
-%
-%  \begin{eqnarray}
-%    M_{\vec n} = \begin{pmatrix}
-%     M^{(1)} | \cdots | M^{(r)}
-%    \end{pmatrix} , \text{ where } M^{(j)} = \begin{pmatrix}
-%      m_{0,0}^{(1)} & \cdots & m_{\pi^{-1}(n_j-2)}^{(1)}  & m_{\pi^{-1}(n_j-1)}^{(1)}  \\
-%      m_{1,0}^{(1)} & \cdots & m_{\pi^{-1}(n_j-2)+(1,0)}^{(1)}  & m_{\pi^{-1}(n_j-1)+(1,0)}^{(1)}  \\
-%      \vdots & \ddots & \vdots & \vdots \\
-%      m_{\pi^{-1}(|\vec n|-1)}^{(1)} & \cdots & m_{\pi^{-1}(n_j-2)+\pi^{-1}(|\vec n|-1)}^{(1)}  & m_{\pi^{-1}(n_j-1)+\pi^{-1}(|\vec n|-1)}^{(1)}  \\
-%    \end{pmatrix}
-%  \end{eqnarray}
-%  
+Once again, let us assume the measures $\mu_1,\dots,\mu_r$ to be absolutely continuous with respect to a common measure $\mu$ whose support is $\Omega = \displaystyle\bigcup_{j=1}^r \Omega_j$, where $\Omega_j=\supp(\mu_j)$ (this is, $d\mu_j(x,y)=w_j(x,y)d\mu(x,y), \ j=1,\dots,r$). Then, we define the \textit{Bivariate Type I Function} as
+\begin{equation}
+    \label{eq:typeI-function-2-app}
+    Q_{\vec n}(x,y)=\sum_{j=1}^r A_{\vec n,j}(x,y) w_j(x,y),
+\end{equation}
+so that conditions \eqref{eq:condition-type-I-2-app} are equivalent to
+\begin{equation}
+    \label{wq:typeI-conditions-function-2-app}
+    \prodesc{Q_{\vec n}}{x^t y^s}_\mu = \left\{\begin{array}{ccl}
+        0 &   \text{ if } & 0\leq \pi(t,s)\leq |\vec n|-2 \\
+        1 & \text{ if } & \pi(t,s)= |\vec n|-1     
+    \end{array}\right..
+\end{equation}
 
-  With the first approach only a few multi-indices allowed us to create MOP vectors, whereas in this second approach it is possible to calculate bivariate MOP with any $\vec n\in\N^r$. Apart from that, the exponent of the type II polynomials is $\pi^{-1}(|\vec n|)$ and the number of orthogonality conditions in type I orthogonality is exactly $|\vec n|$, just like happens in univariate multiple orthogonality. Nevertheless, the conditions \eqref{eq:typeII-MOP-2-app} and \eqref{eq:condition-type-I-2-app} are less intuitive than \eqref{eq:typeII-MOP-d-variables} and \eqref{eq:condition-type-I} with respect to original conditions \eqref{eq:typeII-MOP-dot} and \eqref{eq:typeI-MOP-dot}.
+As we have done previously, we can apply conditions \eqref{eq:condition-type-I-2-app} to generic polynomials to obtain the system of equations for the coefficients of type I polynomials $A_{\vec n,1}(x,y),\dots,A_{\vec n, r}(x,y)$. Then, type I polynomials coefficients $c_{0,j},\dots c_{n_1-1,j}, \ (j=1,\dots,r)$ are the solutions of the system 
+
+\begin{equation}
+    \label{eq:system-typeI-2app}
+    M_{\vec n} \begin{pmatrix}
+        c_{0,1} \\ \vdots \\ c_{n_1-1,1} \\ \hline \vdots \\ \hline c_{0,r} \\ \vdots \\ c_{n_r-1,r} 
+    \end{pmatrix} = \begin{pmatrix}
+        0 \\ 0 \\ \vdots \\ 0 \\ 1
+    \end{pmatrix} 
+\end{equation}
+
+Observe the fact that the coefficient matrices of systems \eqref{eq:system-typeII-2app} and \eqref{eq:system-typeI-2app} are mutually transposed. As a result, the existences of type I and type II MOP for a multi-index $\vec n\in\N^r$ are equivalent. We have proven
+
+\begin{proposition}
+    \label{prop:equivalence-2-app}
+    Given $\vec n=(n_1,\dots,n_r)\in\N^r$. Then the following statements are equivalent.
+    \begin{enumerate}
+        \item There exist unique type I polynomials $A_{\vec n,1},\dots,A_{\vec n,r}$.
+        \item There exist an unique type II polynomial $P_{\vec n}$.
+        \item The matrix
+            \begin{equation}
+                M_{\vec n} = \begin{pmatrix}
+                    M^{(1)} | \cdots | M^{(r)}
+                   \end{pmatrix},
+            \end{equation} 
+            where
+            \begin{equation}
+                M^{(j)} = \begin{pmatrix}
+                    m_{0,0}^{(j)} & \cdots & m_{\pi^{-1}(n_j-2)}^{(j)}  & m_{\pi^{-1}(n_j-1)}^{(j)}  \\
+                    m_{1,0}^{(j)} & \cdots & m_{\pi^{-1}(n_j-2)+(1,0)}^{(j)}  & m_{\pi^{-1}(n_j-1)+(1,0)}^{(j)}  \\
+                    \vdots & \ddots & \vdots & \vdots \\
+                    m_{\pi^{-1}(|\vec n|-1)}^{(j)} & \cdots & m_{\pi^{-1}(n_j-2)+\pi^{-1}(|\vec n|-1)}^{(j)}  & m_{\pi^{-1}(n_j-1)+\pi^{-1}(|\vec n|-1)}^{(j)}  \\
+                  \end{pmatrix}
+            \end{equation}
+            is regular.
+    \end{enumerate}
+\end{proposition}
+
+  As a consecuence of this last result, given a system of $r$ bidimensional measures $\mu_1,\dots,m_r$ and a multi-index $\vec n=(n_1,\dots,n_r)\in\N^r$, we will say $\vec n$ is \textbf{normal} if proposition \ref{prop:equivalence-2-app} holds, and the system of measures $\mu_1,\dots,\mu_r$ will be a \textbf{perfect} system of measures if every multi-index $\vec n\in\N^r$ is normal. 
+  
+  Comparing this latest approach with the first one, note that with the first approach only a few multi-indices allowed us to create MOP vectors, whereas in this second approach it is possible to calculate bivariate MOP with any $\vec n\in\N^r$. Apart from that, the exponent of type II polynomials is $\pi^{-1}(|\vec n|)$ and the number of orthogonality conditions in type I orthogonality is exactly $|\vec n|$, just like happens in univariate multiple orthogonality. Nevertheless, the conditions \eqref{eq:typeII-MOP-2-app} and \eqref{eq:condition-type-I-2-app} are less intuitive than \eqref{eq:typeII-MOP-d-variables} and \eqref{eq:condition-type-I} with respect to original conditions \eqref{eq:typeII-MOP-dot} and \eqref{eq:typeI-MOP-dot}.
+
+    In the following sections, some other generalizations to the principal univariate results will be given, including a biorthogonality relation, the nearest neighbour relation and some conclusions about the product of univariate multiple orthogonal polynomials.
 
 
+    \section{Biorthogonality}
 
+    Employing the type I function defined in \eqref{eq:typeI-function-2-app} we are able to proof some orthogonality relations between type I and type II multiple orthogonal polynomials, as happened in the univariate case (see \cite[Theorem 23.1.6]{Ismail}) and also in the first approach (theorem \ref{th:biorthogonality}). 
+
+    \begin{theorem}
+        \label{th:biorthogonality-2-app}
+        Let $\mu_1,\dots,\mu_r$ be a perfect system of bivariate absolutely continuous measures and consider $\vec n,\vec m\in\N^r$. Then, the following biorthogonality relation holds:
+        \begin{equation}
+            \label{eq:biorthogonality-2-app}
+            \prodesc{P_{\vec n}}{Q_{\vec m}}_{\mu} = \left\{\begin{array}{ccc}
+                0 & \text{ if } & \vec m \leq \vec n \\
+                0 & \text{ if } & |\vec n| \leq |\vec m|-2 \\
+                1 & \text{ if } & |\vec n| = |\vec m|-1 
+            \end{array}\right.
+        \end{equation}
+    \end{theorem}
+    \begin{proof}
+        Applying the definition of type I function $Q_{\vec m}$ in \eqref{eq:typeI-function-2-app}, $$\prodesc{P_{\vec n}}{Q_{\vec m}}_{\mu} =\displaystyle\sum_{j=1}^r \prodesc{P_{\vec n}}{A_{\vec m,j}}_j.$$
+        \begin{itemize}
+            \item If $\vec m \leq \vec n$ (using the product order), then $m_j\leq n_j$ for every $j$. As we know $\pi(\exp(A_{\vec m,j}))\leq m_j-1 \leq n_j -1$, due to type II orthogonality $\prodesc{P_{\vec n}}{A_{\vec m,j}}_j=0$ for every $j$.
+            \item If $|\vec n|\leq|\vec m|-2$, then $|\vec n|=\pi(\exp(P_{\vec n}))\leq|\vec m|-2$, so that $\displaystyle\sum_{j=1}^r\prodesc{P_{\vec n}}{A_{\vec m,j}}_j = 0$ because of type I MOP.
+            \item If $|\vec n|=|\vec m|-1$, then  $|\vec n|=\pi(\exp(P_{\vec n}))=|\vec m|-1$ and, again due to type I MOP and the fact of $P_{\vec n}$ is a monic polynomial, $\displaystyle\sum_{j=1}^r\prodesc{P_{\vec n}}{A_{\vec m,j}}_j = 1$.
+        \end{itemize}
+    \end{proof}
+
+    \section{Nearest Neighbour Recurrence Relation}
+
+    Given $\vec n\in\N^r$, the original univariate Nearest Neighbour Relation \cite[Theorem 23.1.7]{Ismail} expresses the polynomial $xP_{\vec n}(x)$ as a linear combination of $P_{\vec n}$ itself, a beyond neighbour and $r$ above neighbours. In the bivariate case, we could do a generalization of this result using polynomial vectors (check section \ref{sec:NNRR}). The main problem of this result was the restrictions found in creating paths from $\vec 0$ to $\vec n$. With this approach, it is possible to solve that problem, although some other ones appeared.
+    
+    Firstly, in the univariate case, it is clear that $\deg(x P_{\vec n})=\deg(P_{\vec n})+1=|\vec n|+1$, and that is the reason why only one beyond neighbour is needed. However, this equality does not hold in the bivariate case with this approach. For this reason, we present de following lemma.
+    
+    \begin{lemma}
+        \label{lemma:pi-xPn}
+        Let $\vec n\in\N^r$ and $(t,s)=\exp(P_{\vec n})=\pi^{-1}(k)$. Then, $$(t+1,s)=\exp(xP_{\vec n})=\pi^{-1}(k+\deg(P_{\vec n})+1).$$
+    \end{lemma}
+    \begin{proof}
+        Remember the usual basis of the vector space of bivariate polynomials ordered by the reverse lexicographic graded order
+        $$
+        \{1,x,y,\dots, x^{t+s},\dots, \underbrace{x^t y^s, x^{t-1}y^{s+1}, \dots, x y^{t+s-1},y^{t+s},x^{t+s+1},\dots,x^{t+1}y^s},\dots\}.
+        $$
+        An alternative interpretation of the function $\pi(t,s)$ is the position of the monomial $x^t y^s$ on this list (starting the count in $0$). In this way, $t+s+1$ monomials separate $x^t y^s$ and $x^{t+1} y^s$. Thus, $\pi(t+1,s)=\pi(t,s)+t+s+1 = k + \deg(P_{\vec n}) +1$. 
+    \end{proof}
+
+    Another useful result which will be needed is the one who expresses the degree of a  $x^t y^s$ such that we only know $k=\pi(t,s)$, but the exponent $(t,s)$ is unknown. This is, we need to calculate the degree of the $k+1$ monomial in the list \eqref{eq:usual-basis-ordered}.
+
+    \begin{lemma}
+        \label{lemma:degree}
+        Let $k \in \N\cup\{0\}$ and $(t,s)=\pi^{-1}(k)$. Then 
+        \begin{equation}
+        t+s =\deg(x^t y^s)= \left\lceil \dfrac{1}{2}(-1+\sqrt{9+8k}) \right\rceil-1.
+        \end{equation}
+    \end{lemma}
+    \begin{proof}
+        We know there is $1$ monomial of degree $0$ ($1$), $2$ monomials of degree $1$ ($x, y$), \dots, $n+1$ monomials of degree $n$ ($x^n, x^{n-1}y, \dots, y^n$). Then, making partial sums, there are $1+2+\cdots + n+1=\dfrac{1}{2}(n+2)(n+1)$ monomials with degree $\leq n$. So, the question is, which is the minimun $n\in\N\cup\{0\}$ s.t. $\dfrac{1}{2}(n+2)(n+1)\geq k+1$?
+
+        If we solve the last inequation, which is equivalent to $n^2 + 3n -2k \geq 0$, considering that $n\geq 0$, we get $n\geq \frac 1 2 (-3+\sqrt{9+8k})$. But $n$ has to be an integer, so we take 
+        $$
+        n=  \left\lceil\frac 1 2 (-3+\sqrt{9+8k})\right\rceil = \left\lceil\frac 1 2 (-1+\sqrt{9+8k})\right\rceil -1.
+        $$
+
+    \end{proof}
+
+    With these two previous lemmas, we are able to announce the main theorem of this section
+
+    \begin{theorem}
+        Let $(\mu_1,\dots,\mu_r)$ be a perfect system of bidimensional measures and $\vec n\in\N^r$ s.t. $(t,s)=\pi^{-1}(|\vec n|)$ with $s\neq 0$. Let us consider $\vec m$ s.t. $|\vec m| = \pi(t+1,s)$ and a path $\{\vec m_k, k=0,\dots,|\vec n|,\dots,|\vec m|\}$ with $\vec m_0=\vec 0$, $\vec m_{|\vec n|}=\vec n$, $\vec m_{|\vec m|}=\vec m$ and $|\vec m_k|=k$ for every $k$. Then
+        $$
+        xP_{\vec n} = P_{\vec m} + \sum_{k=0}^{|\vec m|-1}c_k P_{\vec m_k}
+        $$
+        where $c_{k-1}=\prodesc{xP_{\vec n}}{Q_{\vec m_k}} \ \ (k=1,\dots,|\vec m|)$.
+
+        Furthermore, if we define the function $\tau:\N\longrightarrow\N$, $\tau(n)=n+\left\lceil \frac 1 2 (-1 + \sqrt{1+8n})\right\rceil$, then $c_{k-1} = 0$ for every $k$ such that $\tau((\vec m_k)_j) \leq n_j$ for every $j=1,\dots,r$.
+    \end{theorem}
+    \begin{proof}
+        We know that $\pi(\exp(xP_{\vec n}))=\pi(t+1,s)=|\vec m|$. In addition, as $P_{\vec n}$ is monic, so is $xP_{\vec n}$. On the other hand, as $\pi(\exp(P_{\vec m_k}))=k$, then $\{P_{\vec m_0}, P_{\vec m_1} \dots,P_{\vec m}\}$ is a basis of the vector space of polynomials $P(x,y)$ such that $\pi(\exp(P))\leq |\vec m|$. With all this information, it is possible to write $xP_{\vec n}$ as a linear combination of $P_{\vec m_0}, P_{\vec m_1} \dots,P_{\vec m}$.
+        \begin{equation}
+            xP_{\vec m} =  P_{\vec m} + \sum_{k=0}^{|\vec m|-1}c_k P_{\vec m_k}.
+        \end{equation}
+
+        Next, in order to find the values of coefficients $c_k$, for $l=1,\dots,|\vec m|$, observe
+        \begin{equation}
+            \label{eq:NNRR-2-app-1}
+            \prodesc{xP_{\vec n}}{Q_{\vec m_l}} = \prodesc{P_{\vec m}}{Q_{\vec m_l}} + \sum_{k=0}^{|\vec m|-1} c_k \prodesc{P_{\vec m_k}}{Q_{\vec m_l}}.
+        \end{equation}
+    
+        To simplify the previous expression, we will employ the biorthogonality theorem \ref{th:biorthogonality-2-app}. 
+        \begin{itemize}
+            \item Firstly, it is known that $\vec m_l \leq \vec m_k$ if, and only if $l\leq k$, then $\prodesc{P_{\vec m_k}}{Q_{\vec m_l}}=0$ if $k\geq l$.
+            \item Secondly, because of $|\vec m_k|=k$,  $|\vec m_k| \leq |\vec m_l| - 2$ if and only if $k\leq l-2$, then $\prodesc{P_{\vec m_k}}{Q_{\vec m_l}}=0$ if $k\leq l-2$.
+            \item Lastly, if $k=l-1$, then $\prodesc{P_{\vec m_{l-1}}}{Q_{\vec m_l}}=1$.
+        \end{itemize}
+
+        Applying these conclusions to \eqref{eq:NNRR-2-app-1}, we get
+        \begin{equation}
+            \prodesc{xP_{\vec n}}{Q_{\vec m_l}}=c_{l-1}, \ \ \ l=1,\dots,|\vec m|
+        \end{equation}
+        
+
+        The last step is to determine the values of $k$ so that the coefficient $c_k$ vanishes. Utilizing the definition of the type I function \eqref{eq:typeI-function-2-app}, 
+        $$
+        c_{k-1}=\prodesc{xP_{\vec n}}{Q_{\vec m_k}} = \sum_{j=0}^r \prodesc{xP_{\vec n}}{A_{\vec m_k,j}}_j,
+        $$
+        and because of the integral definition of these inner products $$ \displaystyle\sum_{j=0}^r \prodesc{xP_{\vec n}}{A_{\vec m_k,j}}_j=\displaystyle\sum_{j=0}^r \prodesc{P_{\vec n}}{xA_{\vec m_k,j}}_j.$$ Fixing $j\in\{1,\dots,r\}$, and due to type II orthogonality, we know $\prodesc{P_{\vec n}}{xA_{\vec m_k,j}}_j=0$ if $\pi(\exp(xA_{\vec m_k,j}))\leq n_j-1$. Because of lemma \ref{lemma:pi-xPn}, 
+        \begin{equation}
+            \label{eq:NNRR-2-app-2}
+            \pi(\exp(xA_{\vec m_k,j})) = \pi(\exp(A_{\vec m_k,j})) + \deg(A_{\vec m_k,j}) +1 \leq (m_k)_j + \deg(A_{\vec m_k,j}).
+        \end{equation}
+        As $\pi(\exp(A_{\vec m_k,j}))\leq (m_k)_j -1$, employing the lemma \ref{lemma:degree}, 
+        $$
+        \deg(A_{\vec m_k,j}) = \left\lceil \frac 1 2 (-1 + \sqrt{9+8((m_k)_j-1)})\right\rceil -1 =  \left\lceil \frac 1 2 (-1 + \sqrt{1+8(m_k)_j})\right\rceil -1,
+        $$
+        and \eqref{eq:NNRR-2-app-2} yields 
+        $$
+        \pi(\exp(xA_{\vec m_k,j})) \leq (m_k)_j + \left\lceil \frac 1 2 (-1 + \sqrt{1+8(m_k)_j})\right\rceil -1.
+        $$
+
+        So $c_{k-1} = \displaystyle\sum_{j=0}^r \prodesc{xP_{\vec n}}{A_{\vec m_k,j}}_j = 0$ if $\tau((\vec m_k)_j) \leq n_j$ for every $j=1,\dots,r$. 
+
+    \end{proof}
+
+    \begin{example}
+        Let us present an example of application of this last theorem. Let $r=3$, $\vec n = (1,2,2)$, with $|\vec n|=5$. As $\pi^{-1}(|\vec n|)=\pi^{-1}(5)=(0,2)$, then the leader term of $P_{(1,2,2)}$ is $y^2$, so $\deg(P_{(1,2,2)})=2$. In addition, $|\vec m|=\pi(\exp(xP_{(1,2,2)}))=\pi(\exp(P_{(1,2,2)})) + \deg(P_{(1,2,2)}) + 1 = 5+2+1 = 8$, and of course $\exp(xP_{(1,2,2)})=\exp(P_{\vec m})=\pi^{-1}(8)=(1,2)$.
+        
+        Now, we will consider the following path from $\vec 0$ to a certain $\vec m$ with $|\vec m|=8$, for example, $\vec m =(3,2,3)$:
+        $$
+        \vec m_0 =(0,0,0)\rightarrow \vec m_1 =(0,1,0)\rightarrow\vec m_2 =(0,1,1)\rightarrow
+        $$ $$
+        \rightarrow\vec m_3 =(1,1,1)\rightarrow \vec m_4 =(1,2,1)\rightarrow\vec m_5 =\vec n = (1,2,2)\rightarrow
+        $$ $$
+        \rightarrow\vec m_6 =(2,2,2)\rightarrow \vec m_7 =(3,2,2)\rightarrow\vec m_8 = \vec m =(3,2,3).
+        $$ 
+
+        We know it is possible to write $xP_{(1,2,2)} = P_{(3,2,3)} + \displaystyle\sum_{k=0}^{7} c_k P_{\vec m_k}$ with $c_{k-1} = \prodesc{xP_{(1,2,2)}}{Q_{\vec m_k}}$ $(k=1,\dots,|\vec m|$), but let us check if any $c_k =0$.
+
+        If we apply the function $\tau$ to every component of the first elements of the path, we get:
+        \begin{table}[h]
+            \centering
+            \begin{tabular}{cccc}
+            \hline
+            $k$ & $\vec m_k$         & $(\tau((\vec m_k)_1), \tau((\vec m_k)_2), \tau((\vec m_k)_3))$ & $\leq \vec n =(1,2,2)$? \\ \hline \hline
+            $0$ & $\vec m_0=(0,0,0)$ & $(0,0,0)$                                                      & Yes                     \\ \hline
+            $1$ & $\vec m_1=(0,1,0)$ & $(0,2,0)$                                                      & Yes                     \\ \hline
+            $2$ & $\vec m_2=(0,1,1)$ & $(0,2,2)$                                                      & Yes                     \\ \hline
+            $3$ & $\vec m_3=(1,1,1)$ & $(2,2,2)$                                                      & \textbf{No}                      \\ \hline
+            \end{tabular}
+            \label{tab:example-NNRR}
+        \end{table}
+
+        Then $c_0=c_1=c_2 =0$, and 
+        $$
+        xP_{(1,2,2)} = P_{(3,2,3)} + \displaystyle\sum_{k=3}^{7} c_k P_{\vec m_k}.
+        $$
+        
+
+    \end{example}
 
 
 % TODO Añadir conclusion llegado el momento
